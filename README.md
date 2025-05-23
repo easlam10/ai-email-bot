@@ -1,18 +1,42 @@
 ## 🔁  Workflow Diagram
 
 ```mermaid
-graph TD
-  A[📥 Email Inbox]
-  A --> B[📨 Fetch Emails (imap-simple + mailparser)]
-  B --> C[🧹 Clean & Parse Content (text, HTML, attachments)]
-  C --> D[🧠 AI Categorization (@google/generative-ai)]
-  D --> E[🗂️ Categorize Email (Priority / Marketing / General / Spam)]
-  E --> F[🧾 Format Message (custom WhatsApp template)]
-  F --> G[📲 Send via WhatsApp (twilio, meta)]
-
-
----
+flowchart TD
+    A[📥 Email Inbox] -->|IMAP Protocol| B[Fetch Emails]
+    B -->|imap + mailparser| C[Parse Content]
+    C -->|Extract Text/HTML| D[AI Analysis]
+    D -->|@google/generative-ai| E{Categorize}
+    E -->|Priority| F[🟢 Immediate Alert]
+    E -->|Marketing| G[🟡 Daily Digest]
+    E -->|General| H[⚪ Weekly Report]
+    F & G & H -->|twilio| I[📱 WhatsApp Delivery]
+    
+    subgraph Tech Stack
+        B -.-> X1["imap (v0.8.19)"]
+        C -.-> X2["mailparser (v3.6.5)"]
+        D -.-> X3["Gemini AI"]
+        I -.-> X4["twilio (v5.5.2)"]
+    end
 ```
+
+## 🔄 Email Processing Pipeline
+
+1. [IMAP] 📥 Email Inbox  
+   → `imap` library  
+   ↓  
+2. [PARSE] 🧹 Extract Content  
+   → `mailparser`  
+   ↓  
+3. [ANALYZE] 🧠 AI Categorization  
+   → `@google/generative-ai`  
+   ↓  
+4. [ROUTE] 🗂️ Priority Decision  
+   ├─ 🟢 PRIORITY → Immediate WhatsApp (`twilio`)  
+   ├─ 🟡 MARKETING → Daily Digest  
+   └─ ⚪ GENERAL → Weekly Report  
+   ↓  
+5. [DELIVER] 📱 WhatsApp Notification  
+   → Existing Twilio integration
 
 ### 🧩 Tech Stack Summary
 
