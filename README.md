@@ -1,3 +1,6 @@
+## 🔁 Workflow Diagram
+
+```mermaid
 graph TD
   A[Email Inbox] --> B[imap-simple + mailparser]
   B --> C[Parse Email Subject + Body]
