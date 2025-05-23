@@ -47,7 +47,7 @@ flowchart TD
 | **AI Categorization**    | Analyze and label emails                     | `@google/generative-ai`          |
 | **Formatting Messages**  | Create WhatsApp-friendly content             | Custom template logic            |
 | **WhatsApp Messaging**   | Send messages to users                       | `twilio`                         |
-| **Logging & Reports**    | Save to Excel / cloud                        | `exceljs`, `dropbox`             |
+
 
 ---
 
