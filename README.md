@@ -5,7 +5,7 @@ flowchart TD
     A[📥 Email Inbox] -->|IMAP Protocol| B[Fetch Emails]
     B -->|imap + mailparser| C[Parse Content]
     C -->|Extract Text/HTML| D[AI Analysis]
-    D -->|@google/generative-ai| E{Categorize}
+    D -->|Google AI| E{Categorize}
     E -->|Priority| F[🟢 Immediate Alert]
     E -->|Marketing| G[🟡 Daily Digest]
     E -->|General| H[⚪ Weekly Report]
