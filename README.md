@@ -3,13 +3,13 @@
 ```mermaid
 graph TD
   A[📥 Email Inbox]
-  A --> B[📨 Fetch Emails<br/>imap-simple + mailparser]
-  B --> C[🧹 Clean & Parse Content<br/>text, HTML, attachments]
-  C --> D[🧠 AI Categorization<br/>@google/generative-ai]
-  D --> E[🗂️ Categorize Email<br/>Priority / Marketing / General / Spam]
-  E --> F[🧾 Format Message<br/>custom WhatsApp template]
-  F --> G[📲 Send via WhatsApp<br/>twilio]
-  G --> H[📊 Log + Archive<br/>exceljs + dropbox]
+  A --> B[📨 Fetch Emails (imap-simple + mailparser)]
+  B --> C[🧹 Clean & Parse Content (text, HTML, attachments)]
+  C --> D[🧠 AI Categorization (@google/generative-ai)]
+  D --> E[🗂️ Categorize Email (Priority / Marketing / General / Spam)]
+  E --> F[🧾 Format Message (custom WhatsApp template)]
+  F --> G[📲 Send via WhatsApp (twilio, meta)]
+
 
 ---
 ```
