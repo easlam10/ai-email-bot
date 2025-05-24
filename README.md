@@ -2,48 +2,52 @@
 
 ```mermaid
 flowchart TD
-    A[📥 Email Inbox] -->|IMAP Protocol| B[Fetch Emails]
-    B -->|imap + mailparser| C[Parse Content]
-    C -->|Extract Text/HTML| D[AI Analysis]
+    A[📥 Outlook Inbox] -->|Microsoft Graph API| B[Fetch Emails]
+    B -->|JSON Structure| C[Filter Today's Emails]
+    C --> D[AI Analysis]
     D -->|Google AI| E{Categorize}
     E -->|Priority| F[🟢 Immediate Alert]
     E -->|Marketing| G[🟡 Daily Digest]
     E -->|General| H[⚪ Weekly Report]
-    F & G & H -->|twilio| I[📱 WhatsApp Delivery]
+    E -->|Spam| I[🗑️ Auto-Archive]
+    F & G & H -->|twilio| J[📱 WhatsApp Delivery]
     
     subgraph Tech Stack
-        B -.-> X1["imap (v0.8.19)"]
-        C -.-> X2["mailparser (v3.6.5)"]
-        D -.-> X3["Gemini AI"]
-        I -.-> X4["twilio (v5.5.2)"]
+        B -.-> X1["Microsoft Graph API"]
+        D -.-> X2["Gemini AI"]
+        J -.-> X3["twilio (v5.5.2)"]
     end
 ```
 
 ## 🔄 Email Processing Pipeline
 
-1. [IMAP] 📥 Email Inbox  
-   → `imap` library  
-   ↓  
-2. [PARSE] 🧹 Extract Content  
-   → `mailparser`  
-   ↓  
-3. [ANALYZE] 🧠 AI Categorization  
-   → `@google/generative-ai`  
-   ↓  
-4. [ROUTE] 🗂️ Priority Decision  
-   ├─ 🟢 PRIORITY → Immediate WhatsApp (`twilio`)  
-   ├─ 🟡 MARKETING → Daily Digest  
-   └─ ⚪ GENERAL → Weekly Report  
-   ↓  
-5. [DELIVER] 📱 WhatsApp Notification  
-   → Existing Twilio integration
+1. [GRAPH API] 📥 Outlook Inbox
+→ axios with OAuth 2.0
+↓
+
+2. [FILTER] ⏳ Today's Emails
+→ JavaScript date filtering
+↓
+
+3. [ANALYZE] 🧠 AI Categorization
+→ @google/generative-ai
+↓
+
+4. ROUTE] 🗂️ Priority Decision
+├─ 🟢 PRIORITY → Immediate WhatsApp
+├─ 🟡 MARKETING → Daily Digest
+├─ ⚪ GENERAL → Weekly Report
+└─ 🗑️ SPAM → Auto-archive
+↓
+
+5 .[DELIVER] 📱 WhatsApp Notification
+→ Existing Twilio integration
 
 ### 🧩 Tech Stack Summary
 
 | Component                 | Purpose                                      | Library Used                    |
 |--------------------------|----------------------------------------------|----------------------------------|
-| **Email Fetching**       | Read email inbox                             | `imap-simple`, `mailparser`      |
-| **Parsing Content**      | Extract plain text / HTML from emails        | `mailparser`                     |
+| **Email Fetching**       | Read email inbox                             | `Microsoft Graph api via axios`  |
 | **AI Categorization**    | Analyze and label emails                     | `@google/generative-ai`          |
 | **Formatting Messages**  | Create WhatsApp-friendly content             | Custom template logic            |
 | **WhatsApp Messaging**   | Send messages to users                       | `twilio`                         |
