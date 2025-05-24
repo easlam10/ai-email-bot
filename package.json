@@ -1,0 +1,32 @@
+{
+  "name": "ai-email-bot",
+  "version": "1.0.0",
+  "description": "A Node.js bot that fetches emails, analyzes with AI, and sends WhatsApp summaries.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "imap-simple": "^5.1.0",
+    "imapflow": "^1.0.187",
+    "mailparser": "^3.7.3",
+    "open": "^10.1.2",
+    "puppeteer": "^24.9.0",
+    "twilio": "^5.6.1"
+  },
+  "keywords": [
+    "email",
+    "AI",
+    "whatsapp",
+    "bot",
+    "twilio",
+    "gmail",
+    "nodejs"
+  ],
+  "author": "Ehtisham Aslam"
+}
