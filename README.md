@@ -31,7 +31,7 @@ flowchart LR
 
 ## 🔄 Email Processing Pipeline
 
-1. 🔐 Authentication
+1.🔐 Authentication
 → OAuth 2.0 flow with Microsoft Identity Platform
 → Generates access/refresh tokens
 
