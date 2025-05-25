@@ -43,14 +43,14 @@ flowchart LR
 → Uses Cheerio to extract clean text
 → Handles HTML/plaintext alternatives
 
-4. 🗃️ JSON Storage
+4.🗃️ JSON Storage
     → Saves structured data for AI processing
 
-5. 🤖 AI Categorization
+5.🤖 AI Categorization
 → Gemini Pro for multi-label classification
 → Dynamic prompt engineering
 
-6. 📱 WhatsApp Notification
+6.📱 WhatsApp Notification
 → Existing Twilio integration
 
 ### 🧩 Tech Stack Summary
