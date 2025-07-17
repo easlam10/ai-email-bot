@@ -1,6 +1,5 @@
 import { getExecutionNumber } from "./fetchEmails.js";
 
-let cachedExecutionNumber;
 
 const getCachedExecutionNumber = () => {
   if (!cachedExecutionNumber) {
@@ -9,39 +8,23 @@ const getCachedExecutionNumber = () => {
   return cachedExecutionNumber;
 };
 
-export const generateCategoryCountMessage = (aiResult) => {
+export const extractCategoryCounts = (aiResult) => {
   const { categories, total, date } = aiResult;
-  const executionNumber = getCachedExecutionNumber();
+  const executionNumber = getExecutionNumber();
 
-  const emojiMap = {
-    'HR': '💼',
-    'Marketing': '📢',
-    'PNM': '🔧',
-    'Audit': '🔍',
-    'Accounts': '💰',
-    'DCR': '🏫',
-    'Others': '📦'
+  return {
+    executionNumber,
+    date,
+    total,
+    hrCount: categories["💼 HR"].length,
+    marketingCount: categories["📢 Marketing"].length,
+    pnmCount: categories["🔧 PNM"].length,
+    auditCount: categories["🔍 Audit"].length,
+    dcrCount: categories["🏫 DCR"].length,
+    othersCount: categories["📦 Others"].length,
   };
-
-  let message = `  ${executionNumber}\n`;
-  message += `📅 ${date}\n`;
-  message += `📬 Total Emails: ${total}\n\n`;
-  message += `*📂 Category Count*\n`;
-
-  const nonEmptyCategories = Object.entries(categories).filter(([, emails]) => emails.length > 0);
-
-  if (nonEmptyCategories.length === 0) {
-    message += `No new emails today.`;
-    return message.trim();
-  }
-
-  for (const [cat, emails] of nonEmptyCategories) {
-    const emoji = emojiMap[cat] || '📌';
-    message += `${emoji} *${cat}*: ${emails.length}\n`;
-  }
-
-  return message.trim();
 };
+
 
 export const generateCategoryBreakdownMessage = (aiResult) => {
   const { categories, total, date } = aiResult;
