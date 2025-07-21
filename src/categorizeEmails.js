@@ -37,17 +37,19 @@ Categorize the emails as follows:
 4. Output JSON format must be EXACTLY:
 {
   "categories": {
-    "💼 HR": [ { "from": {...}, "subject": "...", "content": "..." }, ... ],
-    "📢 Marketing": [...],
-    "🔧 PNM": [...],
-    "🔍 Audit": [...],
-    "💰 Accounts": [...],
-    "🏫 DCR": [...],
-    "📦 Others": [...]
+    "💼 HR": [ { "from": {"name": "Name", "email": "email@example.com"}, "subject": "Subject", "content": "Content" } ],
+    "📢 Marketing": [],
+    "🔧 PNM": [],
+    "🔍 Audit": [],
+    "💰 Accounts": [],
+    "🏫 DCR": [],
+    "📦 Others": []
   },
-  "total": X,
-  "date": "YYYY-MM-DD"
+  "total": 0,
+  "date": "2023-07-21"
 }
+
+IMPORTANT: Your response must be ONLY the valid JSON object, nothing else.
 
 Now categorize and format the following emails:
 ${JSON.stringify(emailData)}
@@ -57,35 +59,111 @@ ${JSON.stringify(emailData)}
     const response = result.response;
     const text = response.text();
 
-    // Extract JSON and handle potential syntax issues
-    let jsonStr = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);
+    // Debug the raw response
+    console.log("Raw API response (first 100 chars):", text.substring(0, 100));
 
-    // Sanitize common JSON issues before parsing
-    jsonStr = jsonStr
-      .replace(/\n/g, " ") // Replace newlines with spaces
-      .replace(/\t/g, " ") // Replace tabs with spaces
-      .replace(/\r/g, "") // Remove carriage returns
-      .replace(/,\s*}/g, "}") // Remove trailing commas in objects
-      .replace(/,\s*]/g, "]") // Remove trailing commas in arrays
-      .replace(/([^"\\])"/g, '$1\\"'); // Escape unescaped quotes within values
+    // Try different methods to extract valid JSON
+    let data;
+    let error = null;
 
     try {
-      const data = JSON.parse(jsonStr);
+      // Method 1: First try to parse the entire text directly
+      data = JSON.parse(text);
+      console.log("✅ Method 1 (direct parsing) successful");
+    } catch (err1) {
+      error = err1;
+      try {
+        // Method 2: Try to extract JSON between braces
+        const potentialJsonStart = text.indexOf("{");
+        const potentialJsonEnd = text.lastIndexOf("}") + 1;
 
-      // Force correct total count
-      data.total = emailData.length;
-      data.date = new Date().toLocaleDateString("en-CA");
+        if (potentialJsonStart >= 0 && potentialJsonEnd > potentialJsonStart) {
+          let jsonStr = text.substring(potentialJsonStart, potentialJsonEnd);
 
-      return data;
-    } catch (jsonError) {
-      console.error("JSON parsing error:", jsonError);
-      // For debugging in production
-      console.error(
-        "JSON string excerpt:",
-        jsonStr.substring(jsonError.position - 50, jsonError.position + 50)
-      );
-      throw new Error(`JSON parsing failed: ${jsonError.message}`);
+          // Basic sanitization
+          jsonStr = jsonStr
+            .replace(/\n/g, " ")
+            .replace(/\t/g, " ")
+            .replace(/\r/g, "");
+
+          data = JSON.parse(jsonStr);
+          console.log(
+            "✅ Method 2 (extraction with basic sanitization) successful"
+          );
+        } else {
+          throw new Error("Could not find valid JSON structure");
+        }
+      } catch (err2) {
+        error = err2;
+        try {
+          // Method 3: Use regex to find code blocks that might contain JSON
+          const codeBlockRegex = /```(?:json)?\s*([\s\S]*?)```/;
+          const match = text.match(codeBlockRegex);
+
+          if (match && match[1]) {
+            data = JSON.parse(match[1].trim());
+            console.log("✅ Method 3 (code block extraction) successful");
+          } else {
+            throw new Error("No code blocks found containing JSON");
+          }
+        } catch (err3) {
+          error = err3;
+          // If all methods fail, create a fallback structure
+          console.error("❌ All JSON parsing methods failed:", error.message);
+          console.error("Raw response:", text);
+
+          // Create default structure
+          data = {
+            categories: {
+              "💼 HR": [],
+              "📢 Marketing": [],
+              "🔧 PNM": [],
+              "🔍 Audit": [],
+              "💰 Accounts": [],
+              "🏫 DCR": [],
+              "📦 Others": [],
+            },
+            total: emailData.length,
+            date: new Date().toLocaleDateString("en-CA"),
+          };
+
+          // Attempt to categorize emails with a simple approach
+          emailData.forEach((email) => {
+            data.categories["📦 Others"].push({
+              from: email.from || {
+                name: "Unknown",
+                email: "unknown@example.com",
+              },
+              subject: email.subject || "No subject",
+              content: "Email content unavailable due to processing error",
+            });
+          });
+
+          console.log(
+            "⚠️ Using fallback categorization due to parsing failure"
+          );
+        }
+      }
     }
+
+    // Ensure required structure exists
+    if (!data.categories) {
+      data.categories = {
+        "💼 HR": [],
+        "📢 Marketing": [],
+        "🔧 PNM": [],
+        "🔍 Audit": [],
+        "💰 Accounts": [],
+        "🏫 DCR": [],
+        "📦 Others": [],
+      };
+    }
+
+    // Force correct total count and date
+    data.total = emailData.length;
+    data.date = new Date().toLocaleDateString("en-CA");
+
+    return data;
   } catch (err) {
     console.error("❌ Email categorization failed:", err);
     throw new Error(`Email processing failed: ${err.message}`);
