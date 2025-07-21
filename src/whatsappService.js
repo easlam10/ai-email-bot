@@ -62,7 +62,7 @@ export async function sendWhatsAppCategoryBreakdown(breakdown) {
     to: WHATSAPP_RECIPIENT_NUMBER,
     type: "template",
     template: {
-      name: "email_category_breakdown", // Make sure this matches your Meta Suite template name
+      name: "email_updates_3", // Make sure this matches your Meta Suite template name
       language: { code: "en_US" },
       components: [
         {
@@ -70,12 +70,13 @@ export async function sendWhatsAppCategoryBreakdown(breakdown) {
           parameters: [
             { type: "text", text: breakdown.executionNumber?.toString() || "" }, // {{1}}
             { type: "text", text: breakdown.date || "" }, // {{2}}
-            { type: "text", text: breakdown.HR || "None" }, // {{3}}
-            { type: "text", text: breakdown.Marketing || "None" }, // {{4}}
-            { type: "text", text: breakdown.PNM || "None" }, // {{5}}
-            { type: "text", text: breakdown.Audit || "None" }, // {{6}}
-            { type: "text", text: breakdown.DCR || "None" }, // {{7}}
-            { type: "text", text: breakdown.Others || "None" }, // {{8}}
+            { type: "text", text: breakdown.total?.toString() || "0" }, // {{3}} (added total)
+            { type: "text", text: breakdown.HR || "None" }, // {{4}}
+            { type: "text", text: breakdown.Marketing || "None" }, // {{5}}
+            { type: "text", text: breakdown.PNM || "None" }, // {{6}}
+            { type: "text", text: breakdown.Audit || "None" }, // {{7}}
+            { type: "text", text: breakdown.DCR || "None" }, // {{8}}
+            { type: "text", text: breakdown.Others || "None" }, // {{9}}
           ],
         },
       ],

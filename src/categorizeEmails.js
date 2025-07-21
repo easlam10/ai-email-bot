@@ -10,7 +10,7 @@ export const categorizeEmails = async () => {
     const emailData = JSON.parse(fs.readFileSync("emails.json", "utf8"));
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
- const prompt = `
+    const prompt = `
 You're summarizing emails into strict WhatsApp-ready JSON format.
 Categorize the emails as follows:
 
@@ -53,25 +53,41 @@ Now categorize and format the following emails:
 ${JSON.stringify(emailData)}
 `;
 
-
-
     const result = await model.generateContent(prompt);
     const response = result.response;
     const text = response.text();
 
-    const jsonStr = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);
-    const data = JSON.parse(jsonStr);
+    // Extract JSON and handle potential syntax issues
+    let jsonStr = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);
 
-    // Force correct total count
-    data.total = emailData.length;
-    data.date = new Date().toLocaleDateString("en-CA");
+    // Sanitize common JSON issues before parsing
+    jsonStr = jsonStr
+      .replace(/\n/g, " ") // Replace newlines with spaces
+      .replace(/\t/g, " ") // Replace tabs with spaces
+      .replace(/\r/g, "") // Remove carriage returns
+      .replace(/,\s*}/g, "}") // Remove trailing commas in objects
+      .replace(/,\s*]/g, "]") // Remove trailing commas in arrays
+      .replace(/([^"\\])"/g, '$1\\"'); // Escape unescaped quotes within values
 
-    return data;
+    try {
+      const data = JSON.parse(jsonStr);
+
+      // Force correct total count
+      data.total = emailData.length;
+      data.date = new Date().toLocaleDateString("en-CA");
+
+      return data;
+    } catch (jsonError) {
+      console.error("JSON parsing error:", jsonError);
+      // For debugging in production
+      console.error(
+        "JSON string excerpt:",
+        jsonStr.substring(jsonError.position - 50, jsonError.position + 50)
+      );
+      throw new Error(`JSON parsing failed: ${jsonError.message}`);
+    }
   } catch (err) {
     console.error("❌ Email categorization failed:", err);
     throw new Error(`Email processing failed: ${err.message}`);
   }
 };
-
-
-

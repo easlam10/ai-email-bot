@@ -1,5 +1,7 @@
 import { getExecutionNumber } from "./fetchEmails.js";
 
+let cachedExecutionNumber; // Declare the variable in module scope
+
 const getCachedExecutionNumber = () => {
   if (!cachedExecutionNumber) {
     cachedExecutionNumber = getExecutionNumber();
