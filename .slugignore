@@ -1,35 +1,31 @@
-# WhatsApp session files (store these in MongoDB instead)
+# Remove ALL Chrome versions except headless-shell
+.cache/puppeteer/chrome
+.cache/puppeteer/chrome-*
+!/.cache/puppeteer/chrome-headless-shell
+
+# WhatsApp session files (store in DB instead)
 session/
 auth_info.json
 *.session
 *.session-journal
 
-# Puppeteer/Chromium - keep ONLY the specific version WhatsApp needs (1045629)
-.cache/puppeteer/*
-!/.cache/puppeteer/linux-1045629
-
-# Node.js development
+# Node.js - keep only production node_modules
 node_modules/
 !node_modules/
+
+# Development artifacts
+test/
+coverage/
+dist/
+docs/
 *.log
 npm-debug.log*
-yarn-error.log*
 
-# Build and test files
-dist/
-build/
-coverage/
-test/
-tests/
-
-# Environment and IDE
-.env*
+# Environment files
+.env
+.env.*
 .idea/
 .vscode/
-
-# Documentation
-*.md
-docs/
 
 # Large media files
 *.psd
@@ -37,3 +33,4 @@ docs/
 *.mov
 *.mp4
 *.zip
+*.pdf

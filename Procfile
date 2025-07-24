@@ -1,1 +1,1 @@
-web: node server.js 
+web: apt-get update && apt-get install -y chromium-browser && export PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser && node server.js 
