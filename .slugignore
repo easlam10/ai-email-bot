@@ -1,0 +1,26 @@
+# Development files
+.git
+.github
+.vscode
+.idea
+*.log
+*.md
+test/
+tests/
+docs/
+
+# Cache folders
+.wwebjs_cache/
+.wwebjs_auth/
+node_modules/.cache
+
+# Source maps
+*.map
+
+# Not used in production
+.eslintrc
+.eslintignore
+.prettierrc
+.prettierrc.json
+.babelrc
+jest.config.js 

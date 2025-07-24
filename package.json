@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "prod": "NODE_ENV=production node server.js",
     "heroku-postbuild": "mkdir -p ./.cache && if [ -d /app/.cache/puppeteer ]; then mv /app/.cache/puppeteer ./.cache; fi"
   },
   "dependencies": {
@@ -30,5 +32,11 @@
     "gmail",
     "nodejs"
   ],
-  "author": "Ehtisham Aslam"
+  "author": "Ehtisham Aslam",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "puppeteer": {
+    "skip_download": true
+  }
 }

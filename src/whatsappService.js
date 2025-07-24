@@ -24,6 +24,19 @@ class WhatsAppService {
       // Create MongoDB store with the same configuration as original app
       this.store = new MongoStore({ mongoose });
 
+      // Use browserless.io or another browser service in production
+      // or local Chrome in development
+      const isProd = process.env.NODE_ENV === "production";
+      const puppeteerOptions = isProd
+        ? {
+            browserWSEndpoint:
+              process.env.BROWSERLESS_URL || "wss://chrome.browserless.io",
+          }
+        : {
+            args: ["--no-sandbox"],
+            headless: true,
+          };
+
       // Create WhatsApp client with RemoteAuth to use existing session
       this.client = new Client({
         authStrategy: new RemoteAuth({
@@ -31,10 +44,7 @@ class WhatsAppService {
           backupSyncIntervalMs: 300000,
           clientId: "app2", // Use the same clientId as the original app
         }),
-        puppeteer: {
-          args: ["--no-sandbox"],
-          headless: true,
-        },
+        puppeteer: puppeteerOptions,
       });
 
       // In case session doesn't exist, handle QR code event
