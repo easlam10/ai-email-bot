@@ -1,26 +1,23 @@
-# Development files
-.git
-.github
-.vscode
-.idea
+# WhatsApp Web specific
+session/
+auth_info.json
+*.session
+*.session-journal
+
+# Puppeteer cache (keep only headless-shell)
+.cache/puppeteer/chrome
+.cache/puppeteer/chrome-*
+!/.cache/puppeteer/chrome-headless-shell
+
+# Node.js
+node_modules/
+!node_modules/
 *.log
-*.md
+npm-debug.log*
+
+# Development files
 test/
-tests/
-docs/
-
-# Cache folders
-.wwebjs_cache/
-.wwebjs_auth/
-node_modules/.cache
-
-# Source maps
-*.map
-
-# Not used in production
-.eslintrc
-.eslintignore
-.prettierrc
-.prettierrc.json
-.babelrc
-jest.config.js 
+coverage/
+.env
+dist/
+.idea/
