@@ -5,9 +5,8 @@ auth_info.json
 *.session-journal
 
 # Puppeteer/Chromium - keep ONLY the specific version WhatsApp needs (1045629)
-.cache/puppeteer/chrome
-.cache/puppeteer/chrome-*
-!/.cache/puppeteer/chrome/linux-1045629
+.cache/puppeteer/*
+!/.cache/puppeteer/linux-1045629
 
 # Node.js development
 node_modules/

@@ -8,7 +8,7 @@
     "start": "node server.js",
     "dev": "node server.js",
     "prod": "NODE_ENV=production node server.js",
-   "heroku-postbuild": "npm install --omit=dev && mkdir -p .cache/puppeteer && npx whatsapp-web.js install && cp -r /app/.cache/puppeteer/chrome/linux-1045629 .cache/puppeteer/"
+   "heroku-postbuild": "npm install --omit=dev && mkdir -p .cache/puppeteer && cp -r node_modules/whatsapp-web.js/node_modules/puppeteer-core/.local-chromium .cache/puppeteer/"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
