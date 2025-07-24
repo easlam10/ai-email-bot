@@ -1,23 +1,40 @@
-# WhatsApp Web specific
+# WhatsApp session files (store these in MongoDB instead)
 session/
 auth_info.json
 *.session
 *.session-journal
 
-# Puppeteer cache (keep only headless-shell)
+# Puppeteer/Chromium - keep ONLY the specific version WhatsApp needs (1045629)
 .cache/puppeteer/chrome
 .cache/puppeteer/chrome-*
-!/.cache/puppeteer/chrome-headless-shell
+!/.cache/puppeteer/chrome/linux-1045629
 
-# Node.js
+# Node.js development
 node_modules/
 !node_modules/
 *.log
 npm-debug.log*
+yarn-error.log*
 
-# Development files
-test/
-coverage/
-.env
+# Build and test files
 dist/
+build/
+coverage/
+test/
+tests/
+
+# Environment and IDE
+.env*
 .idea/
+.vscode/
+
+# Documentation
+*.md
+docs/
+
+# Large media files
+*.psd
+*.avi
+*.mov
+*.mp4
+*.zip
