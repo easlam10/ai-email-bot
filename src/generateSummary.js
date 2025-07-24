@@ -1,5 +1,8 @@
 import { getExecutionNumber } from "./fetchEmails.js";
 
+// Add a declaration for the cache variable
+let cachedExecutionNumber = null;
+
 const getCachedExecutionNumber = () => {
   if (!cachedExecutionNumber) {
     cachedExecutionNumber = getExecutionNumber();
@@ -24,6 +27,13 @@ export const extractCategoryCounts = (aiResult) => {
   };
 };
 
+// Helper function to clean subject lines
+const cleanSubject = (subject) => {
+  if (!subject) return "No subject";
+  // Remove 'Re:', 'Fwd:', etc. from the beginning of the subject
+  return subject.replace(/^(Re|Fw|Fwd|Forward):\s*/i, "").trim();
+};
+
 export const generateCategoryBreakdownMessage = (aiResult) => {
   const { categories, date } = aiResult;
   const executionNumber = getCachedExecutionNumber();
@@ -45,21 +55,32 @@ export const generateCategoryBreakdownMessage = (aiResult) => {
 
   for (const { key, label } of categoryKeys) {
     const emails = categories[key] || [];
-    if (!emails.length) {
-      breakdown[label] = "None";
+    const emailCount = emails.length;
+
+    // For DCR category, only show the count
+    if (label === "DCR") {
+      breakdown[label] = `${label} (${emailCount})`;
       continue;
     }
+
+    // For empty categories, just show the count
+    if (emailCount === 0) {
+      breakdown[label] = `${label} (${emailCount})`;
+      continue;
+    }
+
+    // For categories with emails, show count and formatted emails
+    const categoryHeader = `${label} (${emailCount})`;
+
     const formatted = emails
       .map((email) => {
-        const name = email.from?.name || "Unknown";
         const emailAddr = email.from?.email || "no-email";
-        const showEmail = name.toLowerCase() !== emailAddr.toLowerCase();
-        const senderDisplay = showEmail ? `${name} (${emailAddr})` : name;
-        const subject = email.subject || "No subject";
-        return `${senderDisplay} - ${subject}`;
+        const subject = cleanSubject(email.subject || "No subject");
+        return `${emailAddr} - ${subject}`;
       })
-      .join("; ");
-    breakdown[label] = formatted;
+      .join("\n");
+
+    breakdown[label] = `${categoryHeader}\n${formatted}`;
   }
 
   return breakdown;
