@@ -1,6 +1,7 @@
 import fs from "fs";
 import dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { getExecutionNumber } from "./fetchEmails.js";
 
 dotenv.config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -10,7 +11,8 @@ export const categorizeEmails = async () => {
     const emailData = JSON.parse(fs.readFileSync("emails.json", "utf8"));
     console.log(`Processing ${emailData.length} emails...`);
 
-    const executionNumber = 1; // This should match getExecutionNumber() from fetchEmails.js
+    const executionNumber = getExecutionNumber(false); // Get and increment execution number
+    console.log(`Using execution number: ${executionNumber}`);
     const today = new Date().toLocaleDateString("en-CA");
 
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });

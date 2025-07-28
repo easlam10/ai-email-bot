@@ -11,39 +11,107 @@ dotenv.config();
 const TOKEN_FILE = path.resolve("token.json");
 const OUTPUT_FILE = path.resolve("emails.json");
 const OUTLOOK_SCOPES = ["openid", "profile", "offline_access", "Mail.Read"];
+
+// Use absolute paths for data files to work in any environment
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PROCESSED_EMAILS_FILE = path.resolve(__dirname, "processedEmails.json");
-const EXECUTION_TRACKER = path.resolve(__dirname, "executionTracker.json");
+const ROOT_DIR = path.resolve(__dirname, "..");
+const PROCESSED_EMAILS_FILE = path.join(ROOT_DIR, "processedEmails.json");
+const EXECUTION_TRACKER = path.join(ROOT_DIR, "executionTracker.json");
+
+console.log(`Execution tracker path: ${EXECUTION_TRACKER}`);
 
 const initExecutionTracker = () => {
-  if (!fs.existsSync(EXECUTION_TRACKER)) {
-    fs.writeFileSync(EXECUTION_TRACKER, JSON.stringify({
-      lastExecutionDate: null,
-      executionCount: 0
-    }, null, 2));
+  try {
+    if (!fs.existsSync(EXECUTION_TRACKER)) {
+      console.log("Creating new execution tracker file");
+      fs.writeFileSync(
+        EXECUTION_TRACKER,
+        JSON.stringify(
+          {
+            lastExecutionDate: null,
+            executionCount: 1, // Start at 1 instead of 0
+          },
+          null,
+          2
+        )
+      );
+      console.log("Execution tracker created successfully");
+    }
+  } catch (error) {
+    console.error("Error initializing execution tracker:", error);
+    // Create in current directory as fallback
+    const fallbackPath = path.join(process.cwd(), "executionTracker.json");
+    console.log(`Trying fallback path: ${fallbackPath}`);
+    fs.writeFileSync(
+      fallbackPath,
+      JSON.stringify(
+        {
+          lastExecutionDate: null,
+          executionCount: 1, // Start at 1 instead of 0
+        },
+        null,
+        2
+      )
+    );
   }
 };
 
 export const getExecutionNumber = (preserve = false) => {
   initExecutionTracker();
-  const tracker = JSON.parse(fs.readFileSync(EXECUTION_TRACKER));
+
+  let tracker;
+  try {
+    tracker = JSON.parse(fs.readFileSync(EXECUTION_TRACKER));
+    console.log(`Read execution tracker: ${JSON.stringify(tracker)}`);
+  } catch (error) {
+    console.error("Error reading execution tracker, creating new one:", error);
+    tracker = {
+      lastExecutionDate: null,
+      executionCount: 1, // Start at 1 instead of 0
+    };
+  }
+
   const today = new Date().toDateString();
 
   if (!preserve) {
     if (tracker.lastExecutionDate !== today) {
+      console.log(
+        `New day detected. Resetting execution count. Old date: ${tracker.lastExecutionDate}, New date: ${today}`
+      );
       tracker.lastExecutionDate = today;
       tracker.executionCount = 1;
     } else {
+      console.log(
+        `Same day. Incrementing execution count from ${
+          tracker.executionCount
+        } to ${tracker.executionCount + 1}`
+      );
       tracker.executionCount += 1;
     }
-    fs.writeFileSync(EXECUTION_TRACKER, JSON.stringify(tracker, null, 2));
+
+    try {
+      fs.writeFileSync(EXECUTION_TRACKER, JSON.stringify(tracker, null, 2));
+      console.log(`Updated execution tracker: ${JSON.stringify(tracker)}`);
+    } catch (error) {
+      console.error("Error writing execution tracker:", error);
+      // Try fallback location
+      const fallbackPath = path.join(process.cwd(), "executionTracker.json");
+      fs.writeFileSync(fallbackPath, JSON.stringify(tracker, null, 2));
+    }
   }
 
   return tracker.executionCount;
 };
 
-if (!fs.existsSync(PROCESSED_EMAILS_FILE)) {
-  fs.writeFileSync(PROCESSED_EMAILS_FILE, JSON.stringify([]));
+// Ensure processed emails file exists
+try {
+  if (!fs.existsSync(PROCESSED_EMAILS_FILE)) {
+    fs.writeFileSync(PROCESSED_EMAILS_FILE, JSON.stringify([]));
+  }
+} catch (error) {
+  console.error("Error creating processed emails file:", error);
+  // Create in current directory as fallback
+  fs.writeFileSync("processedEmails.json", JSON.stringify([]));
 }
 
 export const fetchEmails = async () => {
@@ -54,9 +122,16 @@ export const fetchEmails = async () => {
   const { refresh_token } = JSON.parse(fs.readFileSync(TOKEN_FILE, "utf8"));
   const tokenData = await refreshAccessToken(refresh_token);
 
-  fs.writeFileSync(TOKEN_FILE, JSON.stringify({
-    refresh_token: tokenData.refresh_token
-  }, null, 2));
+  fs.writeFileSync(
+    TOKEN_FILE,
+    JSON.stringify(
+      {
+        refresh_token: tokenData.refresh_token,
+      },
+      null,
+      2
+    )
+  );
 
   const accessToken = tokenData.access_token;
 
@@ -99,8 +174,11 @@ export const fetchEmails = async () => {
       })
   );
 
-  const updatedProcessed = [...processedEmails, ...newEmails.map(e => e.id)];
-  fs.writeFileSync(PROCESSED_EMAILS_FILE, JSON.stringify(updatedProcessed, null, 2));
+  const updatedProcessed = [...processedEmails, ...newEmails.map((e) => e.id)];
+  fs.writeFileSync(
+    PROCESSED_EMAILS_FILE,
+    JSON.stringify(updatedProcessed, null, 2)
+  );
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(newEmails, null, 2));
 
   console.log(`✅ Saved ${newEmails.length} new emails to ${OUTPUT_FILE}`);
