@@ -3,6 +3,12 @@
 // Designed to be executed by a scheduler (like Heroku Scheduler) that runs every hour
 
 import { exec } from "child_process";
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
+
+// Get current directory for proper path resolution
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Get current time in Pakistan (UTC+5)
 const now = new Date();

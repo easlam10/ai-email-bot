@@ -1,17 +1,17 @@
-import fs from "fs";
 import dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { getExecutionNumber } from "./fetchEmails.js";
+import { getEmailsForCategorization } from "./database/models.js";
 
 dotenv.config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-export const categorizeEmails = async () => {
+export const categorizeEmails = async (executionNumber) => {
   try {
-    const emailData = JSON.parse(fs.readFileSync("emails.json", "utf8"));
+    // Get emails from database instead of file
+    const emailData = await getEmailsForCategorization();
     console.log(`Processing ${emailData.length} emails...`);
 
-    const executionNumber = getExecutionNumber(false); // Get and increment execution number
+    // Use provided execution number instead of getting it again
     console.log(`Using execution number: ${executionNumber}`);
     const today = new Date().toLocaleDateString("en-CA");
 
