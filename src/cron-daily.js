@@ -2,7 +2,7 @@
 // This script runs the daily email report at specific times each day (Pakistan time)
 // Designed to be executed by a scheduler (like Heroku Scheduler) that runs every hour
 
-const { exec } = require("child_process");
+import { exec } from "child_process";
 
 // Get current time in Pakistan (UTC+5)
 const now = new Date();
@@ -14,7 +14,7 @@ console.log(`Cron check at UTC ${now.toUTCString()}`);
 console.log(`Pakistan time: ${pakistanHour}:${now.getUTCMinutes()}`);
 
 // Run at 11 AM and 6 PM Pakistan time
-if (pakistanHour === 11 || pakistanHour === 18) {
+if (pakistanHour === 11 || pakistanHour ==
   console.log("Running daily email report...");
 
   // Execute the index.js file

@@ -1,6 +1,0 @@
-https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=01cb827e-aff8-4c33-82a7-f1daabd1265f&response_type=code&redirect_uri=http://localhost:3000/auth/callback&response_mode=query&scope=[
-  "openid",
-  "profile",
-  "offline_access",
-  "https://outlook.office.com/mail.read",
-]
