@@ -14,7 +14,7 @@ console.log(`Cron check at UTC ${now.toUTCString()}`);
 console.log(`Pakistan time: ${pakistanHour}:${now.getUTCMinutes()}`);
 
 // Run at 11 AM and 6 PM Pakistan time
-if (pakistanHour === 11 || pakistanHour ==
+if (pakistanHour === 11 || pakistanHour === 18) {
   console.log("Running daily email report...");
 
   // Execute the index.js file

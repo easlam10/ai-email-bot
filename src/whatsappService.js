@@ -29,7 +29,7 @@ class WhatsAppService {
         authStrategy: new RemoteAuth({
           store: this.store,
           backupSyncIntervalMs: 300000,
-          clientId: "app2", // Use the same clientId as the original app
+          clientId: "app5", // Use the same clientId as the original app
         }),
         puppeteer: {
           args: ["--no-sandbox"],
