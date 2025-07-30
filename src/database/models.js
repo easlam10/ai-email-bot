@@ -1,5 +1,17 @@
 import mongoose from "mongoose";
 
+// Helper function to get current date in local timezone format
+const getCurrentLocalDateString = () => {
+  const now = new Date();
+  return now.toLocaleDateString("en-US", {
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    timeZone: "Asia/Karachi", // Pakistan timezone
+  });
+};
+
 // Schema for execution tracker
 const executionTrackerSchema = new mongoose.Schema({
   lastExecutionDate: String,
@@ -85,7 +97,8 @@ export const getExecutionTracker = async (preserve = false) => {
       // No emails to delete on first ever run
     }
 
-    const today = new Date().toDateString();
+    // Use local timezone date string
+    const today = getCurrentLocalDateString();
     console.log(
       `Current date: ${today}, Last execution date: ${tracker.lastExecutionDate}`
     );

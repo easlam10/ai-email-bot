@@ -26,6 +26,26 @@ export const getExecutionNumber = async (preserve = false) => {
   return await getExecutionTracker(preserve);
 };
 
+// Helper function to get the start of day in local timezone
+const getLocalDateStart = () => {
+  const now = new Date();
+  const localDate = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    0,
+    0,
+    0,
+    0
+  );
+  return localDate;
+};
+
+// Helper function to convert local date to UTC ISO string for API filtering
+const getUTCFilterDate = (localDate) => {
+  return localDate.toISOString();
+};
+
 export const fetchEmails = async () => {
   try {
     // Ensure database is connected
@@ -51,13 +71,15 @@ export const fetchEmails = async () => {
 
     const accessToken = tokenData.access_token;
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const isoToday = today.toISOString();
+    // Use local timezone for date calculations
+    const todayLocal = getLocalDateStart();
+    const isoTodayUTC = getUTCFilterDate(todayLocal);
 
-    console.log(`Fetching emails since ${isoToday}...`);
+    console.log(`Local date for filtering: ${todayLocal.toLocaleString()}`);
+    console.log(`Fetching emails since ${isoTodayUTC}...`);
+
     const mailResponse = await axios.get(
-      `https://graph.microsoft.com/v1.0/me/messages?$filter=receivedDateTime ge ${isoToday}&$select=id,subject,from,receivedDateTime,body&$top=100&$orderby=receivedDateTime desc`,
+      `https://graph.microsoft.com/v1.0/me/messages?$filter=receivedDateTime ge ${isoTodayUTC}&$select=id,subject,from,receivedDateTime,body&$top=100&$orderby=receivedDateTime desc`,
       { headers: { Authorization: `Bearer ${accessToken}` } }
     );
 
@@ -70,7 +92,8 @@ export const fetchEmails = async () => {
       mailResponse.data.value
         .filter((mail) => {
           const receivedDate = new Date(mail.receivedDateTime);
-          return receivedDate >= today;
+          // Compare using timestamps to ensure consistent timezone handling
+          return receivedDate >= todayLocal;
         })
         .map(async (mail) => {
           const fullText = await extractTextFromHtml(mail.body?.content || "");
