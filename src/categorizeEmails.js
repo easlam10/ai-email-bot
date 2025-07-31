@@ -26,13 +26,20 @@ The email categories are:
 - 🔧 PNM: Maintenance, repairs, facility issues, lights, electric work, generators, UPS, walls
 - 🔍 Audit: Audits, compliance, reviews
 - 💰 Accounts: Finance, accounting, payments
-- 🏫 DCR: Daily Campus Reports (include all emails with "DCR" in subject/content)
+- 🏫 DCR: Daily Campus Reports (any emails with "DCR", "Daily Campus Report", "Campus Report", "Daily College Report", "Daily Report", or similar terms in the subject/content)
 - 📦 Others: Everything else
 
 INSTRUCTIONS:
 1. Categorize the provided emails into these categories
 2. Count how many emails are in each category
 3. Create TWO separate messages as described below
+
+DCR CATEGORIZATION RULES (PRIORITY RULES):
+- Emails should be categorized as DCR if they match ANY of these patterns:
+  * Subject contains "DCR" (case insensitive)
+  * Subject contains "Daily Campus Report" 
+  
+- These DCR rules override other category rules
 
 MESSAGE 1 - SUMMARY:
 Format exactly like this:
@@ -80,6 +87,7 @@ IMPORTANT NOTES:
 4. Remove "Re:", "Fwd:", etc. from subject lines
 5. For categories with emails, put count in parentheses next to category name
 6. Separate email entries with line breaks
+7. IMPORTANT: Be thorough in identifying DCR emails. ANY email with subject containing "Daily Campus Report", "DCR", "Daily College Report", "Daily Report", or similar variations MUST be categorized as DCR
 
 Output BOTH messages separated by a delimiter like "=====MESSAGE DIVIDER=====" 
 

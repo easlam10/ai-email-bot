@@ -1,7 +1,5 @@
 // fetchEmails.js
 import axios from "axios";
-import fs from "fs";
-import path from "path";
 import dotenv from "dotenv";
 import { extractTextFromHtml } from "./extractText.js";
 import { fileURLToPath } from "url";
@@ -11,11 +9,9 @@ import {
   saveEmails,
 } from "./database/models.js";
 import mongoose from "mongoose";
+import { getAccessToken, EMAIL_ADDRESS } from "./clientCredentialsAuth.js";
 
 dotenv.config();
-
-const TOKEN_FILE = path.resolve("token.json");
-const OUTLOOK_SCOPES = ["openid", "profile", "offline_access", "Mail.Read"];
 
 // Initialize database connection
 export const initializeDatabase = async () => {
@@ -51,35 +47,19 @@ export const fetchEmails = async () => {
     // Ensure database is connected
     await initializeDatabase();
 
-    if (!fs.existsSync(TOKEN_FILE)) {
-      throw new Error("No token file found.");
-    }
-
-    const { refresh_token } = JSON.parse(fs.readFileSync(TOKEN_FILE, "utf8"));
-    const tokenData = await refreshAccessToken(refresh_token);
-
-    fs.writeFileSync(
-      TOKEN_FILE,
-      JSON.stringify(
-        {
-          refresh_token: tokenData.refresh_token,
-        },
-        null,
-        2
-      )
-    );
-
-    const accessToken = tokenData.access_token;
+    // Get a valid access token from database or Microsoft Graph API
+    const accessToken = await getAccessToken();
 
     // Use local timezone for date calculations
     const todayLocal = getLocalDateStart();
     const isoTodayUTC = getUTCFilterDate(todayLocal);
 
     console.log(`Local date for filtering: ${todayLocal.toLocaleString()}`);
-    console.log(`Fetching emails since ${isoTodayUTC}...`);
+    console.log(`Fetching emails for ${EMAIL_ADDRESS} since ${isoTodayUTC}...`);
 
+    // Use /users/{email} endpoint instead of /me for app-only authentication
     const mailResponse = await axios.get(
-      `https://graph.microsoft.com/v1.0/me/messages?$filter=receivedDateTime ge ${isoTodayUTC}&$select=id,subject,from,receivedDateTime,body&$top=100&$orderby=receivedDateTime desc`,
+      `https://graph.microsoft.com/v1.0/users/${EMAIL_ADDRESS}/messages?$filter=receivedDateTime ge ${isoTodayUTC}&$select=id,subject,from,receivedDateTime,body&$top=100&$orderby=receivedDateTime desc`,
       { headers: { Authorization: `Bearer ${accessToken}` } }
     );
 
@@ -129,28 +109,4 @@ export const fetchEmails = async () => {
   }
 };
 
-const refreshAccessToken = async (refreshToken) => {
-  const requestData = new URLSearchParams({
-    client_id: process.env.CLIENT_ID,
-    client_secret: process.env.CLIENT_SECRET,
-    refresh_token: refreshToken,
-    grant_type: "refresh_token",
-    scope: OUTLOOK_SCOPES.join(" "),
-  });
-
-  try {
-    const response = await axios.post(
-      "https://login.microsoftonline.com/common/oauth2/v2.0/token",
-      requestData,
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      }
-    );
-    return response.data;
-  } catch (err) {
-    console.error("❌ Failed to refresh token.");
-    throw err;
-  }
-};
+// End of file

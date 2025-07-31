@@ -49,12 +49,34 @@ const emailSchema = new mongoose.Schema({
   },
 });
 
+// Schema for authentication tokens
+const tokenSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    default: "microsoft_graph_token",
+    unique: true,
+  },
+  access_token: {
+    type: String,
+    required: true,
+  },
+  expires_at: {
+    type: Number,
+    required: true,
+  },
+  created_at: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
 // Creating models
 export const ExecutionTracker = mongoose.model(
   "ExecutionTracker",
   executionTrackerSchema
 );
 export const Email = mongoose.model("Email", emailSchema);
+export const Token = mongoose.model("Token", tokenSchema);
 
 // Function to initialize the database connection
 export const connectToDatabase = async () => {
@@ -274,5 +296,45 @@ export const getEmailsForCategorization = async () => {
   } catch (error) {
     console.error("Error getting emails for categorization:", error);
     return [];
+  }
+};
+
+// Save authentication token to database
+export const saveToken = async (accessToken, expiresIn) => {
+  try {
+    const expiresAt = Date.now() + expiresIn * 1000;
+
+    await Token.updateOne(
+      { id: "microsoft_graph_token" },
+      {
+        access_token: accessToken,
+        expires_at: expiresAt,
+        created_at: new Date(),
+      },
+      { upsert: true }
+    );
+
+    console.log("✅ Token saved to database");
+    return true;
+  } catch (error) {
+    console.error("Error saving token to database:", error);
+    throw error;
+  }
+};
+
+// Get valid token from database or return null if not valid
+export const getValidToken = async () => {
+  try {
+    const token = await Token.findOne({ id: "microsoft_graph_token" });
+
+    // If no token or token is expired (with 1 minute buffer)
+    if (!token || token.expires_at <= Date.now() + 60000) {
+      return null;
+    }
+
+    return token.access_token;
+  } catch (error) {
+    console.error("Error getting token from database:", error);
+    return null;
   }
 };
