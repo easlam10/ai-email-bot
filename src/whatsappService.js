@@ -1,173 +1,161 @@
-import pkg from "whatsapp-web.js";
-const { Client, RemoteAuth } = pkg;
-import { MongoStore } from "wwebjs-mongo";
-import mongoose from "mongoose";
-import qrcode from "qrcode-terminal";
 import dotenv from "dotenv";
+import axios from "axios";
 
 dotenv.config();
 
-class WhatsAppService {
-  constructor() {
-    this.client = null;
-    this.isReady = false;
-    this.store = null;
-  }
+const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
+const WHATSAPP_PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
+const WHATSAPP_RECIPIENT_NUMBER = process.env.DEFAULT_RECIPIENT_NUMBER;
 
-  async initialize() {
-    try {
-      // Connect to MongoDB where the session is saved
-      console.log("Connecting to MongoDB...");
-      await mongoose.connect(process.env.MONGODB_URI);
-      console.log("Connected to MongoDB successfully!");
-
-      // Create MongoDB store with the same configuration as original app
-      this.store = new MongoStore({ mongoose });
-
-      // Create WhatsApp client with RemoteAuth to use existing session
-      this.client = new Client({
-        authStrategy: new RemoteAuth({
-          store: this.store,
-          backupSyncIntervalMs: 300000,
-          clientId: "app5", // Use the same clientId as the original app
-        }),
-        puppeteer: {
-          args: ["--no-sandbox"],
-          headless: true,
-        },
-      });
-
-      // In case session doesn't exist, handle QR code event
-      this.client.on("qr", (qr) => {
-        console.log("No saved session found. Please scan this QR code:");
-        qrcode.generate(qr, { small: true });
-      });
-
-      // When client is ready
-      this.client.on("ready", () => {
-        this.isReady = true;
-        console.log("Client is ready! Session loaded from MongoDB.");
-      });
-
-      this.client.on("authenticated", () => {
-        console.log("Authentication successful!");
-      });
-
-      this.client.on("remote_session_saved", () => {
-        console.log("Session saved to MongoDB!");
-      });
-
-      // Initialize the client
-      console.log("Initializing WhatsApp client with saved session...");
-      await this.client.initialize();
-
-      return this;
-    } catch (error) {
-      console.error("Error initializing WhatsApp client:", error);
-      throw error;
-    }
-  }
-
-  async sendMessage(to, message) {
-    try {
-      if (!this.isReady) {
-        console.log("WhatsApp client not ready. Waiting for initialization...");
-        await this.waitForReady();
-      }
-
-      // Format number for WhatsApp
-      const formattedNumber = this.formatPhoneNumber(to);
-      const chatId = `${formattedNumber}@c.us`;
-
-      // Send the message
-      console.log(`Sending message to ${to}...`);
-      const response = await this.client.sendMessage(chatId, message);
-      console.log(`Message sent to ${to}: ${response.id._serialized}`);
-      return response;
-    } catch (error) {
-      console.error(`Failed to send message to ${to}:`, error);
-      throw error;
-    }
-  }
-
-  // Format phone number to WhatsApp format
-  formatPhoneNumber(phoneNumber) {
-    // Remove any non-digit characters
-    return phoneNumber.replace(/\D/g, "");
-  }
-
-  // Wait for client to be ready with timeout
-  async waitForReady(timeoutMs = 60000) {
-    if (this.isReady) return true;
-
-    return new Promise((resolve, reject) => {
-      const checkInterval = setInterval(() => {
-        if (this.isReady) {
-          clearInterval(checkInterval);
-          clearTimeout(timeout);
-          resolve(true);
-        }
-      }, 1000);
-
-      const timeout = setTimeout(() => {
-        clearInterval(checkInterval);
-        reject(
-          new Error(
-            `Timed out waiting for WhatsApp client to be ready after ${timeoutMs}ms`
-          )
-        );
-      }, timeoutMs);
-    });
-  }
-}
-
-// Create the singleton instance
-const whatsappService = new WhatsAppService();
-let initializationPromise = null;
-
-// Helper to get the initialized service
-const getInitializedService = async () => {
-  if (!initializationPromise) {
-    initializationPromise = whatsappService.initialize();
-  }
-  return initializationPromise;
+// Helper function to extract category counts from AI result
+// Updated extractCategoryCounts
+export const extractCategoryCounts = (aiResult) => {
+  const { categories, meta } = aiResult;
+  return {
+    executionNumber: meta.executionNumber,
+    date: meta.date,
+    total: meta.total,
+    hrCount: categories.HR.length,
+    marketingCount: categories.Marketing.length,
+    pnmCount: categories.PNM.length,
+    auditCount: categories.Audit.length,
+    accountsCount: categories.Accounts.length,
+    dcrCount: categories.DCR, // Already a number
+    othersCount: categories.Others.length,
+  };
 };
 
-// Export functions that match the original API
-export async function sendWhatsAppCategorySummary(data) {
+// Updated generateCategoryBreakdownMessage
+export const generateCategoryBreakdownMessage = (aiResult) => {
+  const { categories, meta } = aiResult;
+  
+  // Format emails with numbers and \r separators
+  const formatEmails = (emails) => {
+    if (!emails || emails.length === 0) return "None";
+    return emails.map((email, index) => 
+      `${index + 1}. ${email.replace(/;/g, ',')}`
+    ).join('\r'); // Use \r instead of \n
+  };
+
+  return {
+    executionNumber: meta.executionNumber,
+    date: meta.date,
+    HR: formatEmails(categories.HR),
+    Marketing: formatEmails(categories.Marketing),
+    PNM: formatEmails(categories.PNM),
+    Audit: formatEmails(categories.Audit),
+    Accounts: formatEmails(categories.Accounts),
+    DCR: `${categories.DCR} emails`,
+    Others: formatEmails(categories.Others),
+  };
+};
+
+export async function sendWhatsAppCategorySummary(aiResult) {
+  const url = `https://graph.facebook.com/v23.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`;
+
+  const counts = extractCategoryCounts(aiResult);
+
+  console.log("📊 Extracted counts for summary:", counts);
+
+  const payload = {
+    messaging_product: "whatsapp",
+    to: WHATSAPP_RECIPIENT_NUMBER,
+    type: "template",
+    template: {
+      name: "email_updates_1",
+      language: { code: "en_US" },
+      components: [
+        {
+          type: "body",
+          parameters: [
+            { type: "text", text: counts.executionNumber.toString() },
+            { type: "text", text: counts.date },
+            { type: "text", text: counts.total.toString() },
+            { type: "text", text: counts.hrCount.toString() },
+            { type: "text", text: counts.marketingCount.toString() },
+            { type: "text", text: counts.pnmCount.toString() },
+            { type: "text", text: counts.auditCount.toString() },
+            { type: "text", text: counts.accountsCount.toString() },
+            { type: "text", text: counts.dcrCount.toString() },
+            { type: "text", text: counts.othersCount.toString() },
+          ],
+        },
+      ],
+    },
+  };
+
+  console.log("📤 Sending summary payload:", JSON.stringify(payload, null, 2));
+
   try {
-    const WHATSAPP_RECIPIENT_NUMBER = process.env.DEFAULT_RECIPIENT_NUMBER;
-
-    const service = await getInitializedService();
-
-    // Use the pre-formatted summary message
-    const message = data.summaryMessage;
-
-    console.log(`Sending summary message to ${WHATSAPP_RECIPIENT_NUMBER}...`);
-    await service.sendMessage(WHATSAPP_RECIPIENT_NUMBER, message);
+    const response = await axios.post(url, payload, {
+      headers: {
+        Authorization: `Bearer ${WHATSAPP_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
     console.log("✅ WhatsApp summary message sent successfully!");
-    return { success: true };
+    return response.data;
   } catch (error) {
-    console.error("❌ WhatsApp error:", error.message || error);
+    console.error(
+      "❌ WhatsApp API error (summary):",
+      error.response?.data || error.message
+    );
     throw error;
   }
 }
 
-export async function sendWhatsAppCategoryBreakdown(data) {
+export async function sendWhatsAppCategoryBreakdown(aiResult) {
+  const url = `https://graph.facebook.com/v23.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`;
+
+  const breakdown = generateCategoryBreakdownMessage(aiResult);
+
+  console.log("📋 Generated breakdown for message:", breakdown);
+
+  const payload = {
+    messaging_product: "whatsapp",
+    to: WHATSAPP_RECIPIENT_NUMBER,
+    type: "template",
+    template: {
+      name: "email_updates_2",
+      language: { code: "en_US" },
+      components: [
+        {
+          type: "body",
+          parameters: [
+            { type: "text", text: breakdown.executionNumber?.toString() || "" },
+            { type: "text", text: breakdown.date || "" },
+            { type: "text", text: breakdown.HR || "None" },
+            { type: "text", text: breakdown.Marketing || "None" },
+            { type: "text", text: breakdown.PNM || "None" },
+            { type: "text", text: breakdown.Audit || "None" },
+            { type: "text", text: breakdown.Accounts || "None" },
+            { type: "text", text: breakdown.DCR || "None" },
+            { type: "text", text: breakdown.Others || "None" },
+          ],
+        },
+      ],
+    },
+  };
+
+  console.log(
+    "📤 Sending breakdown payload:",
+    JSON.stringify(payload, null, 2)
+  );
+
   try {
-    const WHATSAPP_RECIPIENT_NUMBER = process.env.DEFAULT_RECIPIENT_NUMBER;
-
-    const service = await getInitializedService();
-
-    // Use the pre-formatted breakdown message
-    const message = data.breakdownMessage;
-
-    console.log(`Sending breakdown message to ${WHATSAPP_RECIPIENT_NUMBER}...`);
-    await service.sendMessage(WHATSAPP_RECIPIENT_NUMBER, message);
-    console.log("✅ WhatsApp breakdown message sent successfully!");
-    return { success: true };
+    const response = await axios.post(url, payload, {
+      headers: {
+        Authorization: `Bearer ${WHATSAPP_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
+    console.log("✅ WhatsApp category breakdown message sent successfully!");
+    return response.data;
   } catch (error) {
-    console.error("❌ WhatsApp error (breakdown):", error.message || error);
+    console.error(
+      "❌ WhatsApp API error (category breakdown):",
+      error.response?.data || error.message
+    );
     throw error;
   }
 }
