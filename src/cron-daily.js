@@ -2,7 +2,13 @@
 // This script runs the daily email report at specific times each day (Pakistan time)
 // Designed to be executed by a scheduler (like Heroku Scheduler) that runs every hour
 
-import { exec } from "child_process";
+import { spawn } from "child_process";
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
+
+// Get current directory for proper path resolution
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Get current time in Pakistan (UTC+5)
 const now = new Date();
@@ -17,14 +23,18 @@ console.log(`Pakistan time: ${pakistanHour}:${now.getUTCMinutes()}`);
 if (pakistanHour === 11 || pakistanHour === 18) {
   console.log("Running daily email report...");
 
-  // Execute the index.js file
-  exec("node src/index.js", (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error: ${error.message}`);
-      return;
-    }
-    console.log(`Output: ${stdout}`);
-    if (stderr) console.error(`Error output: ${stderr}`);
+  // Execute the index.js file using spawn for real-time output
+  const child = spawn("node", ["src/index.js"], {
+    stdio: "inherit", // Stream output directly to console
+    shell: true,
+  });
+
+  child.on("error", (error) => {
+    console.error(`Failed to start subprocess: ${error}`);
+  });
+
+  child.on("close", (code) => {
+    console.log(`Email report process completed with code ${code}`);
   });
 } else {
   console.log(
