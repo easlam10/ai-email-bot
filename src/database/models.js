@@ -207,6 +207,134 @@ export const cleanupOldEmails = async (retentionDays = 7) => {
   }
 };
 
+// Function to remove duplicate emails by subject and receivedDateTime
+export const removeDuplicateEmails = async () => {
+  try {
+    console.log("🧹 Starting duplicate email cleanup...");
+
+    // Get all emails
+    const allEmails = await Email.find({}).sort({ receivedDateTime: 1 });
+    console.log(`📊 Found ${allEmails.length} total emails in database`);
+
+    // Group emails by subject and receivedDateTime
+    const emailGroups = {};
+    const duplicatesToRemove = [];
+
+    allEmails.forEach((email) => {
+      // Create a key based on subject and receivedDateTime
+      const key = `${email.subject}|${email.receivedDateTime}`;
+
+      if (!emailGroups[key]) {
+        emailGroups[key] = [];
+      }
+      emailGroups[key].push(email);
+    });
+
+    // Find duplicates (keep the first one, mark others for deletion)
+    Object.values(emailGroups).forEach((group) => {
+      if (group.length > 1) {
+        // Keep the first email, mark the rest for deletion
+        for (let i = 1; i < group.length; i++) {
+          duplicatesToRemove.push(group[i]._id);
+        }
+      }
+    });
+
+    console.log(
+      `🔍 Found ${duplicatesToRemove.length} duplicate emails to remove`
+    );
+
+    if (duplicatesToRemove.length > 0) {
+      // Remove duplicates
+      const result = await Email.deleteMany({
+        _id: { $in: duplicatesToRemove },
+      });
+      console.log(
+        `✅ Removed ${result.deletedCount} duplicate emails from database`
+      );
+    } else {
+      console.log("✅ No duplicates found");
+    }
+
+    // Get final count
+    const finalCount = await Email.countDocuments();
+    console.log(`📊 Final email count: ${finalCount}`);
+
+    return {
+      totalEmails: allEmails.length,
+      duplicatesRemoved: duplicatesToRemove.length,
+      finalCount: finalCount,
+    };
+  } catch (error) {
+    console.error("❌ Error removing duplicate emails:", error);
+    throw error;
+  }
+};
+
+// Function to clean up existing duplicates in database (run manually when needed)
+export const cleanupExistingDuplicates = async () => {
+  try {
+    console.log("🧹 Starting cleanup of existing duplicates in database...");
+
+    // Get all emails
+    const allEmails = await Email.find({}).sort({ receivedDateTime: 1 });
+    console.log(`📊 Found ${allEmails.length} total emails in database`);
+
+    // Group emails by subject and receivedDateTime
+    const emailGroups = {};
+    const duplicatesToRemove = [];
+
+    allEmails.forEach((email) => {
+      // Create a key based on subject and receivedDateTime
+      const key = `${email.subject}|${email.receivedDateTime}`;
+
+      if (!emailGroups[key]) {
+        emailGroups[key] = [];
+      }
+      emailGroups[key].push(email);
+    });
+
+    // Find duplicates (keep the first one, mark others for deletion)
+    Object.values(emailGroups).forEach((group) => {
+      if (group.length > 1) {
+        // Keep the first email, mark the rest for deletion
+        for (let i = 1; i < group.length; i++) {
+          duplicatesToRemove.push(group[i]._id);
+        }
+      }
+    });
+
+    console.log(
+      `🔍 Found ${duplicatesToRemove.length} duplicate emails to remove`
+    );
+
+    if (duplicatesToRemove.length > 0) {
+      // Remove duplicates
+      const result = await Email.deleteMany({
+        _id: { $in: duplicatesToRemove },
+      });
+      console.log(
+        `✅ Removed ${result.deletedCount} duplicate emails from database`
+      );
+    } else {
+      console.log("✅ No duplicates found");
+    }
+
+    // Get final count
+    const finalCount = await Email.countDocuments();
+    console.log(`📊 Final email count: ${finalCount}`);
+
+    return {
+      totalEmails: allEmails.length,
+      duplicatesRemoved: duplicatesToRemove.length,
+      finalCount: finalCount,
+    };
+  } catch (error) {
+    console.error("❌ Error removing duplicate emails:", error);
+    throw error;
+  }
+};
+
 // Database operations for emails
 export const saveEmails = async (emails) => {
   try {
@@ -214,33 +342,101 @@ export const saveEmails = async (emails) => {
       return [];
     }
 
-    // Use bulkWrite with updateOne to handle potential duplicates
-    const operations = emails.map((email) => ({
-      updateOne: {
-        filter: { id: email.id },
-        update: {
-          $setOnInsert: {
-            ...email,
-            fetchDate: new Date(),
-            // We keep processed & categorized flags as set in the email object
-          },
-        },
-        upsert: true,
-      },
-    }));
+    console.log(`🔄 Attempting to save ${emails.length} emails to database...`);
 
-    const result = await Email.bulkWrite(operations);
+    // First, remove duplicates by subject and receivedDateTime from the incoming emails
+    const uniqueEmails = [];
+    const seenKeys = new Set();
+
+    emails.forEach((email) => {
+      // Create a key based on subject and receivedDateTime
+      const key = `${email.subject}|${email.receivedDateTime}`;
+
+      if (!seenKeys.has(key)) {
+        seenKeys.add(key);
+        uniqueEmails.push(email);
+      }
+    });
+
     console.log(
-      `✅ Processed ${emails.length} emails (${result.upsertedCount} new added to database)`
+      `🧹 Removed ${
+        emails.length - uniqueEmails.length
+      } duplicates from incoming emails`
+    );
+    console.log(`📊 Unique emails to process: ${uniqueEmails.length}`);
+
+    // Now check for existing emails in database to avoid duplicates
+    const existingEmailIds = await Email.find(
+      { id: { $in: uniqueEmails.map((e) => e.id) } },
+      { id: 1 }
+    ).lean();
+
+    const existingIds = new Set(existingEmailIds.map((e) => e.id));
+    const newEmails = uniqueEmails.filter(
+      (email) => !existingIds.has(email.id)
     );
 
-    return emails;
+    console.log(
+      `📊 Found ${existingIds.size} existing emails, ${newEmails.length} new emails to add`
+    );
+
+    if (newEmails.length === 0) {
+      console.log(
+        "✅ All emails already exist in database, no duplicates to add"
+      );
+      return uniqueEmails; // Return the deduplicated emails
+    }
+
+    // Use insertMany for new emails only
+    const result = await Email.insertMany(newEmails, {
+      ordered: false, // Continue inserting even if some fail
+    });
+
+    console.log(
+      `✅ Successfully saved ${newEmails.length} new emails to database (${result.length} inserted)`
+    );
+
+    return uniqueEmails; // Return the deduplicated emails
   } catch (error) {
-    console.error("Error saving emails to database:", error);
+    console.error("❌ Error saving emails to database:", error);
+
     // Check for duplicate key error
     if (error.code === 11000) {
-      console.warn("Duplicate emails detected and skipped");
+      console.warn(
+        "⚠️ Duplicate emails detected, trying individual insertion..."
+      );
+
+      // Try to save non-duplicate emails individually
+      const savedEmails = [];
+      let successCount = 0;
+      let duplicateCount = 0;
+
+      for (const email of emails) {
+        try {
+          await Email.create(email);
+          savedEmails.push(email);
+          successCount++;
+        } catch (individualError) {
+          if (individualError.code === 11000) {
+            console.log(`⏭️ Email ${email.id} already exists, skipping`);
+            duplicateCount++;
+          } else {
+            console.error(
+              `❌ Error saving individual email ${email.id}:`,
+              individualError
+            );
+          }
+        }
+      }
+
+      console.log(
+        `📊 Individual insertion results: ${successCount} saved, ${duplicateCount} duplicates, ${
+          emails.length - successCount - duplicateCount
+        } errors`
+      );
+      return savedEmails;
     }
+
     throw error;
   }
 };

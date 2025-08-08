@@ -7,6 +7,14 @@ const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
 const WHATSAPP_PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
 const WHATSAPP_RECIPIENT_NUMBER = process.env.DEFAULT_RECIPIENT_NUMBER;
 
+// Helper function to get current date in UTC+5 (Pakistan timezone)
+const getCurrentUTCPLUS5Date = () => {
+  const now = new Date();
+  // Convert to UTC+5 (5 hours ahead of UTC)
+  const utcPlus5Date = new Date(now.getTime() + 5 * 60 * 60 * 1000);
+  return utcPlus5Date.toISOString().split("T")[0]; // YYYY-MM-DD
+};
+
 // Helper function to extract category counts from AI result
 // Updated extractCategoryCounts
 export const extractCategoryCounts = (aiResult) => {
@@ -26,27 +34,31 @@ export const extractCategoryCounts = (aiResult) => {
 };
 
 // Updated generateCategoryBreakdownMessage
-export const generateCategoryBreakdownMessage = (aiResult) => {
+export const generateCategoryBreakdownMessage = async (aiResult) => {
   const { categories, meta } = aiResult;
-  
-  // Format emails with numbers and \r separators
-  const formatEmails = (emails) => {
+
+  // Format emails with numbers and \r separators (no links)
+  const formatEmails = async (emails) => {
     if (!emails || emails.length === 0) return "None";
-    return emails.map((email, index) => 
-      `${index + 1}. ${email.replace(/;/g, ',')}`
-    ).join('\r'); // Use \r instead of \n
+
+    const formattedEmails = emails.map((email, index) => {
+      // Email format is now: "sender@example.com - Subject line"
+      return `${index + 1}. ${email.replace(/;/g, ",")}`;
+    });
+
+    return formattedEmails.join("\r"); // Use \r instead of \n
   };
 
   return {
     executionNumber: meta.executionNumber,
     date: meta.date,
-    HR: formatEmails(categories.HR),
-    Marketing: formatEmails(categories.Marketing),
-    PNM: formatEmails(categories.PNM),
-    Audit: formatEmails(categories.Audit),
-    Accounts: formatEmails(categories.Accounts),
+    HR: await formatEmails(categories.HR),
+    Marketing: await formatEmails(categories.Marketing),
+    PNM: await formatEmails(categories.PNM),
+    Audit: await formatEmails(categories.Audit),
+    Accounts: await formatEmails(categories.Accounts),
     DCR: `${categories.DCR} emails`,
-    Others: formatEmails(categories.Others),
+    Others: await formatEmails(categories.Others),
   };
 };
 
@@ -107,7 +119,7 @@ export async function sendWhatsAppCategorySummary(aiResult) {
 export async function sendWhatsAppCategoryBreakdown(aiResult) {
   const url = `https://graph.facebook.com/v23.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`;
 
-  const breakdown = generateCategoryBreakdownMessage(aiResult);
+  const breakdown = await generateCategoryBreakdownMessage(aiResult);
 
   console.log("📋 Generated breakdown for message:", breakdown);
 

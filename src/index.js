@@ -36,7 +36,7 @@ export const generateDailyReport = async () => {
 
     // Send summary message
     console.log("📤 Sending summary message...");
-    // const summaryMessage = await sendWhatsAppCategorySummary(aiResult);
+    const summaryMessage = await sendWhatsAppCategorySummary(aiResult);
    
 
     // Add a small delay between messages
