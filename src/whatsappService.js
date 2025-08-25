@@ -5,18 +5,22 @@ dotenv.config();
 
 const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
 const WHATSAPP_PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
-const WHATSAPP_RECIPIENT_NUMBER = process.env.DEFAULT_RECIPIENT_NUMBER;
 
-// Helper function to get current date in UTC+5 (Pakistan timezone)
+// 👉 Add both numbers from .env into an array
+const RECIPIENT_NUMBERS = [
+  process.env.DEFAULT_RECIPIENT_NUMBER_1,
+  process.env.DEFAULT_RECIPIENT_NUMBER_2,
+];
+
+// === HELPER FUNCTIONS (unchanged) ===
+
+// UTC+5 date helper
 const getCurrentUTCPLUS5Date = () => {
   const now = new Date();
-  // Convert to UTC+5 (5 hours ahead of UTC)
   const utcPlus5Date = new Date(now.getTime() + 5 * 60 * 60 * 1000);
-  return utcPlus5Date.toISOString().split("T")[0]; // YYYY-MM-DD
+  return utcPlus5Date.toISOString().split("T")[0];
 };
 
-// Helper function to extract category counts from AI result
-// Updated extractCategoryCounts
 export const extractCategoryCounts = (aiResult) => {
   const { categories, meta } = aiResult;
   return {
@@ -28,25 +32,17 @@ export const extractCategoryCounts = (aiResult) => {
     pnmCount: categories.PNM.length,
     auditCount: categories.Audit.length,
     accountsCount: categories.Accounts.length,
-    dcrCount: categories.DCR, // Already a number
+    dcrCount: categories.DCR,
     othersCount: categories.Others.length,
   };
 };
 
-// Updated generateCategoryBreakdownMessage
 export const generateCategoryBreakdownMessage = async (aiResult) => {
   const { categories, meta } = aiResult;
 
-  // Format emails with numbers and \r separators (no links)
   const formatEmails = async (emails) => {
     if (!emails || emails.length === 0) return "None";
-
-    const formattedEmails = emails.map((email, index) => {
-      // Email format is now: "sender@example.com - Subject line"
-      return `${index + 1}. ${email.replace(/;/g, ",")}`;
-    });
-
-    return formattedEmails.join("\r"); // Use \r instead of \n
+    return emails.map((email, index) => `${index + 1}. ${email.replace(/;/g, ",")}`).join("\r");
   };
 
   return {
@@ -62,16 +58,14 @@ export const generateCategoryBreakdownMessage = async (aiResult) => {
   };
 };
 
+// === UPDATED SEND FUNCTIONS ===
+
 export async function sendWhatsAppCategorySummary(aiResult) {
   const url = `https://graph.facebook.com/v23.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`;
-
   const counts = extractCategoryCounts(aiResult);
-
-  console.log("📊 Extracted counts for summary:", counts);
 
   const payload = {
     messaging_product: "whatsapp",
-    to: WHATSAPP_RECIPIENT_NUMBER,
     type: "template",
     template: {
       name: "email_updates_1",
@@ -96,36 +90,33 @@ export async function sendWhatsAppCategorySummary(aiResult) {
     },
   };
 
-  console.log("📤 Sending summary payload:", JSON.stringify(payload, null, 2));
-
-  try {
-    const response = await axios.post(url, payload, {
-      headers: {
-        Authorization: `Bearer ${WHATSAPP_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-    });
-    console.log("✅ WhatsApp summary message sent successfully!");
-    return response.data;
-  } catch (error) {
-    console.error(
-      "❌ WhatsApp API error (summary):",
-      error.response?.data || error.message
-    );
-    throw error;
+  for (const number of RECIPIENT_NUMBERS) {
+    if (!number) continue;
+    try {
+      console.log(`📤 Sending summary to ${number}`);
+      const response = await axios.post(
+        url,
+        { ...payload, to: number },
+        {
+          headers: {
+            Authorization: `Bearer ${WHATSAPP_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(`✅ Summary sent to ${number}`, response.data);
+    } catch (error) {
+      console.error(`❌ Error sending summary to ${number}:`, error.response?.data || error.message);
+    }
   }
 }
 
 export async function sendWhatsAppCategoryBreakdown(aiResult) {
   const url = `https://graph.facebook.com/v23.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`;
-
   const breakdown = await generateCategoryBreakdownMessage(aiResult);
-
-  console.log("📋 Generated breakdown for message:", breakdown);
 
   const payload = {
     messaging_product: "whatsapp",
-    to: WHATSAPP_RECIPIENT_NUMBER,
     type: "template",
     template: {
       name: "email_updates_2",
@@ -149,25 +140,23 @@ export async function sendWhatsAppCategoryBreakdown(aiResult) {
     },
   };
 
-  console.log(
-    "📤 Sending breakdown payload:",
-    JSON.stringify(payload, null, 2)
-  );
-
-  try {
-    const response = await axios.post(url, payload, {
-      headers: {
-        Authorization: `Bearer ${WHATSAPP_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-    });
-    console.log("✅ WhatsApp category breakdown message sent successfully!");
-    return response.data;
-  } catch (error) {
-    console.error(
-      "❌ WhatsApp API error (category breakdown):",
-      error.response?.data || error.message
-    );
-    throw error;
+  for (const number of RECIPIENT_NUMBERS) {
+    if (!number) continue;
+    try {
+      console.log(`📤 Sending breakdown to ${number}`);
+      const response = await axios.post(
+        url,
+        { ...payload, to: number },
+        {
+          headers: {
+            Authorization: `Bearer ${WHATSAPP_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(`✅ Breakdown sent to ${number}`, response.data);
+    } catch (error) {
+      console.error(`❌ Error sending breakdown to ${number}:`, error.response?.data || error.message);
+    }
   }
 }
