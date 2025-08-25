@@ -6,13 +6,7 @@ dotenv.config();
 const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
 const WHATSAPP_PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
 
-// 👉 Add both numbers from .env into an array
-const RECIPIENT_NUMBERS = [
-  process.env.DEFAULT_RECIPIENT_NUMBER_1,
-  process.env.DEFAULT_RECIPIENT_NUMBER_2,
-];
-
-// === HELPER FUNCTIONS (unchanged) ===
+// === HELPER FUNCTIONS ===
 
 // UTC+5 date helper
 const getCurrentUTCPLUS5Date = () => {
@@ -58,14 +52,20 @@ export const generateCategoryBreakdownMessage = async (aiResult) => {
   };
 };
 
-// === UPDATED SEND FUNCTIONS ===
+// === SEND FUNCTIONS (UPDATED to one number) ===
 
-export async function sendWhatsAppCategorySummary(aiResult) {
+export async function sendWhatsAppCategorySummary(aiResult, recipientNumber) {
+  if (!recipientNumber) {
+    console.error("❌ No recipient number provided");
+    return;
+  }
+
   const url = `https://graph.facebook.com/v23.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`;
   const counts = extractCategoryCounts(aiResult);
 
   const payload = {
     messaging_product: "whatsapp",
+    to: recipientNumber,
     type: "template",
     template: {
       name: "email_updates_1",
@@ -90,33 +90,32 @@ export async function sendWhatsAppCategorySummary(aiResult) {
     },
   };
 
-  for (const number of RECIPIENT_NUMBERS) {
-    if (!number) continue;
-    try {
-      console.log(`📤 Sending summary to ${number}`);
-      const response = await axios.post(
-        url,
-        { ...payload, to: number },
-        {
-          headers: {
-            Authorization: `Bearer ${WHATSAPP_TOKEN}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log(`✅ Summary sent to ${number}`, response.data);
-    } catch (error) {
-      console.error(`❌ Error sending summary to ${number}:`, error.response?.data || error.message);
-    }
+  try {
+    console.log(`📤 Sending summary to ${recipientNumber}`);
+    const response = await axios.post(url, payload, {
+      headers: {
+        Authorization: `Bearer ${WHATSAPP_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(`✅ Summary sent to ${recipientNumber}`, response.data);
+  } catch (error) {
+    console.error(`❌ Error sending summary to ${recipientNumber}:`, error.response?.data || error.message);
   }
 }
 
-export async function sendWhatsAppCategoryBreakdown(aiResult) {
+export async function sendWhatsAppCategoryBreakdown(aiResult, recipientNumber) {
+  if (!recipientNumber) {
+    console.error("❌ No recipient number provided");
+    return;
+  }
+
   const url = `https://graph.facebook.com/v23.0/${WHATSAPP_PHONE_NUMBER_ID}/messages`;
   const breakdown = await generateCategoryBreakdownMessage(aiResult);
 
   const payload = {
     messaging_product: "whatsapp",
+    to: recipientNumber,
     type: "template",
     template: {
       name: "email_updates_2",
@@ -140,23 +139,16 @@ export async function sendWhatsAppCategoryBreakdown(aiResult) {
     },
   };
 
-  for (const number of RECIPIENT_NUMBERS) {
-    if (!number) continue;
-    try {
-      console.log(`📤 Sending breakdown to ${number}`);
-      const response = await axios.post(
-        url,
-        { ...payload, to: number },
-        {
-          headers: {
-            Authorization: `Bearer ${WHATSAPP_TOKEN}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log(`✅ Breakdown sent to ${number}`, response.data);
-    } catch (error) {
-      console.error(`❌ Error sending breakdown to ${number}:`, error.response?.data || error.message);
-    }
+  try {
+    console.log(`📤 Sending breakdown to ${recipientNumber}`);
+    const response = await axios.post(url, payload, {
+      headers: {
+        Authorization: `Bearer ${WHATSAPP_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(`✅ Breakdown sent to ${recipientNumber}`, response.data);
+  } catch (error) {
+    console.error(`❌ Error sending breakdown to ${recipientNumber}:`, error.response?.data || error.message);
   }
 }
