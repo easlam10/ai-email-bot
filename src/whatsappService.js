@@ -6,6 +6,16 @@ dotenv.config();
 const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
 const WHATSAPP_PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
 
+// Get recipient number from command line argument
+const recipientNumber = process.argv[2];
+if (!recipientNumber) {
+  console.error("❌ No recipient number provided via command line");
+  console.log("Usage: node src/index.js <recipient_phone_number>");
+  process.exit(1);
+}
+
+console.log(`📱 Recipient number: ${recipientNumber}`);
+
 // === HELPER FUNCTIONS ===
 
 // UTC+5 date helper
