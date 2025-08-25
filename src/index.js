@@ -7,6 +7,7 @@ import {
 } from "./whatsappService.js";
 import { connectToDatabase, getExecutionTracker } from "./database/models.js";
 
+
 // Main function to generate daily report
 export const generateDailyReport = async () => {
   try {

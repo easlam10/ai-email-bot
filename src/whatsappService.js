@@ -18,12 +18,7 @@ console.log(`📱 Recipient number: ${recipientNumber}`);
 
 // === HELPER FUNCTIONS ===
 
-// UTC+5 date helper
-const getCurrentUTCPLUS5Date = () => {
-  const now = new Date();
-  const utcPlus5Date = new Date(now.getTime() + 5 * 60 * 60 * 1000);
-  return utcPlus5Date.toISOString().split("T")[0];
-};
+
 
 export const extractCategoryCounts = (aiResult) => {
   const { categories, meta } = aiResult;
@@ -62,9 +57,9 @@ export const generateCategoryBreakdownMessage = async (aiResult) => {
   };
 };
 
-// === SEND FUNCTIONS (UPDATED to one number) ===
+// === SEND FUNCTIONS (UPDATED to use global recipientNumber) ===
 
-export async function sendWhatsAppCategorySummary(aiResult, recipientNumber) {
+export async function sendWhatsAppCategorySummary(aiResult) { // Removed recipientNumber parameter
   if (!recipientNumber) {
     console.error("❌ No recipient number provided");
     return;
@@ -75,7 +70,7 @@ export async function sendWhatsAppCategorySummary(aiResult, recipientNumber) {
 
   const payload = {
     messaging_product: "whatsapp",
-    to: recipientNumber,
+    to: recipientNumber, // Use the global variable
     type: "template",
     template: {
       name: "email_updates_1",
@@ -109,12 +104,14 @@ export async function sendWhatsAppCategorySummary(aiResult, recipientNumber) {
       },
     });
     console.log(`✅ Summary sent to ${recipientNumber}`, response.data);
+    return response.data;
   } catch (error) {
     console.error(`❌ Error sending summary to ${recipientNumber}:`, error.response?.data || error.message);
+    throw error;
   }
 }
 
-export async function sendWhatsAppCategoryBreakdown(aiResult, recipientNumber) {
+export async function sendWhatsAppCategoryBreakdown(aiResult) { // Removed recipientNumber parameter
   if (!recipientNumber) {
     console.error("❌ No recipient number provided");
     return;
@@ -125,7 +122,7 @@ export async function sendWhatsAppCategoryBreakdown(aiResult, recipientNumber) {
 
   const payload = {
     messaging_product: "whatsapp",
-    to: recipientNumber,
+    to: recipientNumber, // Use the global variable
     type: "template",
     template: {
       name: "email_updates_2",
@@ -158,7 +155,12 @@ export async function sendWhatsAppCategoryBreakdown(aiResult, recipientNumber) {
       },
     });
     console.log(`✅ Breakdown sent to ${recipientNumber}`, response.data);
+    return response.data;
   } catch (error) {
     console.error(`❌ Error sending breakdown to ${recipientNumber}:`, error.response?.data || error.message);
+    throw error;
   }
 }
+
+// Export recipientNumber for potential use in other modules
+export { recipientNumber };
