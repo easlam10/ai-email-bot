@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import fs from "fs";
+import path from "path";
 
 // Helper function to get current date in local timezone format
 const getCurrentLocalDateString = () => {
@@ -35,6 +37,7 @@ const emailSchema = new mongoose.Schema({
   },
   date: String,
   body: String,
+  webLink: String, // Add webLink field to store URL to original email
   fetchDate: {
     type: Date,
     default: Date.now,
@@ -60,8 +63,11 @@ const tokenSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  refresh_token: {
+    type: String,
+  },
   expires_at: {
-    type: Number,
+    type: String, // Changed to String to store ISO date string
     required: true,
   },
   created_at: {
@@ -466,7 +472,7 @@ export const getUnprocessedEmails = async () => {
   }
 };
 
-// Get emails for categorization
+// Get emails for categorization (without marking them as categorized yet)
 export const getEmailsForCategorization = async () => {
   try {
     // Get emails that haven't been categorized yet
@@ -474,16 +480,6 @@ export const getEmailsForCategorization = async () => {
       categorized: false,
       processed: true, // Only categorize emails that have been processed/fetched
     });
-
-    // Mark these emails as categorized
-    if (emails.length > 0) {
-      const emailIds = emails.map((email) => email._id);
-      await Email.updateMany(
-        { _id: { $in: emailIds } },
-        { $set: { categorized: true } }
-      );
-      console.log(`Marked ${emails.length} emails as categorized`);
-    }
 
     console.log(
       `Retrieved ${emails.length} uncategorized emails for processing`
@@ -495,22 +491,54 @@ export const getEmailsForCategorization = async () => {
   }
 };
 
-// Save authentication token to database
-export const saveToken = async (accessToken, expiresIn) => {
+// Mark emails as categorized after successful AI processing
+export const markEmailsAsCategorized = async (emails) => {
   try {
-    const expiresAt = Date.now() + expiresIn * 1000;
+    if (emails.length > 0) {
+      const emailIds = emails.map((email) => email._id);
+      await Email.updateMany(
+        { _id: { $in: emailIds } },
+        { $set: { categorized: true } }
+      );
+      console.log(
+        `✅ Marked ${emails.length} emails as categorized after successful AI processing`
+      );
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.error("Error marking emails as categorized:", error);
+    throw error;
+  }
+};
 
-    await Token.updateOne(
-      { id: "microsoft_graph_token" },
-      {
-        access_token: accessToken,
-        expires_at: expiresAt,
-        created_at: new Date(),
-      },
-      { upsert: true }
+// Save authentication token to database
+export const saveToken = async (
+  accessToken,
+  expiresIn,
+  refreshToken = null,
+  tokenId = "microsoft_graph_token"
+) => {
+  try {
+    // Calculate expiration date as an ISO string
+    const expiryDate = new Date(Date.now() + expiresIn * 1000).toISOString();
+
+    const updateData = {
+      access_token: accessToken,
+      expires_at: expiryDate,
+      created_at: new Date(),
+    };
+
+    // Only add refresh_token if provided
+    if (refreshToken) {
+      updateData.refresh_token = refreshToken;
+    }
+
+    await Token.updateOne({ id: tokenId }, updateData, { upsert: true });
+
+    console.log(
+      `✅ Token saved to database (${tokenId}), expires at: ${expiryDate}`
     );
-
-    console.log("✅ Token saved to database");
     return true;
   } catch (error) {
     console.error("Error saving token to database:", error);
@@ -519,18 +547,107 @@ export const saveToken = async (accessToken, expiresIn) => {
 };
 
 // Get valid token from database or return null if not valid
-export const getValidToken = async () => {
+export const getValidToken = async (tokenId = "microsoft_graph_token") => {
   try {
-    const token = await Token.findOne({ id: "microsoft_graph_token" });
+    const token = await Token.findOne({ id: tokenId });
 
-    // If no token or token is expired (with 1 minute buffer)
-    if (!token || token.expires_at <= Date.now() + 60000) {
+    if (!token) {
+      console.log("No token found in database");
       return null;
     }
 
+    // Parse the ISO date string to get expiration time
+    const expiryDate = new Date(token.expires_at);
+    const now = new Date();
+    const oneMinute = 60 * 1000; // 1 minute in milliseconds
+
+    // Check if token is expired (with 1-minute buffer)
+    if (expiryDate.getTime() <= now.getTime() + oneMinute) {
+      console.log(`Token expired at ${token.expires_at}`);
+      return null;
+    }
+
+    console.log(`Using valid token that expires at ${token.expires_at}`);
     return token.access_token;
   } catch (error) {
-    console.error("Error getting token from database:", error);
+    console.error(`Error getting token (${tokenId}) from database:`, error);
     return null;
+  }
+};
+
+// Get token object including refresh token
+export const getTokenObject = async (tokenId = "microsoft_graph_token") => {
+  try {
+    const token = await Token.findOne({ id: tokenId });
+
+    if (!token) {
+      return null;
+    }
+
+    const expiryDate = new Date(token.expires_at);
+    const now = new Date();
+    const oneMinute = 60 * 1000; // 1 minute in milliseconds
+
+    return {
+      access_token: token.access_token,
+      refresh_token: token.refresh_token,
+      expires_at: token.expires_at,
+      is_expired: expiryDate.getTime() <= now.getTime() + oneMinute,
+    };
+  } catch (error) {
+    console.error(
+      `Error getting token object (${tokenId}) from database:`,
+      error
+    );
+    return null;
+  }
+};
+
+// Import token from token.json file to database
+export const importTokenFromFile = async (
+  filePath,
+  tokenId = "outlook_personal_token" // Changed the default token ID to avoid conflicts
+) => {
+  try {
+    // Read token.json file
+    console.log(`Reading token file from ${filePath}...`);
+    const tokenData = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+    if (
+      !tokenData.access_token ||
+      !tokenData.refresh_token ||
+      !tokenData.expires_at
+    ) {
+      throw new Error("Token file missing required fields");
+    }
+
+    // Calculate expiration time
+    const now = new Date();
+    const expiresAt = new Date(tokenData.expires_at);
+
+    // Store expiration time as milliseconds timestamp for consistent handling
+    const expiresAtMs = expiresAt.getTime();
+    const expiresIn = Math.floor((expiresAtMs - now.getTime()) / 1000); // Convert ms to seconds
+
+    if (expiresIn <= 0) {
+      console.log("⚠️ Warning: Token in file is already expired");
+    }
+
+    // Store both the expiry timestamp and refresh token
+    await saveToken(
+      tokenData.access_token,
+      expiresIn,
+      tokenData.refresh_token,
+      tokenId
+    );
+
+    console.log(`✅ Token imported from file to database (${tokenId})`);
+    console.log(
+      `   Token expires at: ${expiresAt.toISOString()} (in ${expiresIn} seconds)`
+    );
+    return true;
+  } catch (error) {
+    console.error("Error importing token from file:", error);
+    throw error;
   }
 };

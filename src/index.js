@@ -1,16 +1,20 @@
 // Update index.js to use the new approach
 import { fetchEmails } from "./fetchEmails.js";
 import { categorizeEmails } from "./categorizeEmails.js";
-import {
-  sendWhatsAppCategorySummary,
-  sendWhatsAppCategoryBreakdown,
-} from "./whatsappService.js";
+import { sendConsolidatedEmailReport } from "./emailService.js";
 import { connectToDatabase, getExecutionTracker } from "./database/models.js";
 
 // Main function to generate daily report
 export const generateDailyReport = async () => {
   try {
     console.log("🚀 Starting email report generation...");
+
+    // Check if MongoDB URI is set
+    if (!process.env.MONGODB_URI) {
+      console.error("❌ MONGODB_URI environment variable is not set!");
+      throw new Error("MONGODB_URI environment variable is required");
+    }
+    console.log("✓ MONGODB_URI environment variable found");
 
     // Initialize database connection - use connectToDatabase instead of initializeDatabase
     await connectToDatabase();
@@ -31,25 +35,10 @@ export const generateDailyReport = async () => {
     console.log("✅ Emails categorized successfully!");
     console.log("🤖 AI Result structure:", JSON.stringify(aiResult, null, 2));
 
-    // 3️⃣ Send WhatsApp messages via Meta Cloud API
-    console.log("3. Sending WhatsApp messages via Meta Cloud API...");
-
-    // Send summary message
-    console.log("📤 Sending summary message...");
-    const summaryMessage = await sendWhatsAppCategorySummary(aiResult);
-   
-
-    // Add a small delay between messages
-    console.log("⏳ Waiting 3 seconds before sending breakdown message...");
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-
-    // Send breakdown message
-    console.log("📤 Sending breakdown message...");
-    const breakdownMessage = await sendWhatsAppCategoryBreakdown(aiResult);
-    console.log("📨 Breakdown Message Response:");
-    console.log(JSON.stringify(breakdownMessage, null, 2));
-
-    console.log("✅ WhatsApp messages sent successfully via Meta Cloud API!");
+    // 3️⃣ Send consolidated email report via Gmail
+    console.log("3. Sending consolidated email report via Gmail...");
+    await sendConsolidatedEmailReport(aiResult);
+    console.log("✅ Email report sent successfully!");
 
     return { success: true };
   } catch (error) {

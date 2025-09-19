@@ -1,6 +1,9 @@
 import dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { getEmailsForCategorization } from "./database/models.js";
+import {
+  getEmailsForCategorization,
+  markEmailsAsCategorized,
+} from "./database/models.js";
 
 dotenv.config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -87,7 +90,7 @@ You're categorizing emails into a simplified JSON format for WhatsApp templates.
   * "Daily Report" (if related to campus/college)
   * "Campus Report" (if daily)
 - These override ALL other categories - DCR takes absolute priority
-- Only count needed (no details)
+- Include sender email and subject details like other categories
 - Examples that MUST be DCR:
   * "Daily Campus Report 07-08-2025"
   * "DCR 7-8-25"
@@ -103,36 +106,45 @@ You're categorizing emails into a simplified JSON format for WhatsApp templates.
 2. FORMAT REQUIREMENTS:
 - Include ONLY sender email and subject for each email
 - Format: "sender@example.com - Subject line"
-- For DCR: Only count is needed (no details)
+- For DCR: Include sender email and subject details like other categories
 - Strict JSON format (no Markdown, no trailing commas)
 
-3. OUTPUT FORMAT (MUST FOLLOW EXACTLY):
+3. OUTPUT FORMAT (MUST FOLLOW EXACTLY - USE INDEX NUMBERS):
 {
   "categories": {
-    "HR": ["hr@company.com - Updated vacation policy"],
-    "Marketing": ["marketing@company.com - New campaign launch"],
-    "PNM": ["procurement@company.com - New printer purchase"],
-    "Audit": ["audit@company.com - Quarterly audit report"],
-    "Accounts": ["accounts@company.com - Invoice #12345"],
-    "DCR": 5,
-    "Others": ["other@company.com - General inquiry"]
-  },
-  "meta": {
-    "total": ${emailData.length},
-    "date": "${today}",
-    "executionNumber": ${executionNumber}
+    "HR": [0, 5, 12],
+    "Marketing": [1, 8, 15],
+    "PNM": [2, 9, 16],
+    "Audit": [3, 10],
+    "Accounts": [4, 11, 17],
+    "DCR": [6, 13, 18, 19],
+    "Others": [7, 14, 20]
   }
 }
 
+IMPORTANT: Return ONLY index numbers (0, 1, 2, etc.) that correspond to the email positions in the provided array.
+
 CRITICAL: DCR rules take ABSOLUTE PRIORITY over all other categories. If you see "Daily Campus Report" or "DCR" in the subject, it MUST go to DCR category.
 
-Now categorize these emails (DCR rules take absolute priority over all others):
+Now categorize these emails by their INDEX numbers (DCR rules take absolute priority over all others):
 ${JSON.stringify(
-  emailData.map((e) => ({
+  emailData.map((e, index) => ({
+    index: index,
     from: e.from,
     subject: e.subject,
+    body: e.body?.substring(0, 700) || "", // Include first 700 chars of body for better categorization
   }))
-)}`;
+)}
+
+Return the categories with INDEX NUMBERS instead of email strings:
+{
+  "categories": {
+    "HR": [0, 5, 12],
+    "Marketing": [1, 8],
+    "DCR": [2, 15, 20],
+    "Others": [3, 7]
+  }
+}`;
 
     const result = await model.generateContent(prompt);
     const response = result.response;
@@ -158,7 +170,7 @@ ${JSON.stringify(
       throw new Error("Invalid response: missing categories");
     }
 
-    // Ensure all categories exist and DCR is a number
+    // Ensure all categories exist as arrays
     const requiredCategories = [
       "HR",
       "Marketing",
@@ -170,29 +182,43 @@ ${JSON.stringify(
     ];
     for (const category of requiredCategories) {
       if (!data.categories[category]) {
-        if (category === "DCR") {
-          data.categories[category] = 0;
-        } else {
-          data.categories[category] = [];
-        }
+        data.categories[category] = [];
+      }
+      // Ensure all categories are arrays
+      if (!Array.isArray(data.categories[category])) {
+        data.categories[category] = [];
       }
     }
 
-    // Convert DCR to number if it's an array
-    if (Array.isArray(data.categories.DCR)) {
-      data.categories.DCR = data.categories.DCR.length;
-    }
-
-    // Validate that all categories are arrays (except DCR which should be a number)
-    for (const category of requiredCategories) {
-      if (category === "DCR") {
-        if (typeof data.categories[category] !== "number") {
-          data.categories[category] = 0;
-        }
-      } else {
-        if (!Array.isArray(data.categories[category])) {
-          data.categories[category] = [];
-        }
+    // Convert index numbers back to full email objects with webLinks
+    for (let category in data.categories) {
+      if (Array.isArray(data.categories[category])) {
+        data.categories[category] = data.categories[category].map(
+          (emailIndex) => {
+            const email = emailData[emailIndex];
+            if (email) {
+              return {
+                text: `${
+                  email.from?.email || email.from?.name || "Unknown"
+                } - ${email.subject || "No Subject"}`,
+                emailData: {
+                  originalWebLink: email.webLink || "#",
+                  id: email.id,
+                  subject: email.subject,
+                  from: email.from,
+                },
+              };
+            } else {
+              console.warn(`Email at index ${emailIndex} not found`);
+              return {
+                text: `Unknown - Invalid Index ${emailIndex}`,
+                emailData: {
+                  originalWebLink: "#",
+                },
+              };
+            }
+          }
+        );
       }
     }
 
@@ -203,7 +229,10 @@ ${JSON.stringify(
       executionNumber,
     };
 
-    console.log("✅ Successfully categorized emails");
+    // Mark emails as categorized only after successful AI processing
+    await markEmailsAsCategorized(emailData);
+
+    console.log("✅ Successfully categorized emails and added webLinks");
     return data;
   } catch (err) {
     console.error("❌ Email categorization failed:", err);

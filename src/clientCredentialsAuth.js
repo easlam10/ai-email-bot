@@ -1,12 +1,6 @@
 // clientCredentialsAuth.js
 import axios from "axios";
 import dotenv from "dotenv";
-import {
-  connectToDatabase,
-  getValidToken,
-  saveToken,
-} from "./database/models.js";
-
 dotenv.config();
 
 const TENANT = "kips.edu.pk"; // Specific tenant for the organization
@@ -15,18 +9,8 @@ const EMAIL_ADDRESS = "ce@kips.edu.pk"; // Target email address for API calls
 // Get access token - either from database or generate new one
 export const getAccessToken = async () => {
   try {
-    // Ensure database connection
-    await connectToDatabase();
+ 
 
-    // Check if we have a valid token in the database
-    const validToken = await getValidToken();
-    if (validToken) {
-      console.log("Using existing valid token from database");
-      return validToken;
-    }
-
-    // If no valid token, get a new one
-    console.log("No valid token found, getting new one...");
     return await getClientCredentialsToken();
   } catch (error) {
     console.error("Error getting access token:", error);
@@ -52,11 +36,10 @@ const getClientCredentialsToken = async () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
       }
     );
+   
 
     const { access_token, expires_in } = response.data;
 
-    // Save token to database
-    await saveToken(access_token, expires_in);
 
     console.log(`✅ New token obtained, will expire in ${expires_in} seconds`);
     return access_token;
@@ -71,12 +54,8 @@ const getClientCredentialsToken = async () => {
 const main = async () => {
   try {
     console.log("Starting token generation process...");
-    await connectToDatabase();
-    console.log("Database connected, requesting token...");
-
     const token = await getClientCredentialsToken();
-    console.log("✅ Token successfully generated and saved to database");
-    return true;
+    console.log("✅ Token successfully generated and saved to database");    return true;
   } catch (error) {
     console.error("❌ Error during token generation:", error);
     throw error;
@@ -96,4 +75,4 @@ if (process.argv[1] && process.argv[1].endsWith("clientCredentialsAuth.js")) {
     });
 }
 
-export { EMAIL_ADDRESS };
+export { EMAIL_ADDRESS, getClientCredentialsToken };
