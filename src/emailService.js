@@ -90,8 +90,8 @@ export const generateCategoryBreakdownMessage = (aiResult) => {
 // Create Gmail transporter
 function createGmailTransporter() {
   // Email credentials from test-email.js
-  const yourEmail = "ehtisham.ea10@gmail.com";
-  const appPassword = "xyskgonlazqdgqif";
+  const yourEmail = process.env.GOOGLE_SENDER_EMAIL;
+  const appPassword = process.env.GOOGLE_APP_PASSWORD;
 
   return nodemailer.createTransport({
     service: "gmail",
@@ -107,8 +107,8 @@ export async function sendConsolidatedEmailReport(aiResult) {
   try {
     const transporter = createGmailTransporter();
     // Email addresses from test-email.js
-    const senderEmail = "ehtisham.ea10@gmail.com";
-    const recipientEmail = "easlam1010@outlook.com";
+    const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
+    const recipientEmail = process.env.GOOGLE_RECIPIENT_EMAIL;
     const counts = extractCategoryCounts(aiResult);
     const breakdown = generateCategoryBreakdownMessage(aiResult);
 
