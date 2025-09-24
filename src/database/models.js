@@ -38,6 +38,7 @@ const emailSchema = new mongoose.Schema({
   date: String,
   body: String,
   webLink: String, // Add webLink field to store URL to original email
+  sourceEmail: String, // Add field to track which email account this came from
   fetchDate: {
     type: Date,
     default: Date.now,
@@ -342,7 +343,7 @@ export const cleanupExistingDuplicates = async () => {
 };
 
 // Database operations for emails
-export const saveEmails = async (emails) => {
+export const saveEmails = async (emails, sourceEmail = null) => {
   try {
     if (emails.length === 0) {
       return [];
@@ -360,7 +361,12 @@ export const saveEmails = async (emails) => {
 
       if (!seenKeys.has(key)) {
         seenKeys.add(key);
-        uniqueEmails.push(email);
+        // Add sourceEmail to each email object
+        const emailWithSource = { ...email };
+        if (sourceEmail) {
+          emailWithSource.sourceEmail = sourceEmail;
+        }
+        uniqueEmails.push(emailWithSource);
       }
     });
 
@@ -473,16 +479,26 @@ export const getUnprocessedEmails = async () => {
 };
 
 // Get emails for categorization (without marking them as categorized yet)
-export const getEmailsForCategorization = async () => {
+export const getEmailsForCategorization = async (sourceEmail = null) => {
   try {
-    // Get emails that haven't been categorized yet
-    const emails = await Email.find({
+    // Build query filter
+    const filter = {
       categorized: false,
       processed: true, // Only categorize emails that have been processed/fetched
-    });
+    };
+
+    // Add sourceEmail filter if provided
+    if (sourceEmail) {
+      filter.sourceEmail = sourceEmail;
+    }
+
+    // Get emails that haven't been categorized yet
+    const emails = await Email.find(filter);
 
     console.log(
-      `Retrieved ${emails.length} uncategorized emails for processing`
+      `Retrieved ${emails.length} uncategorized emails for processing${
+        sourceEmail ? ` from ${sourceEmail}` : ""
+      }`
     );
     return emails;
   } catch (error) {

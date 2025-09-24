@@ -4,13 +4,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const TENANT = "kips.edu.pk"; // Specific tenant for the organization
-const EMAIL_ADDRESS = "ce@kips.edu.pk"; // Target email address for API calls
+const EMAIL_ADDRESSES = ["ce@kips.edu.pk", "pso.md@kips.edu.pk"]; // Target email addresses for API calls
 
 // Get access token - either from database or generate new one
 export const getAccessToken = async () => {
   try {
- 
-
     return await getClientCredentialsToken();
   } catch (error) {
     console.error("Error getting access token:", error);
@@ -36,10 +34,8 @@ const getClientCredentialsToken = async () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
       }
     );
-   
 
     const { access_token, expires_in } = response.data;
-
 
     console.log(`✅ New token obtained, will expire in ${expires_in} seconds`);
     return access_token;
@@ -55,7 +51,8 @@ const main = async () => {
   try {
     console.log("Starting token generation process...");
     const token = await getClientCredentialsToken();
-    console.log("✅ Token successfully generated and saved to database");    return true;
+    console.log("✅ Token successfully generated and saved to database");
+    return true;
   } catch (error) {
     console.error("❌ Error during token generation:", error);
     throw error;
@@ -75,4 +72,4 @@ if (process.argv[1] && process.argv[1].endsWith("clientCredentialsAuth.js")) {
     });
 }
 
-export { EMAIL_ADDRESS, getClientCredentialsToken };
+export { EMAIL_ADDRESSES, getClientCredentialsToken };

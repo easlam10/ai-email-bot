@@ -43,9 +43,9 @@ const safeJsonParse = (jsonStr) => {
   }
 };
 
-export const categorizeEmails = async (executionNumber) => {
+export const categorizeEmails = async (executionNumber, sourceEmail = null) => {
   try {
-    const emailData = await getEmailsForCategorization();
+    const emailData = await getEmailsForCategorization(sourceEmail);
     console.log(`Processing ${emailData.length} emails...`);
 
     const today = new Date().toLocaleDateString("en-CA");
@@ -227,6 +227,7 @@ Return the categories with INDEX NUMBERS instead of email strings:
       total: emailData.length,
       date: today,
       executionNumber,
+      emailSource: sourceEmail || 'Unknown Email Source',
     };
 
     // Mark emails as categorized only after successful AI processing

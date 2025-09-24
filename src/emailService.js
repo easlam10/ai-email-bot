@@ -89,7 +89,6 @@ export const generateCategoryBreakdownMessage = (aiResult) => {
 
 // Create Gmail transporter
 function createGmailTransporter() {
-  // Email credentials from test-email.js
   const yourEmail = process.env.GOOGLE_SENDER_EMAIL;
   const appPassword = process.env.GOOGLE_APP_PASSWORD;
 
@@ -103,12 +102,22 @@ function createGmailTransporter() {
 }
 
 // Send consolidated email report using Gmail
-export async function sendConsolidatedEmailReport(aiResult) {
+export async function sendConsolidatedEmailReport(
+  aiResult,
+  recipientIndex = 1
+) {
   try {
     const transporter = createGmailTransporter();
-    // Email addresses from test-email.js
+    // Email addresses from environment variables
     const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
-    const recipientEmail = process.env.GOOGLE_RECIPIENT_EMAIL;
+    const recipientEmail =
+      recipientIndex === 1
+        ? process.env.GOOGLE_RECIEVER_EMAIL_1
+        : process.env.GOOGLE_RECIEVER_EMAIL_2;
+    console.log(
+      `📧 Sending report for ${aiResult.meta?.emailSource} to ${recipientEmail}`
+    );
+
     const counts = extractCategoryCounts(aiResult);
     const breakdown = generateCategoryBreakdownMessage(aiResult);
 
@@ -221,7 +230,7 @@ export async function sendConsolidatedEmailReport(aiResult) {
     const mailOptions = {
       from: senderEmail,
       to: recipientEmail,
-      subject: `📊 Daily Email Report - ${counts.date} (${counts.total} emails)`,
+      subject: `📊 Daily Email Report - ${counts.date}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -233,9 +242,11 @@ export async function sendConsolidatedEmailReport(aiResult) {
           <table width="100%" cellspacing="0" cellpadding="0" border="0">
             <tr>
               <td>
-                <h2 style="color: #0078d4; border-bottom: 2px solid #0078d4; padding-bottom: 10px;">📊 Daily Email Report - ${counts.date}</h2>
-                <p><strong>Total Emails:</strong> ${counts.total}</p>
-                <p><strong>Email Report #${counts.executionNumber}</strong></p>
+                 <h2 style="color: #0078d4; border-bottom: 2px solid #0078d4; padding-bottom: 10px;">📊 Daily Email Report - ${
+                   counts.date
+                 }</h2>
+                 <p><strong>Total Emails:</strong> ${counts.total}</p>
+                 <p><strong>Email Report #${counts.executionNumber}</strong></p>
                 
                 <h3 style="color: #0078d4; margin-top: 30px; margin-bottom: 20px;">📈 Category Summary</h3>
               </td>
