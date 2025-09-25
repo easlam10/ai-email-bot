@@ -74,11 +74,9 @@ export const fetchEmails = async (emailAddress) => {
 
     if (allEmails.length > 0) {
       const savedEmails = await saveEmails(allEmails, emailAddress);
+      // Note: savedEmails includes both new and existing emails
       console.log(
-        `✅ Saved ${savedEmails.length} unique emails for ${emailAddress} to database`
-      );
-      console.log(
-        `✅ Returning ${savedEmails.length} unique emails for categorization`
+        `✅ Processed ${savedEmails.length} emails for ${emailAddress} (see database logs above for new vs existing breakdown)`
       );
       return savedEmails;
     }

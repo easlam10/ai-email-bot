@@ -396,6 +396,9 @@ export const saveEmails = async (emails, sourceEmail = null) => {
       console.log(
         "✅ All emails already exist in database, no duplicates to add"
       );
+      console.log(
+        `✅ Returning ${uniqueEmails.length} existing emails for processing`
+      );
       return uniqueEmails; // Return the deduplicated emails
     }
 
@@ -406,6 +409,9 @@ export const saveEmails = async (emails, sourceEmail = null) => {
 
     console.log(
       `✅ Successfully saved ${newEmails.length} new emails to database (${result.length} inserted)`
+    );
+    console.log(
+      `✅ Returning ${uniqueEmails.length} total emails for processing (${newEmails.length} new + ${existingIds.size} existing)`
     );
 
     return uniqueEmails; // Return the deduplicated emails
