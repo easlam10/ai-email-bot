@@ -1,12 +1,12 @@
 import dotenv from "dotenv";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import {
   getEmailsForCategorization,
   markEmailsAsCategorized,
 } from "./database/models.js";
 
 dotenv.config();
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const ai = new GoogleGenAI({});
 
 // Simplified JSON structure for WhatsApp templates
 const safeJsonParse = (jsonStr) => {
@@ -71,7 +71,6 @@ export const categorizeEmails = async (executionNumber, sourceEmail = null) => {
     }
 
     const today = new Date().toLocaleDateString("en-CA");
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     // Simplified prompt with clearer instructions and simpler output format
     const prompt = `
@@ -131,46 +130,47 @@ You're categorizing emails into a simplified JSON format for WhatsApp templates.
 - For DCR: Include sender email and subject details like other categories
 - Strict JSON format (no Markdown, no trailing commas)
 
-3. OUTPUT FORMAT (MUST FOLLOW EXACTLY - USE EMAIL IDs):
+3. OUTPUT FORMAT (MUST FOLLOW EXACTLY - USE SIMPLE IDs):
 {
   "categories": {
-    "HR": ["email_id_1", "email_id_5", "email_id_12"],
-    "Marketing": ["email_id_2", "email_id_8", "email_id_15"],
-    "PNM": ["email_id_3", "email_id_9", "email_id_16"],
-    "Audit": ["email_id_4", "email_id_10"],
-    "Accounts": ["email_id_6", "email_id_11", "email_id_17"],
-    "DCR": ["email_id_7", "email_id_13", "email_id_18", "email_id_19"],
-    "Others": ["email_id_14", "email_id_20"]
+    "HR": [1, 5, 12],
+    "Marketing": [2, 8, 15],
+    "PNM": [3, 9, 16],
+    "Audit": [4, 10],
+    "Accounts": [6, 11, 17],
+    "DCR": [7, 13, 18, 19],
+    "Others": [14, 20]
   }
 }
 
-IMPORTANT: Return ONLY email IDs (the unique identifiers) that correspond to the emails in the provided array.
+IMPORTANT: Return ONLY simple ID numbers (1, 2, 3, etc.) that correspond to the email positions in the provided array.
 
 CRITICAL: DCR rules take ABSOLUTE PRIORITY over all other categories. If you see "Daily Campus Report" or "DCR" in the subject, it MUST go to DCR category.
 
-Now categorize these emails by their EMAIL IDs (DCR rules take absolute priority over all others):
+Now categorize these emails by their SIMPLE IDs (DCR rules take absolute priority over all others):
 ${JSON.stringify(
-  emailData.map((e) => ({
-    emailId: e.id,
+  emailData.map((e, index) => ({
+    simpleId: index + 1, // Use 1-based numbering for AI clarity
     from: e.from,
     subject: e.subject,
-    body: e.body?.substring(0, 700) || "", // Include first 700 chars of body for better categorization
   }))
 )}
 
-Return the categories with EMAIL IDs instead of index numbers:
+Return the categories with SIMPLE ID NUMBERS:
 {
   "categories": {
-    "HR": ["email_id_1", "email_id_5", "email_id_12"],
-    "Marketing": ["email_id_2", "email_id_8"],
-    "DCR": ["email_id_3", "email_id_15", "email_id_20"],
-    "Others": ["email_id_4", "email_id_7"]
+    "HR": [1, 5, 12],
+    "Marketing": [2, 8],
+    "DCR": [3, 15, 20],
+    "Others": [4, 7]
   }
 }`;
 
-    const result = await model.generateContent(prompt);
-    const response = result.response;
-    const text = response.text();
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-pro",
+      contents: prompt,
+    });
+    const text = response.text;
 
     // Extract JSON more carefully
     let jsonStr = text;
@@ -212,26 +212,32 @@ Return the categories with EMAIL IDs instead of index numbers:
       }
     }
 
-    // Convert email IDs back to full email objects with webLinks
+    // Convert simple IDs back to full email objects with webLinks
     let totalValidEmails = 0;
     let totalInvalidIds = 0;
+    const processedIndexes = new Set(); // Track which array indexes we've processed
 
     for (let category in data.categories) {
       if (Array.isArray(data.categories[category])) {
-        const originalCount = data.categories[category].length;
-
         data.categories[category] = data.categories[category]
-          .map((emailId) => {
-            // Validate email ID format
-            if (!emailId || typeof emailId !== "string") {
+          .map((simpleId) => {
+            // Validate simple ID format (should be a number)
+            if (!simpleId || typeof simpleId !== "number" || simpleId < 1) {
               console.warn(
-                `Invalid email ID format: ${emailId} in category ${category}`
+                `Invalid simple ID: ${simpleId} in category ${category}`
               );
               totalInvalidIds++;
               return null;
             }
 
-            const email = emailData.find((e) => e.id === emailId);
+            // Convert 1-based simple ID to 0-based array index
+            const arrayIndex = simpleId - 1;
+
+            // Track processed indexes
+            processedIndexes.add(arrayIndex);
+
+            // Get email by array index
+            const email = emailData[arrayIndex];
             if (email) {
               totalValidEmails++;
               return {
@@ -247,37 +253,25 @@ Return the categories with EMAIL IDs instead of index numbers:
               };
             } else {
               console.warn(
-                `Email with ID ${emailId} not found in current batch for category ${category}`
+                `Email at index ${arrayIndex} (simpleId: ${simpleId}) not found in category ${category}`
               );
               totalInvalidIds++;
               return null; // Return null for invalid IDs
             }
           })
           .filter(Boolean); // Remove null entries from invalid IDs
-
-        // Log category processing results
-        const finalCount = data.categories[category].length;
-        if (originalCount !== finalCount) {
-          console.log(
-            `Category ${category}: ${originalCount} IDs received, ${finalCount} valid emails found`
-          );
-        }
       }
     }
 
-    // Log overall validation results
-    console.log(
-      `✅ Email ID validation complete: ${totalValidEmails} valid emails, ${totalInvalidIds} invalid IDs`
+    // Check if any emails were missed by AI using array indexes
+    const uncategorizedEmails = emailData.filter(
+      (email, index) => !processedIndexes.has(index)
     );
-
-    // Validate that we didn't lose any emails
-    const totalCategorizedEmails = Object.values(data.categories)
-      .filter(Array.isArray)
-      .reduce((sum, arr) => sum + arr.length, 0);
-
-    console.log(
-      `📊 Categorization summary: ${totalCategorizedEmails} emails categorized out of ${emailData.length} total emails`
-    );
+    if (uncategorizedEmails.length > 0) {
+      console.warn(
+        `⚠️ ${uncategorizedEmails.length} emails were missed by AI and not categorized`
+      );
+    }
 
     // Add meta information
     data.meta = {

@@ -351,110 +351,41 @@ export const saveEmails = async (emails, sourceEmail = null) => {
 
     console.log(`🔄 Attempting to save ${emails.length} emails to database...`);
 
-    // First, remove duplicates by subject and receivedDateTime from the incoming emails
-    const uniqueEmails = [];
-    const seenKeys = new Set();
-
-    emails.forEach((email) => {
-      // Create a key based on subject and receivedDateTime
-      const key = `${email.subject}|${email.receivedDateTime}`;
-
-      if (!seenKeys.has(key)) {
-        seenKeys.add(key);
-        // Add sourceEmail to each email object
-        const emailWithSource = { ...email };
-        if (sourceEmail) {
-          emailWithSource.sourceEmail = sourceEmail;
-        }
-        uniqueEmails.push(emailWithSource);
+    // Add sourceEmail to each email object
+    const emailsWithSource = emails.map((email) => {
+      const emailWithSource = { ...email };
+      if (sourceEmail) {
+        emailWithSource.sourceEmail = sourceEmail;
       }
+      return emailWithSource;
     });
 
-    console.log(
-      `🧹 Removed ${
-        emails.length - uniqueEmails.length
-      } duplicates from incoming emails`
-    );
-    console.log(`📊 Unique emails to process: ${uniqueEmails.length}`);
-
-    // Now check for existing emails in database to avoid duplicates
-    const existingEmailIds = await Email.find(
-      { id: { $in: uniqueEmails.map((e) => e.id) } },
-      { id: 1 }
-    ).lean();
-
-    const existingIds = new Set(existingEmailIds.map((e) => e.id));
-    const newEmails = uniqueEmails.filter(
-      (email) => !existingIds.has(email.id)
-    );
-
-    console.log(
-      `📊 Found ${existingIds.size} existing emails, ${newEmails.length} new emails to add`
-    );
-
-    if (newEmails.length === 0) {
+    // Use insertMany with ordered: false to continue even if duplicates exist
+    try {
+      const result = await Email.insertMany(emailsWithSource, {
+        ordered: false, // Continue inserting even if some fail due to duplicates
+      });
       console.log(
-        "✅ All emails already exist in database, no duplicates to add"
+        `✅ Successfully saved ${result.length} new emails to database`
       );
-      console.log(
-        `✅ Returning ${uniqueEmails.length} existing emails for processing`
-      );
-      return uniqueEmails; // Return the deduplicated emails
+    } catch (error) {
+      // Handle duplicate key errors gracefully
+      if (error.code === 11000) {
+        const insertedCount = error.result?.insertedCount || 0;
+        console.log(
+          `✅ Saved ${insertedCount} new emails (some were duplicates and skipped)`
+        );
+      } else {
+        throw error; // Re-throw non-duplicate errors
+      }
     }
 
-    // Use insertMany for new emails only
-    const result = await Email.insertMany(newEmails, {
-      ordered: false, // Continue inserting even if some fail
-    });
-
     console.log(
-      `✅ Successfully saved ${newEmails.length} new emails to database (${result.length} inserted)`
+      `✅ Returning ${emailsWithSource.length} emails for processing`
     );
-    console.log(
-      `✅ Returning ${uniqueEmails.length} total emails for processing (${newEmails.length} new + ${existingIds.size} existing)`
-    );
-
-    return uniqueEmails; // Return the deduplicated emails
+    return emailsWithSource;
   } catch (error) {
     console.error("❌ Error saving emails to database:", error);
-
-    // Check for duplicate key error
-    if (error.code === 11000) {
-      console.warn(
-        "⚠️ Duplicate emails detected, trying individual insertion..."
-      );
-
-      // Try to save non-duplicate emails individually
-      const savedEmails = [];
-      let successCount = 0;
-      let duplicateCount = 0;
-
-      for (const email of emails) {
-        try {
-          await Email.create(email);
-          savedEmails.push(email);
-          successCount++;
-        } catch (individualError) {
-          if (individualError.code === 11000) {
-            console.log(`⏭️ Email ${email.id} already exists, skipping`);
-            duplicateCount++;
-          } else {
-            console.error(
-              `❌ Error saving individual email ${email.id}:`,
-              individualError
-            );
-          }
-        }
-      }
-
-      console.log(
-        `📊 Individual insertion results: ${successCount} saved, ${duplicateCount} duplicates, ${
-          emails.length - successCount - duplicateCount
-        } errors`
-      );
-      return savedEmails;
-    }
-
     throw error;
   }
 };
