@@ -1,0 +1,289 @@
+{
+  "testInfo": {
+    "testDescription": "Morning run at 10am PKT (5am UTC)",
+    "expectedTimeRange": "4pm PKT yesterday to 10am PKT today",
+    "startTimeUTC": "2025-10-16T11:00:00.000Z",
+    "endTimeUTC": "2025-10-17T05:00:00.000Z",
+    "startTimePKT": "2025-10-16 16:00:00 PKT",
+    "endTimePKT": "2025-10-17 10:00:00 PKT",
+    "totalEmails": 23
+  },
+  "emails": [
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXZAAAAA==",
+      "subject": "Bills ENDORSEMENT",
+      "from": {
+        "name": "dc.admin@kips.edu.pk",
+        "email": "dc.admin@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-17T04:48:46Z",
+      "date": "10/17/2025, 9:48:46 AM",
+      "body": "Dear SCM Team,Please endorse all the attached bills; the hard copies are handed over to Mr. Muzaffer.Regards,EDC Office0305-4440703",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXZAAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXYwAAAA==",
+      "subject": "Re: Complaint # KC - 25-10-06 KC Kashmir Bridge, Faisalabad ( Revision of Scholarship Package for Migrated Student)",
+      "from": {
+        "name": "complaint@kips.edu.pk",
+        "email": "complaint@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-17T04:29:40Z",
+      "date": "10/17/2025, 9:29:40 AM",
+      "body": "1st Reminder",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXYwAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXYgAAAA==",
+      "subject": "DCR (16-10-2025) FSD SATIANA ROAD",
+      "from": {
+        "name": "fsd1@preps.kips.edu.pk",
+        "email": "fsd1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T16:06:24Z",
+      "date": "10/16/2025, 9:06:24 PM",
+      "body": "Respected Sir, Kindly find the Attachment.Regards,Ahmed Asrar HussainInfo OfficerKIPS Satiana Road Campus.",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXYgAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXYQAAAA==",
+      "subject": "DCR 16-10-2025",
+      "from": {
+        "name": "ryk.mc@preps.kips.edu.pk",
+        "email": "ryk.mc@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T16:03:38Z",
+      "date": "10/16/2025, 9:03:38 PM",
+      "body": "A.O.A Respected Sir,Find the attached File of DCR.Regards, Mr Yasir HameedInfo Officer",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXYQAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXYAAAAA==",
+      "subject": "DAILY CAMPUS REPORT DGK-BK DATED: 16-10-2025",
+      "from": {
+        "name": "dgk2@preps.kips.edu.pk",
+        "email": "dgk2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T16:01:18Z",
+      "date": "10/16/2025, 9:01:18 PM",
+      "body": "REGARDS,JUNAID QADEERINFO OFFICERKIPS DGKHAN BK0305-4441143",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXYAAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXXwAAAA==",
+      "subject": "DCR 16-10-2025",
+      "from": {
+        "name": "rwp3@preps.kips.edu.pk",
+        "email": "rwp3@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T15:59:38Z",
+      "date": "10/16/2025, 8:59:38 PM",
+      "body": "",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXXwAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXXgAAAA==",
+      "subject": "DCR Model Town Campus Bwp-1",
+      "from": {
+        "name": "bwp1@preps.kips.edu.pk",
+        "email": "bwp1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T15:39:33Z",
+      "date": "10/16/2025, 8:39:33 PM",
+      "body": "Respected sir,Please find the attachment Regards:KIPS Model Town Campus BWP-1",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXXgAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXXQAAAA==",
+      "subject": "EC DCR (GRW-SHN 16-10-2025",
+      "from": {
+        "name": "grw@preps.kips.edu.pk",
+        "email": "grw@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T15:37:31Z",
+      "date": "10/16/2025, 8:37:31 PM",
+      "body": "",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXXQAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXXAAAAA==",
+      "subject": "DCR SAHIWAL CAMPUS 16-10-25",
+      "from": {
+        "name": "swl@preps.kips.edu.pk",
+        "email": "swl@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T15:32:18Z",
+      "date": "10/16/2025, 8:32:18 PM",
+      "body": "Respected Sir, Please find this attachment fileRegards:Tayyab Dawood(Info. Officer)Kips Sahiwal 0305-4440657",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXXAAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXWwAAAA==",
+      "subject": "DCR 16-10-2025",
+      "from": {
+        "name": "wah@preps.kips.edu.pk",
+        "email": "wah@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T15:31:44Z",
+      "date": "10/16/2025, 8:31:44 PM",
+      "body": "Respected Sir, Please find the attached file.",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXWwAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXWgAAAA==",
+      "subject": "DAILY CAMPUS REPORT OF BUREWALA CAMPUS  16-10-2025",
+      "from": {
+        "name": "brw@preps.kips.edu.pk",
+        "email": "brw@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T15:29:59Z",
+      "date": "10/16/2025, 8:29:59 PM",
+      "body": "AoA Respected Sir,Hope you are doing good.Please find the attachment.Regards:Ali RazaInfo OfficerKIPS Burewala Campus03054440406",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXWgAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXWQAAAA==",
+      "subject": "DCR SADDAR CAMPUS OCTOBER 2025 UPDATED (16-10-2025)",
+      "from": {
+        "name": "rwp4@preps.kips.edu.pk",
+        "email": "rwp4@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T14:48:27Z",
+      "date": "10/16/2025, 7:48:27 PM",
+      "body": "",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXWQAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXWAAAAA==",
+      "subject": "Formal Complaint",
+      "from": {
+        "name": "Moazzam Rizvi",
+        "email": "moazzamrazarizvi1979@gmail.com"
+      },
+      "receivedDateTime": "2025-10-16T13:07:47Z",
+      "date": "10/16/2025, 6:07:47 PM",
+      "body": "Subject: Formal Complaint Regarding Denial of Announced Prize – NET Test TopperRespected Principal,I am the father of Muhammad Aliyan Mukhtar, an ICS Second Year student of your campus. I am writing to express my deep concern over the disrespectful treatment we have received from the administration of KIPS Academy Sargodha Campus.My son recently appeared in the NET Test conducted by KIPS Preparations across Punjab on September 28, 2025 and secured first position in the province. He was awarded Certificate of Scholarship and declared eligible for a prize of Electric Bike and 60% fee discount On October 13, 2025, we approached the KIPS Academy management to claim the prize. To our astonishment, we were informed that the prize could only have been availed two days earlier and that it was conditional upon taking admission in KIPS Academy, however, these conditions were never communicated before. What is even more disappointing is that despite lodging a formal complaint through the KIPS Complaint Cell, no action has been taken to address the issue. This makes your Complaint Cell totally ineffective and irresponsible. As a Grade 18 Officer in the Education Department, I have always held KIPS in high regard for its credibility and commitment to educational excellence. However, this experience has been both disheartening and concerning, especially considering that such treatment has been extended to a top-performing student.I respectfully request that this matter be immediately brought to the attention of higher authorities and that my son be awarded his rightful prize with the respect and dignity he deserves.I look forward to your prompt response and resolution of this matter.Kind regards,Professor Moazzam Raza Father of Muhammad Aliyan Mukhtar Contact Number.03008706832",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXWAAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAAAADrNnzj1oNiTZRZemQckkIqBwBuUiszQzAXTJyWATXczimqAAAAAAEMAABuUiszQzAXTJyWATXczimqAAIQYFdXAAA=",
+      "subject": "Office Orders: Discontinuation of Services - Mr. Nasir Hameed Khan as \"Principal\"",
+      "from": {
+        "name": "Notifications",
+        "email": "notifications@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T13:03:42Z",
+      "date": "10/16/2025, 6:03:42 PM",
+      "body": "Dear Sirs,Hope you are doing well. Please find the attached office order.Note: This Discontinuation order has been issued by the HR Department.--Regards, Numan Abdul MajeedAssistant Manager – Information & CoordinationDigital & Social Media Department - KIPS Education SystemAddress: 49-R, Johar Town, Lahore, PakistanMobile: +92 310-444-9819",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAAAADrNnzj1oNiTZRZemQckkIqBwBuUiszQzAXTJyWATXczimqAAAAAAEMAABuUiszQzAXTJyWATXczimqAAIQYFdXAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXVgAAAA==",
+      "subject": "Office Orders: Transfer Order - Mr. Qasim Jaral as \"Campus Manager\"",
+      "from": {
+        "name": "Notifications",
+        "email": "notifications@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T12:58:45Z",
+      "date": "10/16/2025, 5:58:45 PM",
+      "body": "Dear Sirs,Hope you are doing well. Please find the attached office order.Note: This Transfer order has been issued by the HR Department.--Regards, Numan Abdul MajeedAssistant Manager – Information & CoordinationDigital & Social Media Department - KIPS Education SystemAddress: 49-R, Johar Town, Lahore, PakistanMobile: +92 310-444-9819",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXVgAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXVQAAAA==",
+      "subject": "One-Time Revenue Share Adjustment for Kotli TPC (2025)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T12:52:19Z",
+      "date": "10/16/2025, 5:52:19 PM",
+      "body": "Dear Zaheer Sb,Refer to the agreed revenue share (like Sheikhupura Model) with Kotli TPC, the revenue share will remain the same but keeping in view the commitment of undersigned (already discussed with Worthy M.D KIPS) upon the request of franchisee the additional 10% revenue will be given to said party for this year only i.e: 2025. 2nd Party is entitled for the revenue of 60+10=70%.Note: It will not be lies on the next year and onward. Agreement will be carried out as per Sheikhupura ModelRegardsHumayun BabarRegional Manager (O.S)",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXVQAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXVAAAAA==",
+      "subject": "Khyber Medical University Institute of Health Sciences,–Undergraduate  Admission Schedule Fall 2025 intake.",
+      "from": {
+        "name": "Telecare Department",
+        "email": "telecaredepartment@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T12:50:23Z",
+      "date": "10/16/2025, 5:50:23 PM",
+      "body": "Dear KIPS Family,Hope this email finds you well.We are pleased to inform you that Khyber Medical University Institute of Health Sciences, Hazara has announced its admission schedule for the Fall 2025 intake. Please find the attachment for your reference.Here are the key details you need to know:Deadline: 03 November, 2025Please ensure that all relevant students have been informed about this.For queries, you are requested to reach out to the contact number of the undersigned.Thank you!Regards,Muhammad Husnain YasinIncharge - Telecare DepartmentMobile: 0345-0900363Address: 49-R, Johar Town, Lahore, Pakistan UAN: +42 111-547-775",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXVAAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXUwAAAA==",
+      "subject": "Re: 30-05-25 KEC Matric & Inter Results 2025 – Plan - Artworks - Notes",
+      "from": {
+        "name": "marketing@kips.edu.pk",
+        "email": "marketing@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T12:37:04Z",
+      "date": "10/16/2025, 5:37:04 PM",
+      "body": "Dear RMs Offices,Chapter: KEC 1st Year Results – NTS 3x6 for 30-A CampusPFA the artwork the latest sheet received today already shared with the vendor today.Dear Mr. Hamid,Kindly arrange MD Sb’s approval for the subject job amounting PKR 825/- Approx.Best Regards,Anum Amjad,Marketing Department.KIPS Corporate Office | 49-R, Johar Town | Lahore | Pakistan",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXUwAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXUgAAAA==",
+      "subject": "Re: 30-05-25 KEC Matric & Inter Results 2025 – Plan - Artworks - Notes",
+      "from": {
+        "name": "marketing@kips.edu.pk",
+        "email": "marketing@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T12:33:56Z",
+      "date": "10/16/2025, 5:33:56 PM",
+      "body": "Dear RMs Offices,Chapter: KEC 1st Year Results – NTS 3x6 for 30-A CampusPFA the artwork the latest sheet received today already shared with the vendor today.Dear Mr. Hamid,Kindly arrange MD Sb’s approval for the subject job amounting PKR 825/- Approx.Best Regards,Anum Amjad,Marketing Department.KIPS Corporate Office | 49-R, Johar Town | Lahore | Pakistan",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXUgAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXUQAAAA==",
+      "subject": "KET Positions 2025 - 16 October 2025 Updated",
+      "from": {
+        "name": "Digital & Social Media Engagement",
+        "email": "dsm@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T11:59:00Z",
+      "date": "10/16/2025, 4:59:00 PM",
+      "body": "Dear Sirs, Hope you are doing fine. Please find attached the updated KET Positions 2025 file. In this updated file, the following has been updated and highlightedNew Top Scorers of the NUMS-MDCAT have been added.Positions have added against marks of NUMS-MDCAT.--Regards, Numan Abdul MajeedAssistant Manager – Information & CoordinationDigital & Social Media Department - KIPS Education SystemAddress: 49-R, Johar Town, Lahore, PakistanMobile: +92 310-444-9819",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXUQAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXUAAAAA==",
+      "subject": "Re: Request for Approval – Refrigerator Compressor Replacement",
+      "from": {
+        "name": "pnm.support@kips.edu.pk",
+        "email": "pnm.support@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T11:42:34Z",
+      "date": "10/16/2025, 4:42:34 PM",
+      "body": "Dear Operation HeadWith reference to the above subject, it is stated that attached quotation amount to Rs. 13,000/- has been approved by SCM.Therefore, you are requested to please ask the campus administration to proceed the refrigerator maintenance work locally.RegardsTanseer Ahmad",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXUAAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXTwAAAA==",
+      "subject": "Re: Request for Approval – Refrigerator Compressor Replacement",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T11:05:59Z",
+      "date": "10/16/2025, 4:05:59 PM",
+      "body": "Dear P&M Head,Refer to the subject cited above & trailing e-mail, the quotation is attached herewith for your kind perusal. Kindly guide further accordingly.RegardsHumayun BabarRegional Manager (O.S)",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXTwAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXTgAAAA==",
+      "subject": "Re: Request to provide the teachers details (Currently Active)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-10-16T11:00:54Z",
+      "date": "10/16/2025, 4:00:54 PM",
+      "body": "Dear Faisal Sb,In continuation of trailing e-mail, please also provide the details of mentioned below designations:Principal/ManagerACM/AdministratorSCORegardsHumayun BabarRegional Manager (O.S)",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADRjZjQ2NTJkLTdmYmQtNDdhYy04NzQ1LThiMDQwYTNmZTA3MgBGAAAD6zZ849aDYk2UWXpkHJJCKgcAblIrM0MwF0yclgE13M4pqgAAAgEMAAAAblIrM0MwF0yclgE13M4pqgACEGBXTgAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+  ]
+}

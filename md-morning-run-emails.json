@@ -1,0 +1,25 @@
+{
+  "testInfo": {
+    "testDescription": "Morning run at 10am PKT (5am UTC)",
+    "expectedTimeRange": "4pm PKT yesterday to 10am PKT today",
+    "startTimeUTC": "2025-10-16T11:00:00.000Z",
+    "endTimeUTC": "2025-10-17T05:00:00.000Z",
+    "startTimePKT": "2025-10-16 16:00:00 PKT",
+    "endTimePKT": "2025-10-17 10:00:00 PKT",
+    "totalEmails": 1
+  },
+  "emails": [
+    {
+      "id": "AQMkADVlNzQ2MzFjLTYxNjctNDBjZS05ZWY3LTJhMTllMmE4NGYzMABGAAADsV5IPYK8Z0CeQyQHekxBQgcAaBttYHsEeEGd10AAfrLPuwAAAgEMAAAAaBttYHsEeEGd10AAfrLPuwACE4vCpgAAAA==",
+      "subject": "Formal Complaint",
+      "from": {
+        "name": "Moazzam Rizvi",
+        "email": "moazzamrazarizvi1979@gmail.com"
+      },
+      "receivedDateTime": "2025-10-16T13:07:47Z",
+      "date": "10/16/2025, 6:07:47 PM",
+      "body": "Subject: Formal Complaint Regarding Denial of Announced Prize – NET Test TopperRespected Principal,I am the father of Muhammad Aliyan Mukhtar, an ICS Second Year student of your campus. I am writing to express my deep concern over the disrespectful treatment we have received from the administration of KIPS Academy Sargodha Campus.My son recently appeared in the NET Test conducted by KIPS Preparations across Punjab on September 28, 2025 and secured first position in the province. He was awarded Certificate of Scholarship and declared eligible for a prize of Electric Bike and 60% fee discount On October 13, 2025, we approached the KIPS Academy management to claim the prize. To our astonishment, we were informed that the prize could only have been availed two days earlier and that it was conditional upon taking admission in KIPS Academy, however, these conditions were never communicated before. What is even more disappointing is that despite lodging a formal complaint through the KIPS Complaint Cell, no action has been taken to address the issue. This makes your Complaint Cell totally ineffective and irresponsible. As a Grade 18 Officer in the Education Department, I have always held KIPS in high regard for its credibility and commitment to educational excellence. However, this experience has been both disheartening and concerning, especially considering that such treatment has been extended to a top-performing student.I respectfully request that this matter be immediately brought to the attention of higher authorities and that my son be awarded his rightful prize with the respect and dignity he deserves.I look forward to your prompt response and resolution of this matter.Kind regards,Professor Moazzam Raza Father of Muhammad Aliyan Mukhtar Contact Number.03008706832",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADVlNzQ2MzFjLTYxNjctNDBjZS05ZWY3LTJhMTllMmE4NGYzMABGAAADsV5IPYK8Z0CeQyQHekxBQgcAaBttYHsEeEGd10AAfrLPuwAAAgEMAAAAaBttYHsEeEGd10AAfrLPuwACE4vCpgAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+  ]
+}

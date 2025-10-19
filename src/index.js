@@ -38,14 +38,18 @@ export const generateDailyReport = async () => {
 
       // 1️⃣ Fetch emails for this account
       console.log(`1. Fetching emails for ${emailAddress}...`);
-      const fetchedEmails = await fetchEmails(emailAddress);
+      const fetchedEmails = await fetchEmails(emailAddress, executionNumber);
       console.log(
         `✅ Emails fetched successfully for ${emailAddress}! (${fetchedEmails.length} emails)`
       );
 
       // 2️⃣ Categorize emails for this account with AI
       console.log(`2. Categorizing emails for ${emailAddress} with AI...`);
-      const aiResult = await categorizeEmails(executionNumber, emailAddress);
+      const aiResult = await categorizeEmails(
+        fetchedEmails,
+        executionNumber,
+        emailAddress
+      );
       console.log(`✅ Emails categorized successfully for ${emailAddress}!`);
 
       // 3️⃣ Send separate email report for this account

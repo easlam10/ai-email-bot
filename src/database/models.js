@@ -21,6 +21,14 @@ const executionTrackerSchema = new mongoose.Schema({
     type: Number,
     default: 1,
   },
+  lastTimeRange: {
+    type: String,
+    default: null,
+  },
+  lastExecutionTime: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 // Schema for emails
@@ -113,6 +121,20 @@ export const connectToDatabase = async () => {
   }
 };
 
+// Helper function to determine current time range
+const getCurrentTimeRange = () => {
+  const now = new Date();
+  const utcPlus5 = new Date(now.getTime() + 5 * 60 * 60 * 1000);
+  const currentHour = utcPlus5.getUTCHours();
+  
+  // Determine if this is morning (10am) or afternoon (4pm) run
+  // 10am PKT = 5am UTC, 4pm PKT = 11am UTC
+  // Use a 2-hour window around each target time for flexibility
+  const isMorningRun = currentHour >= 8 && currentHour < 12; // 8am-12pm PKT, covers 10am run
+  
+  return isMorningRun ? '4pm_previous_day_to_10am_current_day' : '10am_to_4pm_current_day';
+};
+
 // Database operations for execution tracker
 export const getExecutionTracker = async (preserve = false) => {
   try {
@@ -122,14 +144,21 @@ export const getExecutionTracker = async (preserve = false) => {
       tracker = await ExecutionTracker.create({
         lastExecutionDate: null,
         executionCount: 1,
+        lastTimeRange: null,
+        lastExecutionTime: new Date(),
       });
       // No emails to delete on first ever run
     }
 
     // Use local timezone date string
     const today = getCurrentLocalDateString();
+    const currentTimeRange = getCurrentTimeRange();
+    
     console.log(
       `Current date: ${today}, Last execution date: ${tracker.lastExecutionDate}`
+    );
+    console.log(
+      `Current time range: ${currentTimeRange}, Last time range: ${tracker.lastTimeRange}`
     );
 
     if (!preserve) {
@@ -154,21 +183,32 @@ export const getExecutionTracker = async (preserve = false) => {
           `Reset execution count to ${tracker.executionCount} for new day.`
         );
       } else if (tracker.lastExecutionDate === today) {
-        // Same day, increment counter
-        console.log(
-          `Same day. Incrementing execution count from ${
-            tracker.executionCount
-          } to ${tracker.executionCount + 1}`
-        );
-        tracker.executionCount += 1;
+        // Same day, check if we're processing a different time range
+        if (tracker.lastTimeRange !== currentTimeRange) {
+          console.log(
+            `Different time range detected. Previous: ${tracker.lastTimeRange}, Current: ${currentTimeRange}`
+          );
+          // Don't increment counter for different time ranges on same day
+          tracker.executionCount = tracker.executionCount; // Keep same count
+        } else {
+          // Same time range, increment counter
+          console.log(
+            `Same time range. Incrementing execution count from ${
+              tracker.executionCount
+            } to ${tracker.executionCount + 1}`
+          );
+          tracker.executionCount += 1;
+        }
       } else {
         // First ever run or first run of a day after initialization
         console.log("First run of the day.");
         tracker.executionCount = 1;
       }
 
-      // Always update the date
+      // Always update the date, time range, and execution time
       tracker.lastExecutionDate = today;
+      tracker.lastTimeRange = currentTimeRange;
+      tracker.lastExecutionTime = new Date();
       await tracker.save();
       console.log(`Updated execution tracker: ${JSON.stringify(tracker)}`);
     }

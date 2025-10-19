@@ -11,42 +11,6 @@ if (!process.env.GEMINI_API_KEY) {
 }
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
-
-// Simplified JSON structure for WhatsApp templates
-const safeJsonParse = (jsonStr) => {
-  try {
-    // First try to parse directly
-    return JSON.parse(jsonStr);
-  } catch (firstError) {
-    try {
-      // Try cleaning common issues
-      let cleaned = jsonStr
-        .replace(/```json/g, "")
-        .replace(/```/g, "")
-        .trim();
-
-      // Fix common formatting issues
-      cleaned = cleaned
-        .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?:/g, '"$2":')
-        .replace(/,\s*([}\]])/g, "$1")
-        .replace(/'/g, '"') // Replace single quotes with double quotes
-        .replace(/\n/g, " ") // Remove newlines that might break JSON
-        .replace(/\r/g, " ") // Remove carriage returns
-        .replace(/\t/g, " ") // Remove tabs
-        .replace(/\s+/g, " "); // Normalize whitespace
-
-      return JSON.parse(cleaned);
-    } catch (secondError) {
-      console.error("Original JSON error:", firstError);
-      console.error("Cleaned JSON error:", secondError);
-      console.error("Problematic JSON:", jsonStr);
-      throw new Error(
-        `Failed to parse JSON after cleaning: ${secondError.message}`
-      );
-    }
-  }
-};
 
 export const categorizeEmails = async (
   emails,
@@ -174,48 +138,67 @@ Return the categories with SIMPLE ID NUMBERS:
   }
 }`;
 
-    const result = await model.generateContent(prompt);
-    
-    const text = await result.response.text(); // Gemini response format is different
-
-    // Extract JSON more carefully
-    let jsonStr = text;
-    try {
-      // Try to find JSON in the response
-      const jsonStart = text.indexOf("{");
-      const jsonEnd = text.lastIndexOf("}") + 1;
-      if (jsonStart >= 0 && jsonEnd > jsonStart) {
-        jsonStr = text.slice(jsonStart, jsonEnd);
+    // Initialize Gemini model with JSON mode
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-pro",
+      generationConfig: {
+        temperature: 0,
+        maxOutputTokens: 4000,
+        responseMimeType: "application/json",
+        responseSchema: {
+          type: "object",
+          properties: {
+            categories: {
+              type: "object",
+              properties: {
+                HR: {
+                  type: "array",
+                  items: { type: "number" }
+                },
+                Marketing: {
+                  type: "array",
+                  items: { type: "number" }
+                },
+                PNM: {
+                  type: "array",
+                  items: { type: "number" }
+                },
+                Audit: {
+                  type: "array",
+                  items: { type: "number" }
+                },
+                Accounts: {
+                  type: "array",
+                  items: { type: "number" }
+                },
+                DCR: {
+                  type: "array",
+                  items: { type: "number" }
+                },
+                Others: {
+                  type: "array",
+                  items: { type: "number" }
+                }
+              },
+              required: ["HR", "Marketing", "PNM", "Audit", "Accounts", "DCR", "Others"]
+            }
+          },
+          required: ["categories"]
+        }
       }
-    } catch (err) {
-      console.error("JSON extraction error:", err);
-    }
+    });
 
-    const data = safeJsonParse(jsonStr);
+    // Generate content with Gemini
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
 
-    // Validate and normalize the response
+    // Parse JSON - Gemini returns valid JSON when using JSON mode with schema validation
+    const data = JSON.parse(text);
+
+    // Defensive check (schema already guarantees categories object exists)
     if (!data.categories) {
       throw new Error("Invalid response: missing categories");
-    }
-
-    // Ensure all categories exist as arrays
-    const requiredCategories = [
-      "HR",
-      "Marketing",
-      "PNM",
-      "Audit",
-      "Accounts",
-      "DCR",
-      "Others",
-    ];
-    for (const category of requiredCategories) {
-      if (!data.categories[category]) {
-        data.categories[category] = [];
-      }
-      // Ensure all categories are arrays
-      if (!Array.isArray(data.categories[category])) {
-        data.categories[category] = [];
-      }
     }
 
     // Convert simple IDs back to full email objects with webLinks
@@ -288,7 +271,7 @@ Return the categories with SIMPLE ID NUMBERS:
     };
 
     console.log(
-      "✅ Successfully categorized emails using Email ID-based approach and added webLinks"
+      "✅ Successfully categorized emails using Gemini 2.5 Pro with native JSON mode"
     );
     return data;
   } catch (err) {
