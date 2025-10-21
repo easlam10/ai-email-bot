@@ -112,7 +112,9 @@ export async function sendErrorNotificationEmail(
     const recipientEmail =
       recipientIndex === 1
         ? process.env.GOOGLE_RECIEVER_EMAIL_1
-        : process.env.GOOGLE_RECIEVER_EMAIL_2;
+        : recipientIndex === 2
+        ? process.env.GOOGLE_RECIEVER_EMAIL_2
+        : process.env.GOOGLE_RECIEVER_EMAIL_3;
 
     const {
       emailSource,
@@ -192,7 +194,9 @@ export async function sendConsolidatedEmailReport(
     const recipientEmail =
       recipientIndex === 1
         ? process.env.GOOGLE_RECIEVER_EMAIL_1
-        : process.env.GOOGLE_RECIEVER_EMAIL_2;
+        : recipientIndex === 2
+        ? process.env.GOOGLE_RECIEVER_EMAIL_2
+        : process.env.GOOGLE_RECIEVER_EMAIL_3;
     console.log(
       `📧 Sending report for ${aiResult.meta?.emailSource} to ${recipientEmail}`
     );
