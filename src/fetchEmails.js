@@ -174,8 +174,7 @@ export const fetchEmails = async (emailAddress, executionNumber = 1) => {
     );
 
     // Filter out emails from the sender email
-    const senderEmail = "ehtisham.ea10@gmail.com"; // Fixed typo from "ehitsham" to "ehtisham"
-    
+    const senderEmail = process.env.GOOGLE_SENDER_EMAIL || "kipsemailreporter@gmail.com"; 
     const filteredEmails = allEmails.filter(
       (email) => email.from.email.toLowerCase() !== senderEmail.toLowerCase()
     );

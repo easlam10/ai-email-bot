@@ -81,7 +81,7 @@ const categorizeWithGemini = async (emails, executionNumber, sourceEmail = null)
     }
 
     const today = new Date().toLocaleDateString("en-CA");
-
+    
     // Simplified prompt with clearer instructions and simpler output format
     const prompt = `
 You're categorizing emails into a simplified JSON format for WhatsApp templates. Follow these RULES STRICTLY:
@@ -349,6 +349,7 @@ const categorizeWithClaude = async (emails, executionNumber, sourceEmail = null)
     }
 
     const today = new Date().toLocaleDateString("en-CA");
+    
 
     // Simplified prompt with clearer instructions and simpler output format
     const prompt = `
