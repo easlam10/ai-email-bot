@@ -173,10 +173,32 @@ export const fetchEmails = async (emailAddress, executionNumber = 1) => {
       })
     );
 
-    console.log(
-      `✅ Processed ${allEmails.length} emails from API (no database storage needed)`
+    // Filter out emails from the sender email
+    const senderEmail = "ehtisham.ea10@gmail.com"; // Fixed typo from "ehitsham" to "ehtisham"
+    
+    const filteredEmails = allEmails.filter(
+      (email) => email.from.email.toLowerCase() !== senderEmail.toLowerCase()
     );
-    return allEmails;
+    
+    const filteredCount = allEmails.length - filteredEmails.length;
+    
+    // Only log if emails were actually filtered out
+    if (filteredCount > 0) {
+      console.log(`🔍 Filtered out ${filteredCount} email(s) from sender (${senderEmail})`);
+      
+      // Show which emails were filtered out
+      const filteredOutEmails = allEmails.filter(
+        (email) => email.from.email.toLowerCase() === senderEmail.toLowerCase()
+      );
+      filteredOutEmails.forEach((email, index) => {
+        console.log(`   ${index + 1}. ${email.from.email} - ${email.subject?.substring(0, 50)}...`);
+      });
+    }
+
+    console.log(
+      `✅ Processed ${filteredEmails.length} emails from API (no database storage needed)`
+    );
+    return filteredEmails;
   } catch (error) {
     console.error("Error fetching emails:", error);
     throw error;

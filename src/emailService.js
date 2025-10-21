@@ -101,6 +101,85 @@ function createGmailTransporter() {
   });
 }
 
+// Send error notification email when categorization or other critical failures occur
+export async function sendErrorNotificationEmail(
+  errorDetails,
+  recipientIndex = 1
+) {
+  try {
+    const transporter = createGmailTransporter();
+    const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
+    const recipientEmail =
+      recipientIndex === 1
+        ? process.env.GOOGLE_RECIEVER_EMAIL_1
+        : process.env.GOOGLE_RECIEVER_EMAIL_2;
+
+    const {
+      emailSource,
+      errorType,
+      errorMessage,
+      timestamp,
+      executionNumber,
+    } = errorDetails;
+
+    const mailOptions = {
+      from: senderEmail,
+      to: recipientEmail,
+      subject: `⚠️ Email Report Failed to Generate`,
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+        </head>
+        <body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; margin: 0; padding: 20px; text-align: center;">
+          <div style="max-width: 600px; margin: 0 auto;">
+            <div style="background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+              <h2 style="color: #721c24; margin: 0 0 15px 0;">⚠️ Email Report Failed to Generate</h2>
+              <p style="color: #721c24; margin: 0; font-size: 16px;">
+                Your email report could not be generated at this time.
+              </p>
+            </div>
+            
+            <div style="background-color: #d1ecf1; border: 1px solid #bee5eb; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+              <h3 style="color: #0c5460; margin-top: 0;">Please Notify Development Team</h3>
+              <p style="color: #0c5460; margin: 10px 0;">
+                Please contact your development team for resolution.
+              </p>
+            </div>
+            
+            <p style="color: #666; font-size: 14px;">
+              <em>This is an automated notification.</em>
+            </p>
+          </div>
+        </body>
+        </html>
+      `,
+      text: `
+⚠️ Email Report Failed to Generate
+
+Your email report could not be generated at this time.
+
+Please notify the development team for resolution.
+
+This is an automated notification.
+      `,
+    };
+
+    console.log("📤 Sending error notification email...");
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ Error notification email sent successfully!");
+    return { messageId: info.messageId, response: info.response };
+  } catch (error) {
+    console.error(
+      "❌ Error sending error notification email:",
+      error.message
+    );
+    // Don't throw - we don't want error notification failures to cascade
+    return null;
+  }
+}
+
 // Send consolidated email report using Gmail
 export async function sendConsolidatedEmailReport(
   aiResult,
