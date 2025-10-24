@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
+
+// Get __dirname equivalent for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Helper function to get current date in local timezone format
 const getCurrentLocalDateString = () => {
@@ -14,22 +19,6 @@ const getCurrentLocalDateString = () => {
   });
 };
 
-// Schema for execution tracker
-const executionTrackerSchema = new mongoose.Schema({
-  lastExecutionDate: String,
-  executionCount: {
-    type: Number,
-    default: 1,
-  },
-  lastTimeRange: {
-    type: String,
-    default: null,
-  },
-  lastExecutionTime: {
-    type: Date,
-    default: Date.now,
-  },
-});
 
 // Schema for emails
 const emailSchema = new mongoose.Schema({
@@ -86,10 +75,6 @@ const tokenSchema = new mongoose.Schema({
 });
 
 // Creating models
-export const ExecutionTracker = mongoose.model(
-  "ExecutionTracker",
-  executionTrackerSchema
-);
 export const Email = mongoose.model("Email", emailSchema);
 export const Token = mongoose.model("Token", tokenSchema);
 
@@ -103,17 +88,7 @@ export const connectToDatabase = async () => {
     // Ensure indexes are created and enforced
     await Email.init();
 
-    // Initialize execution tracker if it doesn't exist
-    const trackerExists = await ExecutionTracker.findOne();
-    if (!trackerExists) {
-      console.log("Creating new execution tracker in database");
-      await ExecutionTracker.create({
-        lastExecutionDate: null,
-        executionCount: 1,
-      });
-      console.log("Execution tracker created successfully");
-    }
-
+  
     return true;
   } catch (error) {
     console.error("Error connecting to database:", error);
@@ -121,102 +96,60 @@ export const connectToDatabase = async () => {
   }
 };
 
-// Helper function to determine current time range
-const getCurrentTimeRange = () => {
-  const now = new Date();
-  const utcPlus5 = new Date(now.getTime() + 5 * 60 * 60 * 1000);
-  const currentHour = utcPlus5.getUTCHours();
-  
-  // Determine if this is morning (10am) or afternoon (4pm) run
-  // 10am PKT = 5am UTC, 4pm PKT = 11am UTC
-  // Use a 2-hour window around each target time for flexibility
-  const isMorningRun = currentHour >= 8 && currentHour < 12; // 8am-12pm PKT, covers 10am run
-  
-  return isMorningRun ? '4pm_previous_day_to_10am_current_day' : '10am_to_4pm_current_day';
+
+// Simple file-based execution tracking
+export const getExecutionTracker = async () => {
+  return { success: true };
 };
 
-// Database operations for execution tracker
-export const getExecutionTracker = async (preserve = false) => {
+// Update execution count using file-based approach
+export const updateExecutionCount = () => {
+  const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+  const trackerFile = path.join(__dirname, '../../execution-tracker.json');
+
+  let tracker = { count: 0, date: today };
+
   try {
-    let tracker = await ExecutionTracker.findOne();
-    if (!tracker) {
-      console.log("No execution tracker found, creating new one...");
-      tracker = await ExecutionTracker.create({
-        lastExecutionDate: null,
-        executionCount: 1,
-        lastTimeRange: null,
-        lastExecutionTime: new Date(),
-      });
-      // No emails to delete on first ever run
-    }
+    // Check if file exists, if not create it with default values
+    if (!fs.existsSync(trackerFile)) {
+      console.log('📝 Creating execution-tracker.json file with default values...');
+      tracker = { count: 0, date: today };
+      fs.writeFileSync(trackerFile, JSON.stringify(tracker, null, 2));
+    } else {
+      // Read existing file
+      const fileContent = fs.readFileSync(trackerFile, 'utf8');
+      tracker = JSON.parse(fileContent);
 
-    // Use local timezone date string
-    const today = getCurrentLocalDateString();
-    const currentTimeRange = getCurrentTimeRange();
-    
-    console.log(
-      `Current date: ${today}, Last execution date: ${tracker.lastExecutionDate}`
-    );
-    console.log(
-      `Current time range: ${currentTimeRange}, Last time range: ${tracker.lastTimeRange}`
-    );
-
-    if (!preserve) {
-      // Check if we're starting a new day
-      if (
-        tracker.lastExecutionDate !== today &&
-        tracker.lastExecutionDate !== null
-      ) {
-        console.log(
-          `NEW DAY DETECTED: Old date: ${tracker.lastExecutionDate}, New date: ${today}`
-        );
-
-        // Delete all emails from previous day ONLY when transitioning to a new day
-        // and there was a previous day (not first run ever)
-        console.log("Deleting all emails from previous day...");
-        await resetEmailsForNewDay();
-        console.log("Emails from previous day deleted successfully.");
-
-        // Reset counter for new day
-        tracker.executionCount = 1;
-        console.log(
-          `Reset execution count to ${tracker.executionCount} for new day.`
-        );
-      } else if (tracker.lastExecutionDate === today) {
-        // Same day, check if we're processing a different time range
-        if (tracker.lastTimeRange !== currentTimeRange) {
-          console.log(
-            `Different time range detected. Previous: ${tracker.lastTimeRange}, Current: ${currentTimeRange}`
-          );
-          // Don't increment counter for different time ranges on same day
-          tracker.executionCount = tracker.executionCount; // Keep same count
-        } else {
-          // Same time range, increment counter
-          console.log(
-            `Same time range. Incrementing execution count from ${
-              tracker.executionCount
-            } to ${tracker.executionCount + 1}`
-          );
-          tracker.executionCount += 1;
-        }
-      } else {
-        // First ever run or first run of a day after initialization
-        console.log("First run of the day.");
-        tracker.executionCount = 1;
+      // Reset if it's a new day
+      if (tracker.date !== today) {
+        console.log(`📅 New day detected (${today}), resetting execution count`);
+        tracker = { count: 0, date: today };
       }
-
-      // Always update the date, time range, and execution time
-      tracker.lastExecutionDate = today;
-      tracker.lastTimeRange = currentTimeRange;
-      tracker.lastExecutionTime = new Date();
-      await tracker.save();
-      console.log(`Updated execution tracker: ${JSON.stringify(tracker)}`);
     }
 
-    return tracker.executionCount;
+    // Increment count
+    tracker.count++;
+
+    // Save back to file
+    fs.writeFileSync(trackerFile, JSON.stringify(tracker, null, 2));
+
+    console.log(`🔢 Execution #${tracker.count} for ${tracker.date}`);
+    return tracker;
+
   } catch (error) {
-    console.error("Error managing execution tracker:", error);
-    return 1; // Default to 1 if there's an error
+    console.error('❌ Error tracking execution:', error);
+
+    // If file operations fail, try to create a fresh file
+    try {
+      console.log('🔄 Attempting to create fresh execution-tracker.json file...');
+      const freshTracker = { count: 1, date: today };
+      fs.writeFileSync(trackerFile, JSON.stringify(freshTracker, null, 2));
+      console.log(`✅ Created fresh execution tracker: Execution #${freshTracker.count} for ${freshTracker.date}`);
+      return freshTracker;
+    } catch (fallbackError) {
+      console.error('❌ Failed to create execution tracker file:', fallbackError);
+      return { count: 1, date: today }; // Final fallback
+    }
   }
 };
 

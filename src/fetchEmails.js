@@ -2,13 +2,19 @@
 import axios from "axios";
 import dotenv from "dotenv";
 import { extractTextFromHtml } from "./extractText.js";
-import { connectToDatabase, getExecutionTracker } from "./database/models.js";
-import { getAccessToken } from "./clientCredentialsAuth.js";
+import { getAccessToken, EMAIL_ADDRESSES } from "./clientCredentialsAuth.js";
+import { sendNoEmailsNotification } from "./emailService.js";
 
 dotenv.config();
 
+// Helper function to get recipient index based on email address
+const getRecipientIndexForEmail = (emailAddress) => {
+  const index = EMAIL_ADDRESSES.indexOf(emailAddress);
+  return index !== -1 ? index + 1 : 1; // Default to 1 if not found
+};
+
 // Helper function to get time ranges based on execution time
-const getTimeRangeForExecution = (executionNumber) => {
+const getTimeRangeForExecution = () => {
   const now = new Date();
 
   // PKT is UTC+5, so we get PKT hour by adding 5 hours to UTC
@@ -197,6 +203,32 @@ export const fetchEmails = async (emailAddress, executionNumber = 1) => {
     console.log(
       `✅ Processed ${filteredEmails.length} emails from API (no database storage needed)`
     );
+
+    // If no emails were found, send notification
+    if (filteredEmails.length === 0) {
+      console.log("📭 No emails found, sending notification...");
+      try {
+        // Get readable time range description
+        const timeRangeDescription = timeRange.isMorningRun
+          ? "4pm Previous Day to 10am Today (PKT)"
+          : "10am to 4pm Today (PKT)";
+
+        // Send no emails notification to the correct recipient
+        const recipientIndex = getRecipientIndexForEmail(emailAddress);
+        console.log(`📤 Sending no emails notification to recipient ${recipientIndex} for ${emailAddress}`);
+
+        await sendNoEmailsNotification(
+          recipientIndex,
+          timeRangeDescription,
+          emailAddress
+        );
+        console.log("✅ No emails notification sent successfully");
+      } catch (notificationError) {
+        console.error("❌ Error sending no emails notification:", notificationError);
+        // Don't throw here - we still want to return the empty array
+      }
+    }
+
     return filteredEmails;
   } catch (error) {
     console.error("Error fetching emails:", error);

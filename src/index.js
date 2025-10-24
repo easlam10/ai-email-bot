@@ -2,7 +2,7 @@
 import { fetchEmails } from "./fetchEmails.js";
 import { categorizeEmails } from "./categorizeEmails.js";
 import { sendConsolidatedEmailReport, sendErrorNotificationEmail } from "./emailService.js";
-import { connectToDatabase, getExecutionTracker } from "./database/models.js";
+import { connectToDatabase, updateExecutionCount } from "./database/models.js";
 import { EMAIL_ADDRESSES } from "./clientCredentialsAuth.js";
 
 // Main function to generate daily report
@@ -21,8 +21,9 @@ export const generateDailyReport = async () => {
     await connectToDatabase();
     console.log("✅ Database connection initialized!");
 
-    // Get execution number FIRST - this handles day transitions at the beginning
-    const executionNumber = await getExecutionTracker(false);
+    // Get execution number using file-based tracking
+    const executionTracker = updateExecutionCount();
+    const executionNumber = executionTracker.count;
     console.log(`Today's execution number: ${executionNumber}`);
 
     // Process each email account separately

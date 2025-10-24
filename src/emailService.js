@@ -101,6 +101,103 @@ function createGmailTransporter() {
   });
 }
 
+// Send no emails notification when no emails are fetched
+export async function sendNoEmailsNotification(
+  recipientIndex = 1,
+  timeRange = "",
+  emailSource = ""
+) {
+  try {
+    const transporter = createGmailTransporter();
+    const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
+    const recipientEmail =
+      recipientIndex === 1
+        ? process.env.GOOGLE_RECIEVER_EMAIL_1
+        : recipientIndex === 2
+        ? process.env.GOOGLE_RECIEVER_EMAIL_2
+        : process.env.GOOGLE_RECIEVER_EMAIL_3;
+
+    const mailOptions = {
+      from: senderEmail,
+      to: recipientEmail,
+      subject: `📭 No Emails Found - ${new Date().toLocaleDateString("en-US", {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+      })}`,
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+        </head>
+        <body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; margin: 0; padding: 20px; text-align: center;">
+          <div style="max-width: 600px; margin: 0 auto;">
+            <div style="background-color: #d4edda; border: 1px solid #c3e6cb; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+              <h2 style="color: #155724; margin: 0 0 15px 0;">📭 No Emails Found</h2>
+              <p style="color: #155724; margin: 0; font-size: 16px;">
+                No emails were found in your mailbox for this time period.
+              </p>
+            </div>
+
+            <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: left;">
+              <h3 style="color: #495057; margin-top: 0;">📊 Report Details</h3>
+              <p style="color: #6c757d; margin: 10px 0;">
+                <strong>Email Account:</strong> ${emailSource || "N/A"}<br>
+                <strong>Time Period:</strong> ${timeRange || "N/A"}<br>
+                <strong>Check Time:</strong> ${new Date().toLocaleString("en-US", {
+                  timeZone: "Asia/Karachi"
+                })} PKT
+              </p>
+            </div>
+
+            <div style="background-color: #e7f3ff; border: 1px solid #b8daff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+              <h3 style="color: #004085; margin-top: 0;">ℹ️ Information</h3>
+              <p style="color: #004085; margin: 10px 0;">
+                Since no emails were found, no email report was generated for this cycle.
+              </p>
+            </div>
+
+            <p style="color: #6c757d; font-size: 14px;">
+              <em>This is an automated notification.</em>
+            </p>
+          </div>
+        </body>
+        </html>
+      `,
+      text: `
+📭 No Emails Found
+
+No emails were found in your mailbox for this time period.
+
+Report Details:
+- Email Account: ${emailSource || "N/A"}
+- Time Period: ${timeRange || "N/A"}
+- Check Time: ${new Date().toLocaleString("en-US", {
+  timeZone: "Asia/Karachi"
+})} PKT
+
+Since no emails were found, no email report was generated for this cycle.
+
+This is an automated notification.
+      `,
+    };
+
+    console.log("📤 Sending no emails notification...");
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ No emails notification sent successfully!");
+    return { messageId: info.messageId, response: info.response };
+  } catch (error) {
+    console.error(
+      "❌ Error sending no emails notification:",
+      error.message
+    );
+    // Don't throw - we don't want notification failures to cascade
+    return null;
+  }
+}
+
 // Send error notification email when categorization or other critical failures occur
 export async function sendErrorNotificationEmail(
   errorDetails,
