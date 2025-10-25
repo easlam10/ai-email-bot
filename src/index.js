@@ -21,8 +21,8 @@ export const generateDailyReport = async () => {
     await connectToDatabase();
     console.log("✅ Database connection initialized!");
 
-    // Get execution number using file-based tracking
-    const executionTracker = updateExecutionCount();
+    // Get execution number using MongoDB-based tracking
+    const executionTracker = await updateExecutionCount(); // Changed to await
     const executionNumber = executionTracker.count;
     console.log(`Today's execution number: ${executionNumber}`);
 
@@ -54,6 +54,13 @@ export const generateDailyReport = async () => {
           throw new Error(`Email fetch failed: ${fetchError.message}`);
         }
 
+        // If no emails were found, skip categorization and report sending (notification already sent by fetchEmails)
+        if (fetchedEmails.length === 0) {
+          console.log(`📭 No emails found for ${emailAddress}, skipping categorization and report generation`);
+          successfulAccounts++; // Count as successful since notification was sent
+          continue; // Move to next email account
+        }
+
         // 2️⃣ Categorize emails for this account with AI (includes retry logic)
         console.log(`2. Categorizing emails for ${emailAddress} with AI...`);
         let aiResult;
@@ -66,7 +73,7 @@ export const generateDailyReport = async () => {
           console.log(`✅ Emails categorized successfully for ${emailAddress}!`);
         } catch (categorizeError) {
           console.error(`❌ Failed to categorize emails for ${emailAddress}:`, categorizeError.message);
-          
+
           // Send simple error notification instead of normal report
           await sendErrorNotificationEmail(
             {
@@ -78,7 +85,7 @@ export const generateDailyReport = async () => {
             },
             recipientIndex
           );
-          
+
           throw new Error(`Categorization failed: ${categorizeError.message}`);
         }
 
@@ -90,7 +97,7 @@ export const generateDailyReport = async () => {
           successfulAccounts++;
         } catch (sendError) {
           console.error(`❌ Failed to send email report for ${emailAddress}:`, sendError.message);
-          
+
           // Send error notification about report sending failure
           await sendErrorNotificationEmail(
             {
@@ -102,7 +109,7 @@ export const generateDailyReport = async () => {
             },
             recipientIndex
           );
-          
+
           throw new Error(`Report sending failed: ${sendError.message}`);
         }
         
