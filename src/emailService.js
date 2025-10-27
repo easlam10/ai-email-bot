@@ -366,8 +366,10 @@ export async function sendConsolidatedEmailReport(
         category.count
       } email${category.count !== 1 ? "s" : ""}
                   ${
-                    category.count > 0
+                    category.count > 0 && category.id !== "dcr"
                       ? `<span style="float: right;"><a href="#${category.id}" style="color: #0078d4; text-decoration: none;">▼ View Details</a></span>`
+                      : category.id === "dcr" && category.count > 0
+                      ? `<span style="float: right; color: #666; font-size: 12px;">Count only</span>`
                       : ""
                   }
                 </td>
@@ -382,7 +384,7 @@ export async function sendConsolidatedEmailReport(
     // Generate detailed sections at bottom
     let detailSections = "";
     categories.forEach((category) => {
-      if (category.count > 0) {
+      if (category.count > 0 && category.id !== "dcr") {
         detailSections += `
           <tr>
             <td>

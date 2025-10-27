@@ -17,12 +17,15 @@ const getCurrentLocalDateString = () => {
 
 
 
-// Schema for execution tracking
+// Schema for execution tracking - single document that updates date and count
 const executionTrackerSchema = new mongoose.Schema({
+  _id: {
+    type: mongoose.Schema.Types.ObjectId,
+    default: () => new mongoose.Types.ObjectId(), // Fixed ID for single document
+  },
   date: {
     type: String,
     required: true,
-    unique: true, // Each date should only have one tracker
   },
   count: {
     type: Number,
@@ -52,16 +55,28 @@ export const connectToDatabase = async () => {
 };
 
 
-// Get execution count for today from MongoDB
+// Get execution tracker from MongoDB - always use the single document
 export const getExecutionTracker = async () => {
   try {
     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-    const tracker = await ExecutionTracker.findOne({ date: today });
+
+    // Always look for the single execution tracker document
+    let tracker = await ExecutionTracker.findOne();
 
     if (!tracker) {
-      console.log(`📅 No execution tracker found for ${today}, creating new one`);
+      console.log(`📅 No execution tracker found, creating new one for ${today}`);
       const newTracker = new ExecutionTracker({ date: today, count: 0 });
       await newTracker.save();
+      return { count: 0, date: today };
+    }
+
+    // If the tracker date is different from today, update the date and reset count
+    if (tracker.date !== today) {
+      console.log(`📅 New day detected, updating tracker from ${tracker.date} to ${today}`);
+      tracker.date = today;
+      tracker.count = 0;
+      tracker.lastUpdated = new Date();
+      await tracker.save();
       return { count: 0, date: today };
     }
 
@@ -72,19 +87,28 @@ export const getExecutionTracker = async () => {
   }
 };
 
-// Update execution count using MongoDB
+// Update execution count using MongoDB - always update the single document
 export const updateExecutionCount = async () => {
   try {
     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-    let tracker = await ExecutionTracker.findOne({ date: today });
+
+    // Always look for the single execution tracker document
+    let tracker = await ExecutionTracker.findOne();
 
     if (!tracker) {
-      // Create a new tracker for today if it doesn't exist
-      console.log(`📅 Creating execution tracker for new day: ${today}`);
+      // Create a new tracker if none exists
+      console.log(`📅 Creating execution tracker for ${today}`);
       tracker = new ExecutionTracker({ date: today, count: 1 });
     } else {
-      // Increment the existing count
-      tracker.count++;
+      // If the tracker date is different from today, update the date and reset count
+      if (tracker.date !== today) {
+        console.log(`📅 New day detected, updating tracker from ${tracker.date} to ${today}`);
+        tracker.date = today;
+        tracker.count = 1; // Start count at 1 for the new day
+      } else {
+        // Increment the existing count
+        tracker.count++;
+      }
     }
 
     // Update the last updated timestamp
