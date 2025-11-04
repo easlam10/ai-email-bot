@@ -64,8 +64,9 @@ export const generateCategoryBreakdownMessage = (aiResult) => {
             </div>
             ${
               originalWebLink !== "#"
-                ? `<div style="margin-top: 8px;">
+                ? `<div style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
               <a href="${originalWebLink}" target="_blank" style="color: #0078d4; text-decoration: none; font-weight: 500; padding: 4px 8px; background-color: #e3f2fd; border-radius: 3px; font-size: 13px;">🔗 Open Email</a>
+              ${email.emailData?.date ? `<span style="color: #666; font-size: 12px; background-color: #f5f5f5; padding: 2px 6px; border-radius: 3px;">${email.emailData.date}</span>` : ""}
             </div>`
                 : ""
             }

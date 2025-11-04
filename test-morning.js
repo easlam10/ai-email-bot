@@ -45,7 +45,7 @@ const testMorningRunDirect = async () => {
     console.log("✅ Access token obtained\n");
 
     // Test with email address
-    const testEmail = "md@kips.edu.pk";
+    const testEmail = "ce@kips.edu.pk";
     console.log(`📧 Testing with email: ${testEmail}\n`);
 
     // Build filter for time range
