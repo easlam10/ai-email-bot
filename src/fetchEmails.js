@@ -151,7 +151,7 @@ export const fetchEmails = async (emailAddress, executionNumber = 1) => {
     const timeFilter = `receivedDateTime ge ${startISO} and receivedDateTime le ${endISO}`;
 
     const mailResponse = await axios.get(
-      `https://graph.microsoft.com/v1.0/users/${emailAddress}/messages?$filter=${timeFilter}&$select=id,subject,from,receivedDateTime,body,webLink&$top=150&$orderby=receivedDateTime desc`,
+      `https://graph.microsoft.com/v1.0/users/${emailAddress}/messages?$filter=${timeFilter}&$select=id,subject,from,receivedDateTime,body,webLink,internetMessageId&$top=150&$orderby=receivedDateTime desc`,
       { headers: { Authorization: `Bearer ${accessToken}` } }
     );
 
@@ -159,9 +159,25 @@ export const fetchEmails = async (emailAddress, executionNumber = 1) => {
       `Total emails fetched from API: ${mailResponse.data.value.length}`
     );
 
-    // Process all emails (already filtered by API)
+    // Deduplicate by internetMessageId (Microsoft Graph returns duplicate entries
+    // for the same email across different folders like Inbox/Focused Inbox)
+    const seenInternetIds = new Set();
+    const uniqueMailItems = mailResponse.data.value.filter((mail) => {
+      const internetMsgId = mail.internetMessageId;
+      if (!internetMsgId || seenInternetIds.has(internetMsgId)) {
+        return false;
+      }
+      seenInternetIds.add(internetMsgId);
+      return true;
+    });
+
+    console.log(
+      `After deduplication by internetMessageId: ${uniqueMailItems.length} unique emails (removed ${mailResponse.data.value.length - uniqueMailItems.length} duplicates)`
+    );
+
+    // Process all unique emails
     const allEmails = await Promise.all(
-      mailResponse.data.value.map(async (mail) => {
+      uniqueMailItems.map(async (mail) => {
         const fullText = await extractTextFromHtml(mail.body?.content || "");
         const latestReply = fullText.split(/From: /i)[0].trim();
         return {
