@@ -274,7 +274,7 @@ Return the categories with SIMPLE ID NUMBERS. ENSURE ALL ${
                   id: email.id,
                   subject: email.subject,
                   from: email.from,
-                  date: email.date || new Date(email.receivedDateTime).toLocaleString(),
+                  date: email.date || new Date(email.receivedDateTime).toLocaleString("en-US", { timeZone: "Asia/Karachi" }),
                 },
               };
             } else {
@@ -550,7 +550,7 @@ Return the categories with SIMPLE ID NUMBERS:
                   id: email.id,
                   subject: email.subject,
                   from: email.from,
-                  date: email.date || new Date(email.receivedDateTime).toLocaleString(),
+                  date: email.date || new Date(email.receivedDateTime).toLocaleString("en-US", { timeZone: "Asia/Karachi" }),
                 },
               };
             } else {

@@ -188,7 +188,7 @@ export const fetchEmails = async (emailAddress, executionNumber = 1) => {
             email: mail.from?.emailAddress?.address || "unknown@example.com",
           },
           receivedDateTime: mail.receivedDateTime,
-          date: new Date(mail.receivedDateTime).toLocaleString(),
+          date: new Date(mail.receivedDateTime).toLocaleString("en-US", { timeZone: "Asia/Karachi" }),
           body: latestReply,
           webLink: mail.webLink || null,
         };
