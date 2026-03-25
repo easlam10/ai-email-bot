@@ -184,7 +184,7 @@ Return the categories with SIMPLE ID NUMBERS. ENSURE ALL ${
 
     // Initialize Gemini model (plain text generation for better reliability)
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-pro",
+      model: "gemini-2.5-flash",
       generationConfig: {
         temperature: 0,
         maxOutputTokens: 8000, // Increased from 4000 to handle large email batches
