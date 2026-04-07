@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const TENANT = "kips.edu.pk"; // Specific tenant for the organization
-const EMAIL_ADDRESSES = ["ce@kips.edu.pk", "pso.md@kips.edu.pk", "md@kips.edu.pk"]; // Target email addresses for API calls
+const EMAIL_ADDRESSES = ["ce@kips.edu.pk", "pso.md@kips.edu.pk", "md@kips.edu.pk", "dpreps@kips.edu.pk"]; // Target email addresses for API calls
 
 // Get access token - either from database or generate new one
 export const getAccessToken = async () => {
