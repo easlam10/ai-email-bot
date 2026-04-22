@@ -1,8 +1,9 @@
 // Update index.js to use the new approach
 import { fetchEmails } from "./fetchEmails.js";
 import { categorizeEmails } from "./categorizeEmails.js";
-import { sendConsolidatedEmailReport } from "./emailService.js";
-import { connectToDatabase, getExecutionTracker } from "./database/models.js";
+import { sendConsolidatedEmailReport, sendErrorNotificationEmail } from "./emailService.js";
+import { connectToDatabase, updateExecutionCount } from "./database/models.js";
+import { EMAIL_ADDRESSES } from "./clientCredentialsAuth.js";
 
 // Main function to generate daily report
 export const generateDailyReport = async () => {
@@ -20,25 +21,120 @@ export const generateDailyReport = async () => {
     await connectToDatabase();
     console.log("✅ Database connection initialized!");
 
-    // Get execution number FIRST - this handles day transitions at the beginning
-    const executionNumber = await getExecutionTracker(false);
+    // Get execution number using MongoDB-based tracking
+    const executionTracker = await updateExecutionCount(); // Changed to await
+    const executionNumber = executionTracker.count;
     console.log(`Today's execution number: ${executionNumber}`);
 
-    // 1️⃣ Fetch emails
-    console.log("1. Fetching emails...");
-    const fetchedEmails = await fetchEmails();
-    console.log("✅ Emails fetched successfully!");
+    // Process each email account separately
+    let successfulAccounts = 0;
+    let failedAccounts = 0;
+    
+    for (let i = 0; i < EMAIL_ADDRESSES.length; i++) {
+      const emailAddress = EMAIL_ADDRESSES[i];
+      const recipientIndex = i + 1; // 1 for first email, 2 for second email
 
-    // 2️⃣ Categorize emails with AI
-    console.log("2. Categorizing emails with AI...");
-    const aiResult = await categorizeEmails(executionNumber);
-    console.log("✅ Emails categorized successfully!");
-    console.log("🤖 AI Result structure:", JSON.stringify(aiResult, null, 2));
+      console.log(
+        `\n📧 Processing email account ${i + 1}/${
+          EMAIL_ADDRESSES.length
+        }: ${emailAddress}`
+      );
 
-    // 3️⃣ Send consolidated email report via Gmail
-    console.log("3. Sending consolidated email report via Gmail...");
-    await sendConsolidatedEmailReport(aiResult);
-    console.log("✅ Email report sent successfully!");
+      try {
+        // 1️⃣ Fetch emails for this account
+        console.log(`1. Fetching emails for ${emailAddress}...`);
+        let fetchedEmails;
+        try {
+          fetchedEmails = await fetchEmails(emailAddress, executionNumber);
+          console.log(
+            `✅ Emails fetched successfully for ${emailAddress}! (${fetchedEmails.length} emails)`
+          );
+        } catch (fetchError) {
+          console.error(`❌ Failed to fetch emails for ${emailAddress}:`, fetchError.message);
+          throw new Error(`Email fetch failed: ${fetchError.message}`);
+        }
+
+        // If no emails were found, skip categorization and report sending (notification already sent by fetchEmails)
+        if (fetchedEmails.length === 0) {
+          console.log(`📭 No emails found for ${emailAddress}, skipping categorization and report generation`);
+          successfulAccounts++; // Count as successful since notification was sent
+          continue; // Move to next email account
+        }
+
+        // 2️⃣ Categorize emails for this account with AI (includes retry logic)
+        console.log(`2. Categorizing emails for ${emailAddress} with AI...`);
+        let aiResult;
+        try {
+          aiResult = await categorizeEmails(
+            fetchedEmails,
+            executionNumber,
+            emailAddress
+          );
+          console.log(`✅ Emails categorized successfully for ${emailAddress}!`);
+        } catch (categorizeError) {
+          console.error(`❌ Failed to categorize emails for ${emailAddress}:`, categorizeError.message);
+
+          // Send simple error notification instead of normal report
+          await sendErrorNotificationEmail(
+            {
+              emailSource: emailAddress,
+              errorType: "Email Report Generation Failed",
+              errorMessage: "Your email report could not be generated at this time.",
+              timestamp: new Date().toLocaleString(),
+              executionNumber: executionNumber,
+            },
+            recipientIndex
+          );
+
+          throw new Error(`Categorization failed: ${categorizeError.message}`);
+        }
+
+        // 3️⃣ Send separate email report for this account
+        console.log(`3. Sending email report for ${emailAddress} via Gmail...`);
+        try {
+          await sendConsolidatedEmailReport(aiResult, recipientIndex);
+          console.log(`✅ Email report sent successfully for ${emailAddress}!`);
+          successfulAccounts++;
+        } catch (sendError) {
+          console.error(`❌ Failed to send email report for ${emailAddress}:`, sendError.message);
+
+          // Send error notification about report sending failure
+          await sendErrorNotificationEmail(
+            {
+              emailSource: emailAddress,
+              errorType: "Email Report Sending Failure",
+              errorMessage: sendError.message,
+              timestamp: new Date().toLocaleString(),
+              executionNumber: executionNumber,
+            },
+            recipientIndex
+          );
+
+          throw new Error(`Report sending failed: ${sendError.message}`);
+        }
+        
+      } catch (accountError) {
+        // Log the error for this account and continue with next account
+        console.error(`❌ Processing failed for ${emailAddress}:`, accountError.message);
+        failedAccounts++;
+        
+        // Continue processing other accounts even if one fails
+        console.log(`⏭️ Continuing to next email account...`);
+      }
+    }
+    
+    // Summary of processing
+    console.log(
+      `\n📊 Processing Summary: ${successfulAccounts} successful, ${failedAccounts} failed out of ${EMAIL_ADDRESSES.length} accounts`
+    );
+    
+    if (failedAccounts > 0 && successfulAccounts === 0) {
+      throw new Error(`All ${EMAIL_ADDRESSES.length} email accounts failed to process`);
+    }
+
+    console.log(
+      `\n✅ All ${EMAIL_ADDRESSES.length} email accounts processed and reports sent!`
+    );
 
     return { success: true };
   } catch (error) {

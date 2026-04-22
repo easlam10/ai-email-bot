@@ -1,0 +1,1285 @@
+{
+  "testInfo": {
+    "testDescription": "Morning run at 10am PKT (5am UTC)",
+    "expectedTimeRange": "4pm PKT yesterday to 10am PKT today",
+    "startTimeUTC": "2025-11-03T11:00:00.000Z",
+    "endTimeUTC": "2025-11-04T05:00:00.000Z",
+    "startTimePKT": "2025-11-03 16:00:00 PKT",
+    "endTimePKT": "2025-11-04 10:00:00 PKT",
+    "totalEmails": 106
+  },
+  "emails": [
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh_AAA=",
+      "subject": "Notification No: KIPS-INFO-03-31-2022 - KIPS HAJJ UMRAH GIFT PACKAGE",
+      "from": {
+        "name": "Notifications",
+        "email": "notifications@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-04T04:25:30Z",
+      "date": "11/4/2025, 9:25:30 AM",
+      "body": "Dear Sirs,Hope you are doing well. Please find the attached notification.--Regards, Numan Abdul MajeedAssistant Manager – Information & CoordinationDigital & Social Media Department - KIPS Education SystemAddress: 49-R, Johar Town, Lahore, PakistanMobile: +92 310-444-9819",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh%2BAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh9AAA=",
+      "subject": "Daily College Report Nov, 2025-205, 207-B-2",
+      "from": {
+        "name": "lhrgc1.pr",
+        "email": "lhrgc1.pr@college.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-04T03:08:37Z",
+      "date": "11/4/2025, 8:08:37 AM",
+      "body": "Respected Sir, Please find the attachment.Regards,Amna AwanVice PrincipalKIPS Girls College 203, 205-207, B2, Johar Town Lahore.",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh9AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh8AAA=",
+      "subject": "Daily Campus Report Dated 03-11-2025",
+      "from": {
+        "name": "ait1@preps.kips.edu.pk",
+        "email": "ait1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T17:12:30Z",
+      "date": "11/3/2025, 10:12:30 PM",
+      "body": "Regards, Umer Farooq ButtCampus ManagerA.I.T MainKIPS Preparations Pvt. Ltd4 Chenab Block, LahorePhone: (042) 37814881-4Mobile: 0334-4329747Email: ait1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh8AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTUAABpeeshPrFNQLeJx8GQVgn7AAIfsiTEAAA=",
+      "subject": "Daily Campus Report Dated 03-11-2025",
+      "from": {
+        "name": "ait1@preps.kips.edu.pk",
+        "email": "ait1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T17:12:30Z",
+      "date": "11/3/2025, 10:12:30 PM",
+      "body": "Regards, Umer Farooq ButtCampus ManagerA.I.T MainKIPS Preparations Pvt. Ltd4 Chenab Block, LahorePhone: (042) 37814881-4Mobile: 0334-4329747Email: ait1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTUAABpeeshPrFNQLeJx8GQVgn7AAIfsiTEAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh7AAA=",
+      "subject": "Daily Campus Report 03-11-2025",
+      "from": {
+        "name": "samanabad@preps.kips.edu.pk",
+        "email": "samanabad@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:50:59Z",
+      "date": "11/3/2025, 9:50:59 PM",
+      "body": "Dear Team, PFA the subjected report.Regards, Imran KhanCampus Manager Samanabad KIPS Preparations Pvt. Ltd. 415-Main Boulevard Samanabad, Lahore Phone: (042) 37584434-5 Mobile: 0305-4440509 Email: Samanabad@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh7AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTgAABpeeshPrFNQLeJx8GQVgn7AAIfsp0oAAA=",
+      "subject": "Daily Campus Report 03-11-2025",
+      "from": {
+        "name": "samanabad@preps.kips.edu.pk",
+        "email": "samanabad@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:50:59Z",
+      "date": "11/3/2025, 9:50:59 PM",
+      "body": "Dear Team, PFA the subjected report.Regards, Imran KhanCampus Manager Samanabad KIPS Preparations Pvt. Ltd. 415-Main Boulevard Samanabad, Lahore Phone: (042) 37584434-5 Mobile: 0305-4440509 Email: Samanabad@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTgAABpeeshPrFNQLeJx8GQVgn7AAIfsp0oAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh6AAA=",
+      "subject": "DCR 3-11-25",
+      "from": {
+        "name": "bwp1@preps.kips.edu.pk",
+        "email": "bwp1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:43:47Z",
+      "date": "11/3/2025, 9:43:47 PM",
+      "body": "Dear Sir Please Find The attachmentsRegards: MR MUHAMMAD SHAHIDKips Model Town CampusBahawalpur03054440531",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh6AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPEAABpeeshPrFNQLeJx8GQVgn7AAIfsgUyAAA=",
+      "subject": "DCR 3-11-25",
+      "from": {
+        "name": "bwp1@preps.kips.edu.pk",
+        "email": "bwp1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:43:47Z",
+      "date": "11/3/2025, 9:43:47 PM",
+      "body": "Dear Sir Please Find The attachmentsRegards: MR MUHAMMAD SHAHIDKips Model Town CampusBahawalpur03054440531",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPEAABpeeshPrFNQLeJx8GQVgn7AAIfsgUyAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh5AAA=",
+      "subject": "Daily Campus Report 03-11-25",
+      "from": {
+        "name": "878r1@preps.kips.edu.pk",
+        "email": "878r1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:41:08Z",
+      "date": "11/3/2025, 9:41:08 PM",
+      "body": "Dear Sir,Kindly find attachment.Regards.Muhammad Tahir SheikhCampus Manager878-R1KIPS Preparation Pvt. Ltd.878-R1, Johar Town - LahorePhone: (042) 35311328Mobile: 0305-4440719, 0305-4441490Email: 878r1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh5AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNO0AABpeeshPrFNQLeJx8GQVgn7AAIfspkzAAA=",
+      "subject": "Daily Campus Report 03-11-25",
+      "from": {
+        "name": "878r1@preps.kips.edu.pk",
+        "email": "878r1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:41:08Z",
+      "date": "11/3/2025, 9:41:08 PM",
+      "body": "Dear Sir,Kindly find attachment.Regards.Muhammad Tahir SheikhCampus Manager878-R1KIPS Preparation Pvt. Ltd.878-R1, Johar Town - LahorePhone: (042) 35311328Mobile: 0305-4440719, 0305-4441490Email: 878r1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNO0AABpeeshPrFNQLeJx8GQVgn7AAIfspkzAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh4AAA=",
+      "subject": "Mobile Balance is Required to Recharge (G-Ravi)",
+      "from": {
+        "name": "gravi@preps.kips.edu.pk",
+        "email": "gravi@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:32:21Z",
+      "date": "11/3/2025, 9:32:21 PM",
+      "body": "Dear Sir,It is submitted that our campus mobile number is block for outgoing call due to balance is insufficient , Kindly Recharge it on priority basisMobile Number= 0305-4440697Regards,Irfan AmeerCampus ManagerGulshan-e-RaviKIPS Preparations Pvt. Ltd.46-Main Road, Urdu Nagar, Gulshan-e-Ravi, LahorePhone: (042) 37468000 Mobile: 0305-4440697Email: gravi@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh4AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTXAABpeeshPrFNQLeJx8GQVgn7AAIfspNWAAA=",
+      "subject": "Mobile Balance is Required to Recharge (G-Ravi)",
+      "from": {
+        "name": "gravi@preps.kips.edu.pk",
+        "email": "gravi@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:32:21Z",
+      "date": "11/3/2025, 9:32:21 PM",
+      "body": "Dear Sir,It is submitted that our campus mobile number is block for outgoing call due to balance is insufficient , Kindly Recharge it on priority basisMobile Number= 0305-4440697Regards,Irfan AmeerCampus ManagerGulshan-e-RaviKIPS Preparations Pvt. Ltd.46-Main Road, Urdu Nagar, Gulshan-e-Ravi, LahorePhone: (042) 37468000 Mobile: 0305-4440697Email: gravi@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTXAABpeeshPrFNQLeJx8GQVgn7AAIfspNWAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh3AAA=",
+      "subject": "Daily Campus Report (03-11-2025)",
+      "from": {
+        "name": "11a@preps.kips.edu.pk",
+        "email": "11a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:27:22Z",
+      "date": "11/3/2025, 9:27:22 PM",
+      "body": "Dear Sir, Kindly find the attached file.Regards, Qasim JaralCampus Manager 11-A KIPS Preparations Pvt. Ltd. 11-A, Johar Town Lahore Phone: (042) 35170523 Mobile: 0305-4440554Email: 11a@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh3AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTeAABpeeshPrFNQLeJx8GQVgn7AAIfso9kAAA=",
+      "subject": "Daily Campus Report (03-11-2025)",
+      "from": {
+        "name": "11a@preps.kips.edu.pk",
+        "email": "11a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:27:22Z",
+      "date": "11/3/2025, 9:27:22 PM",
+      "body": "Dear Sir, Kindly find the attached file.Regards, Qasim JaralCampus Manager 11-A KIPS Preparations Pvt. Ltd. 11-A, Johar Town Lahore Phone: (042) 35170523 Mobile: 0305-4440554Email: 11a@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTeAABpeeshPrFNQLeJx8GQVgn7AAIfso9kAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh2AAA=",
+      "subject": "Reminder: Resignation of Miss. Hafiza Mirha Mehmood (SCO -11A Campus) for approval",
+      "from": {
+        "name": "11a@preps.kips.edu.pk",
+        "email": "11a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:27:15Z",
+      "date": "11/3/2025, 9:27:15 PM",
+      "body": "Dear Sir, it is requested to please provide us the SCO at 11A Campus on priority basis.Looking forward.Regards, Qasim JaralCampus Manager 11-A KIPS Preparations Pvt. Ltd. 11-A, Johar Town Lahore Phone: (042) 35170523 Mobile: 0305-4440554Email: 11a@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh2AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTeAABpeeshPrFNQLeJx8GQVgn7AAIfso9jAAA=",
+      "subject": "Reminder: Resignation of Miss. Hafiza Mirha Mehmood (SCO -11A Campus) for approval",
+      "from": {
+        "name": "11a@preps.kips.edu.pk",
+        "email": "11a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:27:15Z",
+      "date": "11/3/2025, 9:27:15 PM",
+      "body": "Dear Sir, it is requested to please provide us the SCO at 11A Campus on priority basis.Looking forward.Regards, Qasim JaralCampus Manager 11-A KIPS Preparations Pvt. Ltd. 11-A, Johar Town Lahore Phone: (042) 35170523 Mobile: 0305-4440554Email: 11a@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTeAABpeeshPrFNQLeJx8GQVgn7AAIfso9jAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh1AAA=",
+      "subject": "DAILY CASH REPORT (03-11-25)",
+      "from": {
+        "name": "wt2@preps.kips.edu.pk",
+        "email": "wt2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:25:56Z",
+      "date": "11/3/2025, 9:25:56 PM",
+      "body": "Regards, Abdul MubeenCampus ManagerWapda Town Matric KIPS Preparations Pvt. Ltd. 6 J-2, Wapda Town, LahorePhone: (042) 35229167-8 Mobile: 0300-0447899. Email: wt2@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh1AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNOzAABpeeshPrFNQLeJx8GQVgn7AAIfshzlAAA=",
+      "subject": "DAILY CASH REPORT (03-11-25)",
+      "from": {
+        "name": "wt2@preps.kips.edu.pk",
+        "email": "wt2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:25:56Z",
+      "date": "11/3/2025, 9:25:56 PM",
+      "body": "Regards, Abdul MubeenCampus ManagerWapda Town Matric KIPS Preparations Pvt. Ltd. 6 J-2, Wapda Town, LahorePhone: (042) 35229167-8 Mobile: 0300-0447899. Email: wt2@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNOzAABpeeshPrFNQLeJx8GQVgn7AAIfshzlAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh0AAA=",
+      "subject": "Request for Approval Leave Application ( Dr Saeed  ) Chemistry",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:23:53Z",
+      "date": "11/3/2025, 9:23:53 PM",
+      "body": "Dear Sir, It is Requested that replacement may kindly be provided for the said leave period. Regards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd.30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZh0AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw9AAA=",
+      "subject": "Request for Approval Leave Application ( Dr Saeed  ) Chemistry",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:23:53Z",
+      "date": "11/3/2025, 9:23:53 PM",
+      "body": "Dear Sir, It is Requested that replacement may kindly be provided for the said leave period. Regards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd.30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw9AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhzAAA=",
+      "subject": "Re: DCR 03-11-2025",
+      "from": {
+        "name": "ryk.mc@preps.kips.edu.pk",
+        "email": "ryk.mc@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:21:46Z",
+      "date": "11/3/2025, 9:21:46 PM",
+      "body": "A.O.ARespected Sir,Find the attached File of DCR.Regards, Mr Yasir HameedInfo Officer",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhzAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPiAABpeeshPrFNQLeJx8GQVgn7AAIfsotWAAA=",
+      "subject": "Re: DCR 03-11-2025",
+      "from": {
+        "name": "ryk.mc@preps.kips.edu.pk",
+        "email": "ryk.mc@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:21:46Z",
+      "date": "11/3/2025, 9:21:46 PM",
+      "body": "A.O.ARespected Sir,Find the attached File of DCR.Regards, Mr Yasir HameedInfo Officer",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPiAABpeeshPrFNQLeJx8GQVgn7AAIfsotWAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhyAAA=",
+      "subject": "Daily campus Report 03-11-25",
+      "from": {
+        "name": "gshahu@preps.kips.edu.pk",
+        "email": "gshahu@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:19:14Z",
+      "date": "11/3/2025, 9:19:14 PM",
+      "body": "DEAR SIR,FIND THE ATECHMENT .Regards,Salman HamidCampus ManagerGarhi ShahuKIPS Preparations Pvt. Ltd.101-Allama Iqbal Road, Garhi Shahu, LahorePhone: (042) 36370109Mobile: 0305-4440583Email: gshahu@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhyAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwThAABpeeshPrFNQLeJx8GQVgn7AAIfsoNTAAA=",
+      "subject": "Daily campus Report 03-11-25",
+      "from": {
+        "name": "gshahu@preps.kips.edu.pk",
+        "email": "gshahu@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:19:14Z",
+      "date": "11/3/2025, 9:19:14 PM",
+      "body": "DEAR SIR,FIND THE ATECHMENT .Regards,Salman HamidCampus ManagerGarhi ShahuKIPS Preparations Pvt. Ltd.101-Allama Iqbal Road, Garhi Shahu, LahorePhone: (042) 36370109Mobile: 0305-4440583Email: gshahu@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwThAABpeeshPrFNQLeJx8GQVgn7AAIfsoNTAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhxAAA=",
+      "subject": "DCR-3-11-2025",
+      "from": {
+        "name": "bwp2.mc@preps.kips.edu.pk",
+        "email": "bwp2.mc@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:18:41Z",
+      "date": "11/3/2025, 9:18:41 PM",
+      "body": "Dear Sir, Hope you are Fine.Kindly find the attached file of Daily Campus Report. Regard'sMr.ZafarInformation officerKIPS Satellite Town BWPMOb:0305-4440588",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhxAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhwAAA=",
+      "subject": "Daily Campus Report 03-11-2025",
+      "from": {
+        "name": "mgp@preps.kips.edu.pk",
+        "email": "mgp@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:15:15Z",
+      "date": "11/3/2025, 9:15:15 PM",
+      "body": "Sir, Please find attached file.Regards,Muhammad Ahmad JavaidPrincipalMughalpura Inter | KIPS Preparations Pvt. Ltd.Near Lalpull Mughalpura, LahorePhone: (042)36524935Mobile: 0305 4440526Email: mgp@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhwAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTdAABpeeshPrFNQLeJx8GQVgn7AAIfsfwoAAA=",
+      "subject": "Daily Campus Report 03-11-2025",
+      "from": {
+        "name": "mgp@preps.kips.edu.pk",
+        "email": "mgp@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:15:15Z",
+      "date": "11/3/2025, 9:15:15 PM",
+      "body": "Sir, Please find attached file.Regards,Muhammad Ahmad JavaidPrincipalMughalpura Inter | KIPS Preparations Pvt. Ltd.Near Lalpull Mughalpura, LahorePhone: (042)36524935Mobile: 0305 4440526Email: mgp@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTdAABpeeshPrFNQLeJx8GQVgn7AAIfsfwoAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhvAAA=",
+      "subject": "Daily Campus Report (3-11-2025)",
+      "from": {
+        "name": "wt2@preps.kips.edu.pk",
+        "email": "wt2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:14:10Z",
+      "date": "11/3/2025, 9:14:10 PM",
+      "body": "Regards, Abdul MubeenCampus ManagerWapda Town Matric KIPS Preparations Pvt. Ltd. 6 J-2, Wapda Town, LahorePhone: (042) 35229167-8 Mobile: 0300-0447899. Email: wt2@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNOzAABpeeshPrFNQLeJx8GQVgn7AAIfshzkAAA=",
+      "subject": "Daily Campus Report (3-11-2025)",
+      "from": {
+        "name": "wt2@preps.kips.edu.pk",
+        "email": "wt2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:14:10Z",
+      "date": "11/3/2025, 9:14:10 PM",
+      "body": "Regards, Abdul MubeenCampus ManagerWapda Town Matric KIPS Preparations Pvt. Ltd. 6 J-2, Wapda Town, LahorePhone: (042) 35229167-8 Mobile: 0300-0447899. Email: wt2@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNOzAABpeeshPrFNQLeJx8GQVgn7AAIfshzkAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhuAAA=",
+      "subject": "Daily Campus Report 03-Nov-2025",
+      "from": {
+        "name": "mgp2@preps.kips.edu.pk",
+        "email": "mgp2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:11:05Z",
+      "date": "11/3/2025, 9:11:05 PM",
+      "body": "Dear Sir, Find attached file,please.Regards,Dr. Hafiz Muzzammel RehmanCampus ManagerMughalpura-M CampusKIPS Preparations Pvt. Ltd.Near Lalpul Mughalpura, LahorePhone: 042-36524936-7Mobile: +92 305-4441439E-mail: mgp2@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhuAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNOyAABpeeshPrFNQLeJx8GQVgn7AAIfsodMAAA=",
+      "subject": "Daily Campus Report 03-Nov-2025",
+      "from": {
+        "name": "mgp2@preps.kips.edu.pk",
+        "email": "mgp2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:11:05Z",
+      "date": "11/3/2025, 9:11:05 PM",
+      "body": "Dear Sir, Find attached file,please.Regards,Dr. Hafiz Muzzammel RehmanCampus ManagerMughalpura-M CampusKIPS Preparations Pvt. Ltd.Near Lalpul Mughalpura, LahorePhone: 042-36524936-7Mobile: +92 305-4441439E-mail: mgp2@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNOyAABpeeshPrFNQLeJx8GQVgn7AAIfsodMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhtAAA=",
+      "subject": "Daily Campus Report Dated 3rd-Nov-25",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:10:53Z",
+      "date": "11/3/2025, 9:10:53 PM",
+      "body": "Dear Sir, Please find the attached fileRegards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd. 30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhtAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw8AAA=",
+      "subject": "Daily Campus Report Dated 3rd-Nov-25",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:10:53Z",
+      "date": "11/3/2025, 9:10:53 PM",
+      "body": "Dear Sir, Please find the attached fileRegards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd. 30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw8AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhsAAA=",
+      "subject": "Re: Faulty Water Cooler",
+      "from": {
+        "name": "skt1.mc@preps.kips.edu.pk",
+        "email": "skt1.mc@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:10:42Z",
+      "date": "11/3/2025, 9:10:42 PM",
+      "body": "A.A Sir, In response to the a/m subject and trailing mail, it is submitted that if procurement of new water cooler has not approved by worthy finance Director then is it possible to provide the campus some 2nd hand water cooler with good working condition or can you provide us back one of the 3 x faulty water coolers which were sent back to head office from the campus after repair beacuse campus badly needs 1 x water cooler to be installed at the boys side after installation of water RO Plant.Your positive response will be highly appreciated.Kind Regards,Tahir Munir,Principal,SKT-1",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhsAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTkAABpeeshPrFNQLeJx8GQVgn7AAIfsfRIAAA=",
+      "subject": "Re: Faulty Water Cooler",
+      "from": {
+        "name": "skt1.mc@preps.kips.edu.pk",
+        "email": "skt1.mc@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:10:42Z",
+      "date": "11/3/2025, 9:10:42 PM",
+      "body": "A.A Sir, In response to the a/m subject and trailing mail, it is submitted that if procurement of new water cooler has not approved by worthy finance Director then is it possible to provide the campus some 2nd hand water cooler with good working condition or can you provide us back one of the 3 x faulty water coolers which were sent back to head office from the campus after repair beacuse campus badly needs 1 x water cooler to be installed at the boys side after installation of water RO Plant.Your positive response will be highly appreciated.Kind Regards,Tahir Munir,Principal,SKT-1",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTkAABpeeshPrFNQLeJx8GQVgn7AAIfsfRIAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhrAAA=",
+      "subject": "Revenue & Petty Expenses, KDP Reports (KIPS Garhi Shah Campus (03-11-25)",
+      "from": {
+        "name": "gshahu@preps.kips.edu.pk",
+        "email": "gshahu@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:08:39Z",
+      "date": "11/3/2025, 9:08:39 PM",
+      "body": "Dear Sir, Please find the attached file.Regards,Salman HamidCampus ManagerGarhi ShahuKIPS Preparations Pvt. Ltd.101-Allama Iqbal Road, Garhi Shahu, LahorePhone: (042) 36370109Mobile: 0305-4440583Email: gshahu@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhrAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwThAABpeeshPrFNQLeJx8GQVgn7AAIfsoNSAAA=",
+      "subject": "Revenue & Petty Expenses, KDP Reports (KIPS Garhi Shah Campus (03-11-25)",
+      "from": {
+        "name": "gshahu@preps.kips.edu.pk",
+        "email": "gshahu@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:08:39Z",
+      "date": "11/3/2025, 9:08:39 PM",
+      "body": "Dear Sir, Please find the attached file.Regards,Salman HamidCampus ManagerGarhi ShahuKIPS Preparations Pvt. Ltd.101-Allama Iqbal Road, Garhi Shahu, LahorePhone: (042) 36370109Mobile: 0305-4440583Email: gshahu@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwThAABpeeshPrFNQLeJx8GQVgn7AAIfsoNSAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhqAAA=",
+      "subject": "Daily Campus Report 03-11-25 (Shadman Campus)",
+      "from": {
+        "name": "shadman@preps.kips.edu.pk",
+        "email": "shadman@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:06:02Z",
+      "date": "11/3/2025, 9:06:02 PM",
+      "body": "Dear Sir,Please find the attached file of DCR.Regards,Dr. Muhammad Farooq AbidCampus ManagerShadmanKIPS Preparations Pvt. Ltd.6-A Link Shadman Road Lahore.Phone: (042) 37428738-9Mobile: 0305 4440523Email: shadman@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhqAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTbAABpeeshPrFNQLeJx8GQVgn7AAIfsnt3AAA=",
+      "subject": "Daily Campus Report 03-11-25 (Shadman Campus)",
+      "from": {
+        "name": "shadman@preps.kips.edu.pk",
+        "email": "shadman@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:06:02Z",
+      "date": "11/3/2025, 9:06:02 PM",
+      "body": "Dear Sir,Please find the attached file of DCR.Regards,Dr. Muhammad Farooq AbidCampus ManagerShadmanKIPS Preparations Pvt. Ltd.6-A Link Shadman Road Lahore.Phone: (042) 37428738-9Mobile: 0305 4440523Email: shadman@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTbAABpeeshPrFNQLeJx8GQVgn7AAIfsnt3AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhpAAA=",
+      "subject": "DCR 03-11-2025",
+      "from": {
+        "name": "wah@preps.kips.edu.pk",
+        "email": "wah@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:03:42Z",
+      "date": "11/3/2025, 9:03:42 PM",
+      "body": "Respected Sir, Pleas find the attached file.",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhpAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPfAABpeeshPrFNQLeJx8GQVgn7AAIfsneIAAA=",
+      "subject": "DCR 03-11-2025",
+      "from": {
+        "name": "wah@preps.kips.edu.pk",
+        "email": "wah@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T16:03:42Z",
+      "date": "11/3/2025, 9:03:42 PM",
+      "body": "Respected Sir, Pleas find the attached file.",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPfAABpeeshPrFNQLeJx8GQVgn7AAIfsneIAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhoAAA=",
+      "subject": "Daily Campus Report - 03-11-2025",
+      "from": {
+        "name": "gbg1@preps.kips.edu.pk",
+        "email": "gbg1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:54:11Z",
+      "date": "11/3/2025, 8:54:11 PM",
+      "body": "Dear SirPlease find attachment...Regards,Nasir MehmoodCampus Manager Gulberg InterKIPS Preparation Pvt. Ltd.225-A-III Gulberg III LahorePhone: (042)35759032Mobile: (+92)305 4440519Email: gbg1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhoAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTZAABpeeshPrFNQLeJx8GQVgn7AAIfskZcAAA=",
+      "subject": "Daily Campus Report - 03-11-2025",
+      "from": {
+        "name": "gbg1@preps.kips.edu.pk",
+        "email": "gbg1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:54:11Z",
+      "date": "11/3/2025, 8:54:11 PM",
+      "body": "Dear SirPlease find attachment...Regards,Nasir MehmoodCampus Manager Gulberg InterKIPS Preparation Pvt. Ltd.225-A-III Gulberg III LahorePhone: (042)35759032Mobile: (+92)305 4440519Email: gbg1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTZAABpeeshPrFNQLeJx8GQVgn7AAIfskZcAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhnAAA=",
+      "subject": "Daily Campus Report Dated 3rd Nov 25 ( 31-A)",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:53:29Z",
+      "date": "11/3/2025, 8:53:29 PM",
+      "body": "Dear Sir, Please find the attached file.Regards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd.30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhnAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw7AAA=",
+      "subject": "Daily Campus Report Dated 3rd Nov 25 ( 31-A)",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:53:29Z",
+      "date": "11/3/2025, 8:53:29 PM",
+      "body": "Dear Sir, Please find the attached file.Regards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd.30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw7AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhmAAA=",
+      "subject": "DCR (03-11-2025) FSD SATIANA ROAD",
+      "from": {
+        "name": "fsd1@preps.kips.edu.pk",
+        "email": "fsd1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:52:22Z",
+      "date": "11/3/2025, 8:52:22 PM",
+      "body": "Respected Sir, Kindly find the Attachment.Regards,Zia Ur RehmanInfo OfficerKIPS Satiana Road Campus.",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhmAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPIAABpeeshPrFNQLeJx8GQVgn7AAIfsnOIAAA=",
+      "subject": "DCR (03-11-2025) FSD SATIANA ROAD",
+      "from": {
+        "name": "fsd1@preps.kips.edu.pk",
+        "email": "fsd1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:52:22Z",
+      "date": "11/3/2025, 8:52:22 PM",
+      "body": "Respected Sir, Kindly find the Attachment.Regards,Zia Ur RehmanInfo OfficerKIPS Satiana Road Campus.",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPIAABpeeshPrFNQLeJx8GQVgn7AAIfsnOIAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhlAAA=",
+      "subject": "Daily Campus Report (Chauburji) 03-11-2025",
+      "from": {
+        "name": "chauburji@preps.kips.edu.pk",
+        "email": "chauburji@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:52:19Z",
+      "date": "11/3/2025, 8:52:19 PM",
+      "body": "Dear Sir, Please find the attached file.Regards, Imran DarPrincipal Chauburji KIPS Preparations Pvt.Ltd 3-B Poonch Road Chauburji, LahorePhone: (042) 35244868Mobile: 0331-4785468 Email : chauburji@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhlAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTVAABpeeshPrFNQLeJx8GQVgn7AAIfsm_bAAA=",
+      "subject": "Daily Campus Report (Chauburji) 03-11-2025",
+      "from": {
+        "name": "chauburji@preps.kips.edu.pk",
+        "email": "chauburji@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:52:19Z",
+      "date": "11/3/2025, 8:52:19 PM",
+      "body": "Dear Sir, Please find the attached file.Regards, Imran DarPrincipal Chauburji KIPS Preparations Pvt.Ltd 3-B Poonch Road Chauburji, LahorePhone: (042) 35244868Mobile: 0331-4785468 Email : chauburji@preps.kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTVAABpeeshPrFNQLeJx8GQVgn7AAIfsm%2BbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhkAAA=",
+      "subject": "DAILY CAMPUS REPORT DGK-BK DATED: 03-11-2025",
+      "from": {
+        "name": "dgk2@preps.kips.edu.pk",
+        "email": "dgk2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:43:33Z",
+      "date": "11/3/2025, 8:43:33 PM",
+      "body": "REGARDS,JUNAID QADEERINFO OFFICERKIPS DGKHAN BK0305-4441143",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhkAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTrAABpeeshPrFNQLeJx8GQVgn7AAIfsmurAAA=",
+      "subject": "DAILY CAMPUS REPORT DGK-BK DATED: 03-11-2025",
+      "from": {
+        "name": "dgk2@preps.kips.edu.pk",
+        "email": "dgk2@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:43:33Z",
+      "date": "11/3/2025, 8:43:33 PM",
+      "body": "REGARDS,JUNAID QADEERINFO OFFICERKIPS DGKHAN BK0305-4441143",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTrAABpeeshPrFNQLeJx8GQVgn7AAIfsmurAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhjAAA=",
+      "subject": "DCR (Daily Campus Report) CHI Dated: 03-11-2025",
+      "from": {
+        "name": "chi@preps.kips.edu.pk",
+        "email": "chi@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:34:43Z",
+      "date": "11/3/2025, 8:34:43 PM",
+      "body": "Dear sir,Hope this email will find you in good health. As per subject above kindly find the attached file.Best Regards,Administration | KIPS Preparations📞 0632507474-5 | 📱 +923054441445📧 ctn@preps.kips.edu.pk🌐 www.kips.edu.pk📍 Arshad Plaza, Chungi #4, Chishtian, Pakistan",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhjAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPlAABpeeshPrFNQLeJx8GQVgn7AAIfsmXNAAA=",
+      "subject": "DCR (Daily Campus Report) CHI Dated: 03-11-2025",
+      "from": {
+        "name": "chi@preps.kips.edu.pk",
+        "email": "chi@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:34:43Z",
+      "date": "11/3/2025, 8:34:43 PM",
+      "body": "Dear sir,Hope this email will find you in good health. As per subject above kindly find the attached file.Best Regards,Administration | KIPS Preparations📞 0632507474-5 | 📱 +923054441445📧 ctn@preps.kips.edu.pk🌐 www.kips.edu.pk📍 Arshad Plaza, Chungi #4, Chishtian, Pakistan",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPlAABpeeshPrFNQLeJx8GQVgn7AAIfsmXNAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhiAAA=",
+      "subject": "DAILY CAMPUS REPORT OF BUREWALA CAMPUS  03-11-2025",
+      "from": {
+        "name": "brw@preps.kips.edu.pk",
+        "email": "brw@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:30:29Z",
+      "date": "11/3/2025, 8:30:29 PM",
+      "body": "AoA Respected Sir,Hope you are doing good.Please find the attachment.Regards:Ali RazaInfo OfficerKIPS Burewala Campus03054440406",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhiAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPDAABpeeshPrFNQLeJx8GQVgn7AAIfsl-wAAA=",
+      "subject": "DAILY CAMPUS REPORT OF BUREWALA CAMPUS  03-11-2025",
+      "from": {
+        "name": "brw@preps.kips.edu.pk",
+        "email": "brw@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:30:29Z",
+      "date": "11/3/2025, 8:30:29 PM",
+      "body": "AoA Respected Sir,Hope you are doing good.Please find the attachment.Regards:Ali RazaInfo OfficerKIPS Burewala Campus03054440406",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPDAABpeeshPrFNQLeJx8GQVgn7AAIfsl%2FwAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhhAAA=",
+      "subject": "Career Prep Weekly Reports",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:17:09Z",
+      "date": "11/3/2025, 8:17:09 PM",
+      "body": "Dear Sir,Please find the attached file.Regards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd. 30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhhAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw6AAA=",
+      "subject": "Career Prep Weekly Reports",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:17:09Z",
+      "date": "11/3/2025, 8:17:09 PM",
+      "body": "Dear Sir,Please find the attached file.Regards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd. 30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw6AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhgAAA=",
+      "subject": "EC DCR (GRW-SHN 03-11-2025",
+      "from": {
+        "name": "grw@preps.kips.edu.pk",
+        "email": "grw@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:10:23Z",
+      "date": "11/3/2025, 8:10:23 PM",
+      "body": "",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhgAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPeAABpeeshPrFNQLeJx8GQVgn7AAIfslv7AAA=",
+      "subject": "EC DCR (GRW-SHN 03-11-2025",
+      "from": {
+        "name": "grw@preps.kips.edu.pk",
+        "email": "grw@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:10:23Z",
+      "date": "11/3/2025, 8:10:23 PM",
+      "body": "",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPeAABpeeshPrFNQLeJx8GQVgn7AAIfslv7AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhfAAA=",
+      "subject": "DCR SADDAR CAMPUS NOVEMBER 2025 UPDATED 03-11-2025",
+      "from": {
+        "name": "rwp4@preps.kips.edu.pk",
+        "email": "rwp4@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:04:33Z",
+      "date": "11/3/2025, 8:04:33 PM",
+      "body": "",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhfAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPCAABpeeshPrFNQLeJx8GQVgn7AAIfsd6bAAA=",
+      "subject": "DCR SADDAR CAMPUS NOVEMBER 2025 UPDATED 03-11-2025",
+      "from": {
+        "name": "rwp4@preps.kips.edu.pk",
+        "email": "rwp4@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T15:04:33Z",
+      "date": "11/3/2025, 8:04:33 PM",
+      "body": "",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPCAABpeeshPrFNQLeJx8GQVgn7AAIfsd6bAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZheAAA=",
+      "subject": "Entry Test Reports 02-11-25",
+      "from": {
+        "name": "wt1@preps.kips.edu.pk",
+        "email": "wt1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T14:30:08Z",
+      "date": "11/3/2025, 7:30:08 PM",
+      "body": "Dear Sir,Kindly find attachment.Regards, Shahzad NaseemCampus Principal Wapda Town Inter KIPS Preparations Pvt. Ltd.75 E-1, Wapda Town, LahorePhone: 042 - 35184405-6 Ext 103Mobile: 0305-4441149Email: wt1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZheAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTiAABpeeshPrFNQLeJx8GQVgn7AAIfslIsAAA=",
+      "subject": "Entry Test Reports 02-11-25",
+      "from": {
+        "name": "wt1@preps.kips.edu.pk",
+        "email": "wt1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T14:30:08Z",
+      "date": "11/3/2025, 7:30:08 PM",
+      "body": "Dear Sir,Kindly find attachment.Regards, Shahzad NaseemCampus Principal Wapda Town Inter KIPS Preparations Pvt. Ltd.75 E-1, Wapda Town, LahorePhone: 042 - 35184405-6 Ext 103Mobile: 0305-4441149Email: wt1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTiAABpeeshPrFNQLeJx8GQVgn7AAIfslIsAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhdAAA=",
+      "subject": "Request to Remove Old Stock Entries from ERP KEC Lahore.",
+      "from": {
+        "name": "preps.lhr@kips.edu.pk",
+        "email": "preps.lhr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:50:10Z",
+      "date": "11/3/2025, 6:50:10 PM",
+      "body": "Dear Sir,It has come to our attention that the following campuses still show stock in the ERP from previous years. Please note that all of this stock has already been physically collected by the NDC department.Kindly remove these old stock entries from the system before the delivery and issuance of the new revision and test session material to avoid any discrepancies.1. Bahria2. 878R13. 263E4. Garhi Shahu5. Gulberg Matric (P.B & F.B)6. Samanabad7. ShadmanThank you for your prompt attention to this matter.Regards, Muhammad Amjad HabibOperations Executive Operations Department - Lahore KIPS Preparations Pvt. Ltd. 5-6, D1, Khayaban-e-Firdousi, Johar Town, Lahore Phone: (042) 32305477 | Ext: 141Mobile: 0305-4440524Email: preps.lhr@kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhdAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTSAABpeeshPrFNQLeJx8GQVgn7AAIfscz8AAA=",
+      "subject": "Request to Remove Old Stock Entries from ERP KEC Lahore.",
+      "from": {
+        "name": "preps.lhr@kips.edu.pk",
+        "email": "preps.lhr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:50:10Z",
+      "date": "11/3/2025, 6:50:10 PM",
+      "body": "Dear Sir,It has come to our attention that the following campuses still show stock in the ERP from previous years. Please note that all of this stock has already been physically collected by the NDC department.Kindly remove these old stock entries from the system before the delivery and issuance of the new revision and test session material to avoid any discrepancies.1. Bahria2. 878R13. 263E4. Garhi Shahu5. Gulberg Matric (P.B & F.B)6. Samanabad7. ShadmanThank you for your prompt attention to this matter.Regards, Muhammad Amjad HabibOperations Executive Operations Department - Lahore KIPS Preparations Pvt. Ltd. 5-6, D1, Khayaban-e-Firdousi, Johar Town, Lahore Phone: (042) 32305477 | Ext: 141Mobile: 0305-4440524Email: preps.lhr@kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTSAABpeeshPrFNQLeJx8GQVgn7AAIfscz8AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhcAAA=",
+      "subject": "Re:  Fee Edit Cases (After Admission) 31-A",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:30:19Z",
+      "date": "11/3/2025, 6:30:19 PM",
+      "body": "Dear Sir, Please find the attached fileRegards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd.30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhcAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw5AAA=",
+      "subject": "Re:  Fee Edit Cases (After Admission) 31-A",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:30:19Z",
+      "date": "11/3/2025, 6:30:19 PM",
+      "body": "Dear Sir, Please find the attached fileRegards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd.30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw5AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhbAAA=",
+      "subject": "Fee Edit Cases (After Admission) 31-A",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:27:58Z",
+      "date": "11/3/2025, 6:27:58 PM",
+      "body": "Dear Sir, Please find the attached fileRegards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd.30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw4AAA=",
+      "subject": "Fee Edit Cases (After Admission) 31-A",
+      "from": {
+        "name": "30a@preps.kips.edu.pk",
+        "email": "30a@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:27:58Z",
+      "date": "11/3/2025, 6:27:58 PM",
+      "body": "Dear Sir, Please find the attached fileRegards,Dr. Javed Iqbal GondalCampus Manager30-A | KIPS Preprations Pvt. Ltd.30-A, Johar Town, LahorePhone: (042) 35179001-4Mobile: 0321-5179001Email: 30a@preps.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTWAABpeeshPrFNQLeJx8GQVgn7AAIfskw4AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhaAAA=",
+      "subject": "Re: Reminder about Completion of Admission Data on ERP",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:11:47Z",
+      "date": "11/3/2025, 6:11:47 PM",
+      "body": "Reminder - IIRespected Principal,ٱلسَّلَامُ عَلَيْكُمْRegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhaAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGLAAA=",
+      "subject": "Re: Reminder about Completion of Admission Data on ERP",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:11:47Z",
+      "date": "11/3/2025, 6:11:47 PM",
+      "body": "Reminder - IIRespected Principal,ٱلسَّلَامُ عَلَيْكُمْRegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGLAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhZAAA=",
+      "subject": "One-on-One Meeting with Worthy EDC",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:09:07Z",
+      "date": "11/3/2025, 6:09:07 PM",
+      "body": "Respected Principal,ٱلسَّلَامُ عَلَيْكُمْ I hope this email finds you well. Please be updated that you are going to have one-on-one meeting with Worthy EDC. You are expected to be thoroughly prepared to answer any queries by worthy EDC during the meeting related to:Current Admission StatusMarketing Campaign during Admissions 2025-26HR details including workload along with section strengthFY/SY Annual Results 2025Usage of ERP Meeting Schedule:Date: November 4, 2025Time: 02:30 PMVenue: KIPS Corporate OfficeRegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhZAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGKAAA=",
+      "subject": "One-on-One Meeting with Worthy EDC",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:09:07Z",
+      "date": "11/3/2025, 6:09:07 PM",
+      "body": "Respected Principal,ٱلسَّلَامُ عَلَيْكُمْ I hope this email finds you well. Please be updated that you are going to have one-on-one meeting with Worthy EDC. You are expected to be thoroughly prepared to answer any queries by worthy EDC during the meeting related to:Current Admission StatusMarketing Campaign during Admissions 2025-26HR details including workload along with section strengthFY/SY Annual Results 2025Usage of ERP Meeting Schedule:Date: November 4, 2025Time: 02:30 PMVenue: KIPS Corporate OfficeRegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGKAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhYAAA=",
+      "subject": "Entry Test 2024-25 | Reports (Gulberg I)",
+      "from": {
+        "name": "gbg1@preps.kips.edu.pk",
+        "email": "gbg1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:08:48Z",
+      "date": "11/3/2025, 6:08:48 PM",
+      "body": "Dear SirPlease find attachment...Regards,Nasir MehmoodCampus Manager Gulberg InterKIPS Preparation Pvt. Ltd.225-A-III Gulberg III LahorePhone: (042)35759032Mobile: (+92)305 4440519Email: gbg1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhYAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTZAABpeeshPrFNQLeJx8GQVgn7AAIfskZbAAA=",
+      "subject": "Entry Test 2024-25 | Reports (Gulberg I)",
+      "from": {
+        "name": "gbg1@preps.kips.edu.pk",
+        "email": "gbg1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:08:48Z",
+      "date": "11/3/2025, 6:08:48 PM",
+      "body": "Dear SirPlease find attachment...Regards,Nasir MehmoodCampus Manager Gulberg InterKIPS Preparation Pvt. Ltd.225-A-III Gulberg III LahorePhone: (042)35759032Mobile: (+92)305 4440519Email: gbg1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTZAABpeeshPrFNQLeJx8GQVgn7AAIfskZbAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhXAAA=",
+      "subject": "Re: Chauburji Campus  Requistion",
+      "from": {
+        "name": "mdc@kips.edu.pk",
+        "email": "mdc@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:07:09Z",
+      "date": "11/3/2025, 6:07:09 PM",
+      "body": "Dear Sir,Your requisition is forwarded to store. You’ll get your required material as soon as possible.Regards",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhXAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPsAABpeeshPrFNQLeJx8GQVgn7AAIfsehqAAA=",
+      "subject": "Re: Chauburji Campus  Requistion",
+      "from": {
+        "name": "mdc@kips.edu.pk",
+        "email": "mdc@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T13:07:09Z",
+      "date": "11/3/2025, 6:07:09 PM",
+      "body": "Dear Sir,Your requisition is forwarded to store. You’ll get your required material as soon as possible.Regards",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPsAABpeeshPrFNQLeJx8GQVgn7AAIfsehqAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhWAAA=",
+      "subject": "Completion of Admission Data on ERP",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:56:17Z",
+      "date": "11/3/2025, 5:56:17 PM",
+      "body": "Reminder - IIRespected Principal,ٱلسَّلَامُ عَلَيْكُمْThis is to remind you that the admission data on ERP is still incomplete in most of the campuses. This delay is causing discrepancies in student records and affecting the accuracy of our system-wide reporting. As already communicated, it is mandatory to ensure that the following information is completely entered and verified in the ERP:1. Student Picture2. Complete Bio Data (Personal Profile)3. Academic Profile (Matric Marks)4. Parents/Guardians Contact Information5. Co-curricular Details6. Checklist of Documents attachedAll campuses are expected to ensure 100% data completion without further delay. Non-compliance may be reflected in your campus’s performance evaluation and reported to the concerned authorities.RegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhWAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGJAAA=",
+      "subject": "Completion of Admission Data on ERP",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:56:17Z",
+      "date": "11/3/2025, 5:56:17 PM",
+      "body": "Reminder - IIRespected Principal,ٱلسَّلَامُ عَلَيْكُمْThis is to remind you that the admission data on ERP is still incomplete in most of the campuses. This delay is causing discrepancies in student records and affecting the accuracy of our system-wide reporting. As already communicated, it is mandatory to ensure that the following information is completely entered and verified in the ERP:1. Student Picture2. Complete Bio Data (Personal Profile)3. Academic Profile (Matric Marks)4. Parents/Guardians Contact Information5. Co-curricular Details6. Checklist of Documents attachedAll campuses are expected to ensure 100% data completion without further delay. Non-compliance may be reflected in your campus’s performance evaluation and reported to the concerned authorities.RegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGJAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhVAAA=",
+      "subject": "Re: Completion of Admission Data on ERP",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:55:00Z",
+      "date": "11/3/2025, 5:55:00 PM",
+      "body": "Reminder - IIRespected Principal,ٱلسَّلَامُ عَلَيْكُمْThis is to remind you that the admission data on ERP is still incomplete in most of the campuses. This delay is causing discrepancies in student records and affecting the accuracy of our system-wide reporting. As already communicated, it is mandatory to ensure that the following information is completely entered and verified in the ERP:1. Student Picture2. Complete Bio Data (Personal Profile)3. Academic Profile (Matric Marks)4. Parents/Guardians Contact Information5. Co-curricular Details6. Checklist of Documents attachedAll campuses are expected to ensure 100% data completion without further delay. Non-compliance may be reflected in your campus’s performance evaluation and reported to the concerned authorities.RegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhVAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGIAAA=",
+      "subject": "Re: Completion of Admission Data on ERP",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:55:00Z",
+      "date": "11/3/2025, 5:55:00 PM",
+      "body": "Reminder - IIRespected Principal,ٱلسَّلَامُ عَلَيْكُمْThis is to remind you that the admission data on ERP is still incomplete in most of the campuses. This delay is causing discrepancies in student records and affecting the accuracy of our system-wide reporting. As already communicated, it is mandatory to ensure that the following information is completely entered and verified in the ERP:1. Student Picture2. Complete Bio Data (Personal Profile)3. Academic Profile (Matric Marks)4. Parents/Guardians Contact Information5. Co-curricular Details6. Checklist of Documents attachedAll campuses are expected to ensure 100% data completion without further delay. Non-compliance may be reflected in your campus’s performance evaluation and reported to the concerned authorities.RegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGIAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhUAAA=",
+      "subject": "Re: Evening Coaching DCR Observations (1-11-2025)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:51:30Z",
+      "date": "11/3/2025, 5:51:30 PM",
+      "body": "Dear Sir, Please find attached the updated report.The issues highlighted in red within the DCRs have already been reported, and the noted errors still require correction.You are kindly requested to ensure that these observations are addressed and eradicated in the upcoming report.Regards, Rana Muhammad Asim Manager Regional Coordination",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPuAABpeeshPrFNQLeJx8GQVgn7AAIfskBRAAA=",
+      "subject": "Re: Evening Coaching DCR Observations (1-11-2025)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:51:30Z",
+      "date": "11/3/2025, 5:51:30 PM",
+      "body": "Dear Sir, Please find attached the updated report.The issues highlighted in red within the DCRs have already been reported, and the noted errors still require correction.You are kindly requested to ensure that these observations are addressed and eradicated in the upcoming report.Regards, Rana Muhammad Asim Manager Regional Coordination",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPuAABpeeshPrFNQLeJx8GQVgn7AAIfskBRAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhTAAA=",
+      "subject": "Re: Reminder about Completion of Admission Data on ERP",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:51:18Z",
+      "date": "11/3/2025, 5:51:18 PM",
+      "body": "Reminder - IIRespected Principal,ٱلسَّلَامُ عَلَيْكُمْThis is a Reminder regarding the earlier email titled “Completion of Admission Data on ERP”. It has been observed that KC-Kotli has still not completed the required admission data entries on ERP.Please treat this as a matter of priority and confirm compliance at the earliest.RegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhTAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGHAAA=",
+      "subject": "Re: Reminder about Completion of Admission Data on ERP",
+      "from": {
+        "name": "dc.reports.fr@kips.edu.pk",
+        "email": "dc.reports.fr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:51:18Z",
+      "date": "11/3/2025, 5:51:18 PM",
+      "body": "Reminder - IIRespected Principal,ٱلسَّلَامُ عَلَيْكُمْThis is a Reminder regarding the earlier email titled “Completion of Admission Data on ERP”. It has been observed that KC-Kotli has still not completed the required admission data entries on ERP.Please treat this as a matter of priority and confirm compliance at the earliest.RegardsDr. Qaiser MaqsoodKIPS College DirectorateMobile: 0346-0036477Ext. 112",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPpAABpeeshPrFNQLeJx8GQVgn7AAIfsbGHAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhSAAA=",
+      "subject": "Re: Evening Coaching DCR Observations (1-11-2025)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:49:38Z",
+      "date": "11/3/2025, 5:49:38 PM",
+      "body": "Dear Sir, Please find attached the updated report.The issues highlighted in red within the DCRs have already been reported, and the noted errors still require correction.You are kindly requested to ensure that these observations are addressed and eradicated in the upcoming report.Regards, Rana Muhammad Asim Manager Regional Coordination",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhSAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPuAABpeeshPrFNQLeJx8GQVgn7AAIfskBQAAA=",
+      "subject": "Re: Evening Coaching DCR Observations (1-11-2025)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:49:38Z",
+      "date": "11/3/2025, 5:49:38 PM",
+      "body": "Dear Sir, Please find attached the updated report.The issues highlighted in red within the DCRs have already been reported, and the noted errors still require correction.You are kindly requested to ensure that these observations are addressed and eradicated in the upcoming report.Regards, Rana Muhammad Asim Manager Regional Coordination",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPuAABpeeshPrFNQLeJx8GQVgn7AAIfskBQAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhRAAA=",
+      "subject": "Re: Evening Coaching DCR Observations (1-11-2025)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:48:37Z",
+      "date": "11/3/2025, 5:48:37 PM",
+      "body": "Dear Sir, Please find attached the updated report.The issues highlighted in red within the DCRs have already been reported, and the noted errors still require correction.You are kindly requested to ensure that these observations are addressed and eradicated in the upcoming report.Regards, Rana Muhammad Asim Manager Regional Coordination",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhRAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPuAABpeeshPrFNQLeJx8GQVgn7AAIfskBPAAA=",
+      "subject": "Re: Evening Coaching DCR Observations (1-11-2025)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:48:37Z",
+      "date": "11/3/2025, 5:48:37 PM",
+      "body": "Dear Sir, Please find attached the updated report.The issues highlighted in red within the DCRs have already been reported, and the noted errors still require correction.You are kindly requested to ensure that these observations are addressed and eradicated in the upcoming report.Regards, Rana Muhammad Asim Manager Regional Coordination",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPuAABpeeshPrFNQLeJx8GQVgn7AAIfskBPAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhQAAA=",
+      "subject": "Notification to Proceed – Marks-Based Scholarship (1st Year Lahore Board) for 2nd Year Session 2025-26 (Final)",
+      "from": {
+        "name": "preps.lhr@kips.edu.pk",
+        "email": "preps.lhr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:37:12Z",
+      "date": "11/3/2025, 5:37:12 PM",
+      "body": "Dear Sir,Hope you are blessed with good health, Please find the attachments of the Marks-Based Scholarship (1st Year Lahore Board) for 2nd Year Session 2025-26.Please circulate this information to all concerned.Stay blessed.Regards, Muhammad Amjad HabibOperations Executive Operations Department - Lahore KIPS Preparations Pvt. Ltd. 5-6, D1, Khayaban-e-Firdousi, Johar Town, Lahore Phone: (042) 32305477 | Ext: 141Mobile: 0305-4440524Email: preps.lhr@kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhQAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTSAABpeeshPrFNQLeJx8GQVgn7AAIfscz7AAA=",
+      "subject": "Notification to Proceed – Marks-Based Scholarship (1st Year Lahore Board) for 2nd Year Session 2025-26 (Final)",
+      "from": {
+        "name": "preps.lhr@kips.edu.pk",
+        "email": "preps.lhr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:37:12Z",
+      "date": "11/3/2025, 5:37:12 PM",
+      "body": "Dear Sir,Hope you are blessed with good health, Please find the attachments of the Marks-Based Scholarship (1st Year Lahore Board) for 2nd Year Session 2025-26.Please circulate this information to all concerned.Stay blessed.Regards, Muhammad Amjad HabibOperations Executive Operations Department - Lahore KIPS Preparations Pvt. Ltd. 5-6, D1, Khayaban-e-Firdousi, Johar Town, Lahore Phone: (042) 32305477 | Ext: 141Mobile: 0305-4440524Email: preps.lhr@kips.edu.pk www.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTSAABpeeshPrFNQLeJx8GQVgn7AAIfscz7AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhPAAA=",
+      "subject": "RE: KIPS R&T Matric 2025-26 - Parents Orientation / Seminar – Revised Schedule and Venue",
+      "from": {
+        "name": "preps.rmlhr@kips.edu.pk",
+        "email": "preps.rmlhr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:24:30Z",
+      "date": "11/3/2025, 5:24:30 PM",
+      "body": "Dear Campus Heads,With reference to subject and trailing email, please note that the Parents Orientation / Seminar (KIPS Revision and Test Session Matric 2025-26), which was earlier scheduled to be held on November 7, 2025, at the campuses of KIPS Evening Coaching, will now be conducted on November 15, 2025, as a seminar titled: “Understanding of New Syllabus and Exam Methodology (Matric) – Success Key KIPS R&T Session” You are requested to take note of the revised schedule: 📅 Date: Saturday, November 15, 2025🕙 Time: 10:00 AM – 12:00 Noon📍 Venue: Faisal Auditorium, Gate No. 3, Punjab University, Lahore.📍 Location Map: https://maps.app.goo.gl/KsZS2A57GMEqAjdSA Make announcements in classes to invite parents and students and ensure maximum presence. Presence of following staff is mandatory:Campus Heads (all campuses)ACM / ADMIN / BEIStudent Care OfficersInformation Officers. Reporting time for above mentioned staff members is 09:00 AM.Dress Code shall be formal. Information officers must wear a tie. Casual dressing is strictly prohibited. Best Regards, Muhammad Abbas MushtaqRegional Manager, LahoreEmail: preps.rmlhr@kips.edu.pkPhone: 3361040376Mobile: 03450384000KIPS Corporate Office5/6 D block Johar town Lahore",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhPAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTSAABpeeshPrFNQLeJx8GQVgn7AAIfscz6AAA=",
+      "subject": "RE: KIPS R&T Matric 2025-26 - Parents Orientation / Seminar – Revised Schedule and Venue",
+      "from": {
+        "name": "preps.rmlhr@kips.edu.pk",
+        "email": "preps.rmlhr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:24:30Z",
+      "date": "11/3/2025, 5:24:30 PM",
+      "body": "Dear Campus Heads,With reference to subject and trailing email, please note that the Parents Orientation / Seminar (KIPS Revision and Test Session Matric 2025-26), which was earlier scheduled to be held on November 7, 2025, at the campuses of KIPS Evening Coaching, will now be conducted on November 15, 2025, as a seminar titled: “Understanding of New Syllabus and Exam Methodology (Matric) – Success Key KIPS R&T Session” You are requested to take note of the revised schedule: 📅 Date: Saturday, November 15, 2025🕙 Time: 10:00 AM – 12:00 Noon📍 Venue: Faisal Auditorium, Gate No. 3, Punjab University, Lahore.📍 Location Map: https://maps.app.goo.gl/KsZS2A57GMEqAjdSA Make announcements in classes to invite parents and students and ensure maximum presence. Presence of following staff is mandatory:Campus Heads (all campuses)ACM / ADMIN / BEIStudent Care OfficersInformation Officers. Reporting time for above mentioned staff members is 09:00 AM.Dress Code shall be formal. Information officers must wear a tie. Casual dressing is strictly prohibited. Best Regards, Muhammad Abbas MushtaqRegional Manager, LahoreEmail: preps.rmlhr@kips.edu.pkPhone: 3361040376Mobile: 03450384000KIPS Corporate Office5/6 D block Johar town Lahore",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTSAABpeeshPrFNQLeJx8GQVgn7AAIfscz6AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhOAAA=",
+      "subject": "Re: Permanent Transfer and Replacement – Mr. Badar Awais (Biology)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:16:37Z",
+      "date": "11/3/2025, 5:16:37 PM",
+      "body": "Dear Shoaib Sb,I would like to inform you that as per SOP it should be asked from undersigned instead of ZM (after the discussion with ZM). Unfortunately, there is no discussion with me by your side or from the respected HOD.The transfer is made during the session which is not in our SOP and not recommended as well. RegardsHumayun BabarRegional Manager (O.S)",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhOAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPuAABpeeshPrFNQLeJx8GQVgn7AAIfskBOAAA=",
+      "subject": "Re: Permanent Transfer and Replacement – Mr. Badar Awais (Biology)",
+      "from": {
+        "name": "preps.os@kips.edu.pk",
+        "email": "preps.os@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:16:37Z",
+      "date": "11/3/2025, 5:16:37 PM",
+      "body": "Dear Shoaib Sb,I would like to inform you that as per SOP it should be asked from undersigned instead of ZM (after the discussion with ZM). Unfortunately, there is no discussion with me by your side or from the respected HOD.The transfer is made during the session which is not in our SOP and not recommended as well. RegardsHumayun BabarRegional Manager (O.S)",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AABIjNPuAABpeeshPrFNQLeJx8GQVgn7AAIfskBOAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhNAAA=",
+      "subject": "Undergraduate Universities Admissions 2025.",
+      "from": {
+        "name": "Telecare Department",
+        "email": "telecaredepartment@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T12:08:39Z",
+      "date": "11/3/2025, 5:08:39 PM",
+      "body": "Dear KIPS Family,Hope you are doing well. It is to inform you that the following undergraduate universities have announced the admissions for 2025-26.The University of Lahore, Lahore.Riphah International University, Lahore.My University, Islamabad.Hallmark College of Nursing & Allied Health Sciences, Peshawar.Please ensure that all relevant students have been informed about this.For queries, you are requested to reach out to the contact number of the undersigned.Thank you!Regards,Asia ZulfiqarAddress: 49-R, Johar Town, Lahore, Pakistan UAN: +42 111-547-775",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhNAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhMAAA=",
+      "subject": "KIPS R&T Matric 2025-26 - Parents Orientation / Seminar – Revised Schedule and Venue",
+      "from": {
+        "name": "preps.rmlhr@kips.edu.pk",
+        "email": "preps.rmlhr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:59:55Z",
+      "date": "11/3/2025, 4:59:55 PM",
+      "body": "Dear Heads, Kindly note that the Parents Orientation / Seminar (KIPS Revision and Test Session Matric 2025-26), which was earlier scheduled to be held on November 7, 2025, at the campuses of KIPS Evening Coaching, will now be conducted on November 15, 2025, as a seminar titled: “Understanding of New Syllabus and Exam Methodology (Matric) – Success Key KIPS R&T Session” Objectives of Seminar: Understanding ALP syllabus for 9th Class.Focus on core concepts of reduced syllabus and pairing schemes for exams.Understanding of revised syllabus and exam methodology for 10th Class.How to cope up the challenges of students: Time management and revision.Understanding of KIPS Teaching Methodology in revision and test session. You are requested to take note of the revised schedule and proceed as per your respective departmental responsibilities accordingly. 📅 Date: Saturday, November 15, 2025🕙 Time: 10:00 AM – 12:00 Noon📍 Venue: Faisal Auditorium, Gate No. 3, Punjab University, Lahore📍 Location Map: https://maps.app.goo.gl/KsZS2A57GMEqAjdSADepartmental Responsibilities Marketing DepartmentMarketing Materials: Dropdown Banner, Standees, Media Wall, 1,500 Leaflets, Social Media Post, and E-Invitation for Parents, BODs, and Department Heads.SMD with sound system.Event coverage (photography and short video clips).Mainstream media coverage. Kindly share artwork on priority basis for review and approval. NDC DepartmentKDP display & sale stalls (Matric & Intermediate) — minimum of two.PNM DepartmentProvision of:6 Tables12 Cane ChairsFor establishment of the Information / Admission Desk.Campus ManagementEnsure the presence of Campus Heads, ACM/BEI, SCO, and Information Officers.Make announcements in classes to invite parents and students.HR / Admin DepartmentEnsure the presence of an HR Representative.Deployment of 3 Office Boys. Best Regards, Muhammad Abbas MushtaqRegional Manager, LahoreEmail: preps.rmlhr@kips.edu.pkPhone: 3361040376Mobile: 03450384000KIPS Corporate Office5/6 D bl…",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTSAABpeeshPrFNQLeJx8GQVgn7AAIfscz5AAA=",
+      "subject": "KIPS R&T Matric 2025-26 - Parents Orientation / Seminar – Revised Schedule and Venue",
+      "from": {
+        "name": "preps.rmlhr@kips.edu.pk",
+        "email": "preps.rmlhr@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:59:55Z",
+      "date": "11/3/2025, 4:59:55 PM",
+      "body": "Dear Heads, Kindly note that the Parents Orientation / Seminar (KIPS Revision and Test Session Matric 2025-26), which was earlier scheduled to be held on November 7, 2025, at the campuses of KIPS Evening Coaching, will now be conducted on November 15, 2025, as a seminar titled: “Understanding of New Syllabus and Exam Methodology (Matric) – Success Key KIPS R&T Session” Objectives of Seminar: Understanding ALP syllabus for 9th Class.Focus on core concepts of reduced syllabus and pairing schemes for exams.Understanding of revised syllabus and exam methodology for 10th Class.How to cope up the challenges of students: Time management and revision.Understanding of KIPS Teaching Methodology in revision and test session. You are requested to take note of the revised schedule and proceed as per your respective departmental responsibilities accordingly. 📅 Date: Saturday, November 15, 2025🕙 Time: 10:00 AM – 12:00 Noon📍 Venue: Faisal Auditorium, Gate No. 3, Punjab University, Lahore📍 Location Map: https://maps.app.goo.gl/KsZS2A57GMEqAjdSADepartmental Responsibilities Marketing DepartmentMarketing Materials: Dropdown Banner, Standees, Media Wall, 1,500 Leaflets, Social Media Post, and E-Invitation for Parents, BODs, and Department Heads.SMD with sound system.Event coverage (photography and short video clips).Mainstream media coverage. Kindly share artwork on priority basis for review and approval. NDC DepartmentKDP display & sale stalls (Matric & Intermediate) — minimum of two.PNM DepartmentProvision of:6 Tables12 Cane ChairsFor establishment of the Information / Admission Desk.Campus ManagementEnsure the presence of Campus Heads, ACM/BEI, SCO, and Information Officers.Make announcements in classes to invite parents and students.HR / Admin DepartmentEnsure the presence of an HR Representative.Deployment of 3 Office Boys. Best Regards, Muhammad Abbas MushtaqRegional Manager, LahoreEmail: preps.rmlhr@kips.edu.pkPhone: 3361040376Mobile: 03450384000KIPS Corporate Office5/6 D bl…",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTSAABpeeshPrFNQLeJx8GQVgn7AAIfscz5AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhLAAA=",
+      "subject": "Re: Urgently request for temporally replacement of Prof Ali Manan Computer at KIPS AIT",
+      "from": {
+        "name": "ait1@preps.kips.edu.pk",
+        "email": "ait1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:50:46Z",
+      "date": "11/3/2025, 4:50:46 PM",
+      "body": "Ackonolodge,with lots of Thanks Regards, Umer Farooq ButtCampus ManagerA.I.T MainKIPS Preparations Pvt. Ltd4 Chenab Block, LahorePhone: (042) 37814881-4Mobile: 0334-4329747Email: ait1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhLAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTUAABpeeshPrFNQLeJx8GQVgn7AAIfsiTDAAA=",
+      "subject": "Re: Urgently request for temporally replacement of Prof Ali Manan Computer at KIPS AIT",
+      "from": {
+        "name": "ait1@preps.kips.edu.pk",
+        "email": "ait1@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:50:46Z",
+      "date": "11/3/2025, 4:50:46 PM",
+      "body": "Ackonolodge,with lots of Thanks Regards, Umer Farooq ButtCampus ManagerA.I.T MainKIPS Preparations Pvt. Ltd4 Chenab Block, LahorePhone: (042) 37814881-4Mobile: 0334-4329747Email: ait1@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTUAABpeeshPrFNQLeJx8GQVgn7AAIfsiTDAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhJAAA=",
+      "subject": "Re: Urgently request for temporally replacement of Prof Ali Manan Computer at KIPS AIT",
+      "from": {
+        "name": "HOD CS",
+        "email": "hod.cs@kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:22:17Z",
+      "date": "11/3/2025, 4:22:17 PM",
+      "body": "Respected Sir, Mr. Abdul Waheed (0301-4010783) from R&D department will join AIT campus today to teach computer inter classes of MR. Ali Mannan until his availibility.Regards,Muhammad Imran BajwaHOD Computer Science",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhJAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhIAAA=",
+      "subject": "Entry Test Weekly Reports MGP Inter Campus",
+      "from": {
+        "name": "mgp@preps.kips.edu.pk",
+        "email": "mgp@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:20:30Z",
+      "date": "11/3/2025, 4:20:30 PM",
+      "body": "Sir, Please find attached file.Regards,Muhammad Ahmad JavaidPrincipalMughalpura Inter | KIPS Preparations Pvt. Ltd.Near Lalpull Mughalpura, LahorePhone: (042)36524935Mobile: 0305 4440526Email: mgp@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhIAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTdAABpeeshPrFNQLeJx8GQVgn7AAIfsfwnAAA=",
+      "subject": "Entry Test Weekly Reports MGP Inter Campus",
+      "from": {
+        "name": "mgp@preps.kips.edu.pk",
+        "email": "mgp@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:20:30Z",
+      "date": "11/3/2025, 4:20:30 PM",
+      "body": "Sir, Please find attached file.Regards,Muhammad Ahmad JavaidPrincipalMughalpura Inter | KIPS Preparations Pvt. Ltd.Near Lalpull Mughalpura, LahorePhone: (042)36524935Mobile: 0305 4440526Email: mgp@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTdAABpeeshPrFNQLeJx8GQVgn7AAIfsfwnAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhHAAA=",
+      "subject": "Replacement required of the resigned IO -MGP-I",
+      "from": {
+        "name": "mgp@preps.kips.edu.pk",
+        "email": "mgp@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:20:26Z",
+      "date": "11/3/2025, 4:20:26 PM",
+      "body": "Dear Sir,With reference to below mail and above subject, it is requested that 01 seat of the information officer is still vacant and required on urgent basis as the academic session is on full swing keeping in view of the upcoming R&T session.Your prompt response will highly be appreciated.Regards, Muhammad Ahmad Javaid PrincipalMughalpura Inter | KIPS Preparations Pvt. Ltd.Near Lalpull Mughalpura, LahorePhone: (042)36524935Mobile: 0305 4440526Email: mgp@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhHAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTdAABpeeshPrFNQLeJx8GQVgn7AAIfsfwmAAA=",
+      "subject": "Replacement required of the resigned IO -MGP-I",
+      "from": {
+        "name": "mgp@preps.kips.edu.pk",
+        "email": "mgp@preps.kips.edu.pk"
+      },
+      "receivedDateTime": "2025-11-03T11:20:26Z",
+      "date": "11/3/2025, 4:20:26 PM",
+      "body": "Dear Sir,With reference to below mail and above subject, it is requested that 01 seat of the information officer is still vacant and required on urgent basis as the academic session is on full swing keeping in view of the upcoming R&T session.Your prompt response will highly be appreciated.Regards, Muhammad Ahmad Javaid PrincipalMughalpura Inter | KIPS Preparations Pvt. Ltd.Near Lalpull Mughalpura, LahorePhone: (042)36524935Mobile: 0305 4440526Email: mgp@preps.kips.edu.pkwww.kips.edu.pk",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAHhwTdAABpeeshPrFNQLeJx8GQVgn7AAIfsfwmAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    },
+    {
+      "id": "AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE-4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhGAAA=",
+      "subject": "📊 Daily Email Report - 2025-11-03",
+      "from": {
+        "name": "kipsemailreporter@gmail.com",
+        "email": "kipsemailreporter@gmail.com"
+      },
+      "receivedDateTime": "2025-11-03T11:01:35Z",
+      "date": "11/3/2025, 4:01:35 PM",
+      "body": "📊 Daily Email Report - 2025-11-03Total Emails: 78Email Report #2📈 Category Summary💼 HR: 8 emails ▼ View Details 📢 Marketing: 4 emails ▼ View Details 🔧 PNM: 30 emails ▼ View Details 🔍 Audit: 2 emails ▼ View Details 💰 Accounts: 3 emails ▼ View Details 🏫 DCR: 24 emails Count only 📦 Others: 7 emails ▼ View Details 📋 Detailed Email ListsClick on category names above to jump to details, or scroll down to view all.💼 HR Details ▲ Back to Top 1. hrd.am2@kips.edu.pk Urgently request for temporally replacement of Prof Ali Manan Computer at KIPS AIT 🔗 Open Email 2. hod.phy@kips.edu.pk Re: Request for Approval Leave Application ( Mr. IbtisamHussain ) Physics 🔗 Open Email 3. hod.phy@kips.edu.pk Re: Request for Approval Leave Application ( Mr. IbtisamHussain ) Physics 🔗 Open Email 4. preps.lhr@kips.edu.pk FW: Urgently required temporary replacement of Prof Asim Iqbal Pak-Studies at KIPS AIT 🔗 Open Email 5. preps.lhr@kips.edu.pk FW: Urgently required temporary replacement of Prof Asim Iqbal Pak-Studies at KIPS AIT 🔗 Open Email 6. preps.lhr@kips.edu.pk FW: Urgently request for temporally replacement of Prof Ali Manan Computer at KIPS AIT 🔗 Open Email 7. preps.lhr@kips.edu.pk FW: Urgently request for temporally replacement of Prof Ali Manan Computer at KIPS AIT 🔗 Open Email 8. sd.gmops@kips.edu.pk Re: Invitation for R&T Matric Teachers Training Workshop 2025-26 🔗 Open Email 📢 Marketing Details ▲ Back to Top 1. notifications@kips.edu.pk Notification No: KIPS-INFO-11-02-2025 - Launching of 9th Revision & Test Sessions under Coaching Classes at KIPS Virtual 🔗 Open Email 2. mkt.kv@kips.edu.pk Re: 26-08-25 KC Inter Results 2025 - Artworks - Notes 🔗 Open Email 3. dsm@kips.edu.pk KET Positions 2025 - 3 November 2025 Updated 🔗 Open Email 4. cashmanagement@faysalbank.com Enhance Your Business Payments with RAAST – Now Available on Faysal Transact Payment Portal 🔗 Open Email 🔧 PNM Details ▲ Back to Top 1. it.support@kips.edu.pk RE: Revised: Request For New Mobile and S…",
+      "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADA1NWU0ZDgyLTA4ZmUtNDJjNy1hYzJjLTM0ZjYxZmQ1MTdiYQBGAAAAAAC9aXJVdE%2F4SqPBDz9L5qJQBwBpeeshPrFNQLeJx8GQVgn7AAAAAAEMAABpeeshPrFNQLeJx8GQVgn7AAIfsZhGAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    }
+  ]
+}

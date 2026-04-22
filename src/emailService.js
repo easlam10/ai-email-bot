@@ -64,8 +64,9 @@ export const generateCategoryBreakdownMessage = (aiResult) => {
             </div>
             ${
               originalWebLink !== "#"
-                ? `<div style="margin-top: 8px;">
+                ? `<div style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
               <a href="${originalWebLink}" target="_blank" style="color: #0078d4; text-decoration: none; font-weight: 500; padding: 4px 8px; background-color: #e3f2fd; border-radius: 3px; font-size: 13px;">🔗 Open Email</a>
+              ${email.emailData?.date ? `<span style="color: #666; font-size: 12px; background-color: #f5f5f5; padding: 2px 6px; border-radius: 3px;">${email.emailData.date}</span>` : ""}
             </div>`
                 : ""
             }
@@ -89,7 +90,6 @@ export const generateCategoryBreakdownMessage = (aiResult) => {
 
 // Create Gmail transporter
 function createGmailTransporter() {
-  // Email credentials from test-email.js
   const yourEmail = process.env.GOOGLE_SENDER_EMAIL;
   const appPassword = process.env.GOOGLE_APP_PASSWORD;
 
@@ -102,13 +102,188 @@ function createGmailTransporter() {
   });
 }
 
-// Send consolidated email report using Gmail
-export async function sendConsolidatedEmailReport(aiResult) {
+// Send no emails notification when no emails are fetched
+export async function sendNoEmailsNotification(
+  recipientIndex = 1,
+  timeRange = "",
+  emailSource = ""
+) {
   try {
     const transporter = createGmailTransporter();
-    // Email addresses from test-email.js
     const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
-    const recipientEmail = process.env.GOOGLE_RECIPIENT_EMAIL;
+    const recipientEmail = process.env[`GOOGLE_RECIEVER_EMAIL_${recipientIndex}`];
+
+    const mailOptions = {
+      from: senderEmail,
+      to: recipientEmail,
+      subject: `📭 No Emails Found - ${new Date().toLocaleDateString("en-US", {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+      })}`,
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+        </head>
+        <body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; margin: 0; padding: 20px; text-align: center;">
+          <div style="max-width: 600px; margin: 0 auto;">
+            <div style="background-color: #d4edda; border: 1px solid #c3e6cb; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+              <h2 style="color: #155724; margin: 0 0 15px 0;">📭 No Emails Found</h2>
+              <p style="color: #155724; margin: 0; font-size: 16px;">
+                No emails were found in your mailbox for this time period.
+              </p>
+            </div>
+
+            <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: left;">
+              <h3 style="color: #495057; margin-top: 0;">📊 Report Details</h3>
+              <p style="color: #6c757d; margin: 10px 0;">
+                <strong>Email Account:</strong> ${emailSource || "N/A"}<br>
+                <strong>Time Period:</strong> ${timeRange || "N/A"}<br>
+                <strong>Check Time:</strong> ${new Date().toLocaleString("en-US", {
+                  timeZone: "Asia/Karachi"
+                })} PKT
+              </p>
+            </div>
+
+            <div style="background-color: #e7f3ff; border: 1px solid #b8daff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+              <h3 style="color: #004085; margin-top: 0;">ℹ️ Information</h3>
+              <p style="color: #004085; margin: 10px 0;">
+                Since no emails were found, no email report was generated for this cycle.
+              </p>
+            </div>
+
+            <p style="color: #6c757d; font-size: 14px;">
+              <em>This is an automated notification.</em>
+            </p>
+          </div>
+        </body>
+        </html>
+      `,
+      text: `
+📭 No Emails Found
+
+No emails were found in your mailbox for this time period.
+
+Report Details:
+- Email Account: ${emailSource || "N/A"}
+- Time Period: ${timeRange || "N/A"}
+- Check Time: ${new Date().toLocaleString("en-US", {
+  timeZone: "Asia/Karachi"
+})} PKT
+
+Since no emails were found, no email report was generated for this cycle.
+
+This is an automated notification.
+      `,
+    };
+
+    console.log("📤 Sending no emails notification...");
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ No emails notification sent successfully!");
+    return { messageId: info.messageId, response: info.response };
+  } catch (error) {
+    console.error(
+      "❌ Error sending no emails notification:",
+      error.message
+    );
+    // Don't throw - we don't want notification failures to cascade
+    return null;
+  }
+}
+
+// Send error notification email when categorization or other critical failures occur
+export async function sendErrorNotificationEmail(
+  errorDetails,
+  recipientIndex = 1
+) {
+  try {
+    const transporter = createGmailTransporter();
+    const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
+    const recipientEmail = process.env[`GOOGLE_RECIEVER_EMAIL_${recipientIndex}`];
+
+    const {
+      emailSource,
+      errorType,
+      errorMessage,
+      timestamp,
+      executionNumber,
+    } = errorDetails;
+
+    const mailOptions = {
+      from: senderEmail,
+      to: recipientEmail,
+      subject: `⚠️ Email Report Failed to Generate`,
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+        </head>
+        <body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; margin: 0; padding: 20px; text-align: center;">
+          <div style="max-width: 600px; margin: 0 auto;">
+            <div style="background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+              <h2 style="color: #721c24; margin: 0 0 15px 0;">⚠️ Email Report Failed to Generate</h2>
+              <p style="color: #721c24; margin: 0; font-size: 16px;">
+                Your email report could not be generated at this time.
+              </p>
+            </div>
+            
+            <div style="background-color: #d1ecf1; border: 1px solid #bee5eb; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+              <h3 style="color: #0c5460; margin-top: 0;">Please Notify Development Team</h3>
+              <p style="color: #0c5460; margin: 10px 0;">
+                Please contact your development team for resolution.
+              </p>
+            </div>
+            
+            <p style="color: #666; font-size: 14px;">
+              <em>This is an automated notification.</em>
+            </p>
+          </div>
+        </body>
+        </html>
+      `,
+      text: `
+⚠️ Email Report Failed to Generate
+
+Your email report could not be generated at this time.
+
+Please notify the development team for resolution.
+
+This is an automated notification.
+      `,
+    };
+
+    console.log("📤 Sending error notification email...");
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ Error notification email sent successfully!");
+    return { messageId: info.messageId, response: info.response };
+  } catch (error) {
+    console.error(
+      "❌ Error sending error notification email:",
+      error.message
+    );
+    // Don't throw - we don't want error notification failures to cascade
+    return null;
+  }
+}
+
+// Send consolidated email report using Gmail
+export async function sendConsolidatedEmailReport(
+  aiResult,
+  recipientIndex = 1
+) {
+  try {
+    const transporter = createGmailTransporter();
+    // Email addresses from environment variables
+    const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
+    const recipientEmail = process.env[`GOOGLE_RECIEVER_EMAIL_${recipientIndex}`];
+    console.log(
+      `📧 Sending report for ${aiResult.meta?.emailSource} to ${recipientEmail}`
+    );
+
     const counts = extractCategoryCounts(aiResult);
     const breakdown = generateCategoryBreakdownMessage(aiResult);
 
@@ -177,8 +352,10 @@ export async function sendConsolidatedEmailReport(aiResult) {
         category.count
       } email${category.count !== 1 ? "s" : ""}
                   ${
-                    category.count > 0
+                    category.count > 0 && category.id !== "dcr"
                       ? `<span style="float: right;"><a href="#${category.id}" style="color: #0078d4; text-decoration: none;">▼ View Details</a></span>`
+                      : category.id === "dcr" && category.count > 0
+                      ? `<span style="float: right; color: #666; font-size: 12px;">Count only</span>`
                       : ""
                   }
                 </td>
@@ -193,7 +370,7 @@ export async function sendConsolidatedEmailReport(aiResult) {
     // Generate detailed sections at bottom
     let detailSections = "";
     categories.forEach((category) => {
-      if (category.count > 0) {
+      if (category.count > 0 && category.id !== "dcr") {
         detailSections += `
           <tr>
             <td>
@@ -221,7 +398,7 @@ export async function sendConsolidatedEmailReport(aiResult) {
     const mailOptions = {
       from: senderEmail,
       to: recipientEmail,
-      subject: `📊 Daily Email Report - ${counts.date} (${counts.total} emails)`,
+      subject: `📊 Daily Email Report - ${counts.date}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -233,9 +410,11 @@ export async function sendConsolidatedEmailReport(aiResult) {
           <table width="100%" cellspacing="0" cellpadding="0" border="0">
             <tr>
               <td>
-                <h2 style="color: #0078d4; border-bottom: 2px solid #0078d4; padding-bottom: 10px;">📊 Daily Email Report - ${counts.date}</h2>
-                <p><strong>Total Emails:</strong> ${counts.total}</p>
-                <p><strong>Email Report #${counts.executionNumber}</strong></p>
+                 <h2 style="color: #0078d4; border-bottom: 2px solid #0078d4; padding-bottom: 10px;">📊 Daily Email Report - ${
+                   counts.date
+                 }</h2>
+                 <p><strong>Total Emails:</strong> ${counts.total}</p>
+                 <p><strong>Email Report #${counts.executionNumber}</strong></p>
                 
                 <h3 style="color: #0078d4; margin-top: 30px; margin-bottom: 20px;">📈 Category Summary</h3>
               </td>
