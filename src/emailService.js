@@ -111,12 +111,7 @@ export async function sendNoEmailsNotification(
   try {
     const transporter = createGmailTransporter();
     const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
-    const recipientEmail =
-      recipientIndex === 1
-        ? process.env.GOOGLE_RECIEVER_EMAIL_1
-        : recipientIndex === 2
-        ? process.env.GOOGLE_RECIEVER_EMAIL_2
-        : process.env.GOOGLE_RECIEVER_EMAIL_3;
+    const recipientEmail = process.env[`GOOGLE_RECIEVER_EMAIL_${recipientIndex}`];
 
     const mailOptions = {
       from: senderEmail,
@@ -207,12 +202,7 @@ export async function sendErrorNotificationEmail(
   try {
     const transporter = createGmailTransporter();
     const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
-    const recipientEmail =
-      recipientIndex === 1
-        ? process.env.GOOGLE_RECIEVER_EMAIL_1
-        : recipientIndex === 2
-        ? process.env.GOOGLE_RECIEVER_EMAIL_2
-        : process.env.GOOGLE_RECIEVER_EMAIL_3;
+    const recipientEmail = process.env[`GOOGLE_RECIEVER_EMAIL_${recipientIndex}`];
 
     const {
       emailSource,
@@ -289,12 +279,7 @@ export async function sendConsolidatedEmailReport(
     const transporter = createGmailTransporter();
     // Email addresses from environment variables
     const senderEmail = process.env.GOOGLE_SENDER_EMAIL;
-    const recipientEmail =
-      recipientIndex === 1
-        ? process.env.GOOGLE_RECIEVER_EMAIL_1
-        : recipientIndex === 2
-        ? process.env.GOOGLE_RECIEVER_EMAIL_2
-        : process.env.GOOGLE_RECIEVER_EMAIL_3;
+    const recipientEmail = process.env[`GOOGLE_RECIEVER_EMAIL_${recipientIndex}`];
     console.log(
       `📧 Sending report for ${aiResult.meta?.emailSource} to ${recipientEmail}`
     );
